@@ -36,6 +36,8 @@ links:
   - title: Tweets
     url: https://twitter.com/HCampbell07/
     external: true
+  - title: Presentations
+    url: /presentations/
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Europe/London
