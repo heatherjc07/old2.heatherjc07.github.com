@@ -3,6 +3,7 @@ layout: post
 title: "Some Soft Skill Reading"
 description: "12 Essentail Skills for Software Engineers, Review"
 category: books 
+share: true
 tags: [soft skills, career development, relationships, 12 essential skills]
 ---
 

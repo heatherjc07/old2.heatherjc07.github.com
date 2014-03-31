@@ -3,6 +3,7 @@ layout: post
 title: "When Your Soft Skills Get Called Into Question"
 description: "Developing your soft skills"
 category: development
+share: true
 tags: [career development, soft skills]
 ---
 I'm at the stage in my career where I want to take it to the next level and that is the stage where the ability to manage becomes important. As well as having excellent technical skills soft skills become more important in order to enable you to get the best out of your colleagues, vendors and customers.

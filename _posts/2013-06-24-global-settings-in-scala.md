@@ -3,6 +3,7 @@ layout: post
 title: "Global Settings in Scala"
 description: "Defining behaviour at a global level in Play"
 category: tutorial
+share: true
 tags: [scala, play, development]
 ---
 

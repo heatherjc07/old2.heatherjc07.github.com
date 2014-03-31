@@ -3,6 +3,7 @@ layout: post
 title: "Real Happiness at Work"
 description: "Real Happiness at Work by Sharon Salzberg"
 category: books 
+share: true
 tags: [soft skills, well-being, sharon salzberg, balance]
 ---
 When I was pregnant and during Luke's birth I found visualization and breathing techniques really useful. They helped me to focus and stay relaxed. I highly recommend [Pregnancy Health Yoga](http://www.amazon.co.uk/Pregnancy-Health-Yoga-Tara-Lee/dp/B0012KSDG0/ref=sr_1_1?ie=UTF8&qid=1390517019&sr=8-1&keywords=pregnancy+yoga) which is a DVD aimed at pregnant women. 

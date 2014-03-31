@@ -3,6 +3,7 @@ layout: post
 title: "Seven Languages in Seven Weeks"
 description: "Seven Languages in Seven Weeks"
 category: books 
+share: true
 tags: [design, languages, seven languages in seven weeks]
 ---
 

@@ -3,6 +3,7 @@ layout: post
 title: "Gracious Behaviour"
 description: "The importance of gracious behaviour"
 category: development 
+share: true
 tags: [relationships, soft skills, career development, 12 essential skills]
 ---
 The first of the relationship skills Hendricksen mentions in his book <a href="http://www.amazon.co.uk/12-Essential-Skills-Software-Architects/dp/0321717295" target="_blank">12 Essential Skills for Software Architects</a> is Gracious Behaviour. Easy when you're dealing with someone pleasant not so easy in other circumstances. 

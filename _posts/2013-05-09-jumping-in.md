@@ -3,6 +3,7 @@ layout: post
 title: "Jumping In"
 description: "Benefits of presenting"
 category: development
+share: true
 tags: [career development]
 ---
 

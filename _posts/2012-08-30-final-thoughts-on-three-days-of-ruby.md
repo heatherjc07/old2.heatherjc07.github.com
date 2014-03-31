@@ -3,6 +3,7 @@ layout: post
 title: "Final Thoughts on Three Days of Ruby"
 description: "Ruby Roundup: Seven Languages in Seven Weeks"
 category: development
+share: true
 tags: [seven languages in seven weeks, ruby, languages]
 ---
 

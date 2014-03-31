@@ -3,6 +3,7 @@ layout: post
 title: "Review: AOP in .NET."
 description: "Review of Manning Publication's AOP in .NET by Matthew Groves"
 category: books
+share: true
 tags: [AOP, C#, review]
 ---
 

@@ -3,6 +3,7 @@ layout: post
 title: "Neo4j Day 1 (Gremlin)"
 description: "Using Gremlin with Neo4J"
 category: development
+share: true
 tags: [seven databases in seven weeks, nosql, data, neo4j, gremlin]
 ---
 

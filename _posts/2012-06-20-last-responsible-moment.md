@@ -3,6 +3,7 @@ layout: post
 title: "Last Responsible Moment"
 description: "Ovewview of last responsible moment"
 category: skills
+share: true
 tags: [design, lean]
 ---
 

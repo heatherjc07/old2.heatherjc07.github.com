@@ -3,6 +3,7 @@ layout: post
 title: "Get Involved!"
 description: "Review of 'Get Involved' Pluralsight course"
 category: reviews 
+share: true
 tags: [hanselman, conery, pluralsight, career]
 ---
 

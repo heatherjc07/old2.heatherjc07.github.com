@@ -3,6 +3,7 @@ layout: post
 title: "A Fresh Look"
 description: "Updating the look and feel of my blog"
 category: 
+share: true
 tags: [site]
 ---
 

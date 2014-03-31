@@ -4,6 +4,7 @@ title: "Rapid Presentation Layer Development with Play"
 description: "Using templates in Scala Play applications"
 category: tutorial
 tags: [scala, play, development]
+share: true
 ---
 
 One of the really nice features of Play is its [template engine](http://www.playframework.com/documentation/2.1.1/ScalaTemplates). It's something I made use of heavily in my latest piece of work developing a proof of concept for a customer. The template engine allows you to create reusable blocks of layout which you can use across multiple pages in your site. It's really easy to get started with templates as they don't require you to learn a new language. Mine consisted of Scala and HTML. 

@@ -3,6 +3,7 @@ layout: post
 title: "Neo4j Day 1 (Installing and Exploring the Web GUI)"
 description: "Installing Neo4J"
 category: development
+share: true
 tags: [seven databases in seven weeks, nosql, data, neo4j]
 ---
 

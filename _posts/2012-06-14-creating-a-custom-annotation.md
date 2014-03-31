@@ -3,6 +3,7 @@ layout: post
 title: "Creating a Custom Annotation"
 description: "Creating a customer annotation in Java"
 category: tutorial 
+share: true
 tags: [JSR303,java,validation]
 ---
 

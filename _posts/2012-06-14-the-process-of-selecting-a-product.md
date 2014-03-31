@@ -3,6 +3,7 @@ layout: post
 title: "The Process of Selecting a Product"
 description: "Steps to successful product selection"
 category: skills
+share: true
 tags: [products,business,selection]
 ---
 

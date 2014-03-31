@@ -3,6 +3,7 @@ layout: post
 title: "Agile Weekly: Prescriptive Coaching?"
 description: "Prescriptive Coaching"
 category: Agile
+share: true
 tags: [agile, coaching]
 ---
 

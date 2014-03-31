@@ -3,6 +3,7 @@ layout: post
 title: "Clojure Day 2"
 description: "Clojure Day 2: Seven Languages in Seven Weeks"
 category: development
+share: true
 tags: [seven languages in seven weeks, clojure, languages]
 ---
 *My experience with day two of exploring Clojure through <a href="http://pragprog.com/book/btlang/seven-languages-in-seven-weeks" target="_blank">Seven Languages in Seven Weeks</a>.*

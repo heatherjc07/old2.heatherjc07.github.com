@@ -3,6 +3,7 @@ layout: post
 title: "10gen MongoDB Courses: My Experience So Far"
 description: "Experience of 10gen MongoDB Course"
 category: development 
+share: true
 tags: [10gen, mongodb, online courses, nosql, databases]
 ---
 

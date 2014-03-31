@@ -3,6 +3,7 @@ layout: post
 title: "Passionate Programmer"
 description: "Review of the Passionate Programmer, Pragmatic Bookshelf"
 category: books
+share: true
 tags: [career development, passionate programmer]
 ---
 No it's not an erotic novel about an excitable programmer but a guide to how you can refind your passion for IT and programming in particular.

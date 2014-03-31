@@ -3,6 +3,7 @@ layout: post
 title: "Technology Radar March 2012"
 description: "Overview of the Technology Radar"
 category: development 
+share: true
 tags: [trends,thoughtworks]
 ---
 
