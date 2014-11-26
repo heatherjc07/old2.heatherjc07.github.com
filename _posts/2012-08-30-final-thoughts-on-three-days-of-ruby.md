@@ -33,7 +33,7 @@ A big positive for Ruby is how quickly you can bring something to market. The ex
 
 ###Performance 
 
-This is improving but the focus remains on programmer experience and many of the language’s best features like ducktyping and open classes make it difficult to compile. It is however reasonable for many purposes. 
+This is improving but the focus remains on programmer experience and many of the language's best features like ducktyping and open classes make it difficult to compile. It is however reasonable for many purposes. 
 
 ###Concurrency and OOP 
 
