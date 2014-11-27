@@ -12,5 +12,5 @@ With so much interesting stuff happening in technology it can be hard to know wh
 Two things I liked in particular:
 
 * She emphasizes the importance of deciding to not learn something. Take time to rule out things.
-* Just because you decide to not learn something now doesn't mean you can't ever pick it up. 
+* Just because you decide to not learn something now doesn't mean you can never pick it up. 
 
