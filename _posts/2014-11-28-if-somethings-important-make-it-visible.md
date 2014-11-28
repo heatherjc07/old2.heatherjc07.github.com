@@ -55,6 +55,6 @@ On the blocked story add a post-it for each defect with the id of the defect. No
 
 ![Stories Blocked in Test]({{ site.url}}/images/visibility/TestBoard.JPG)
 
-** This is just a small selection of the things my team has made visible. Hope it helps spark some ideas for things to display in your project **
+This is just a small selection of the things my team has made visible. Hope it helps spark some ideas for things to display in your project
 
 
