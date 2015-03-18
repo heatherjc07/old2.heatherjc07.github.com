@@ -1,14 +1,5 @@
 ---
 layout: post
-title: "Explaining Languages through Storytelling"
-description: "Using storytelling to teach lanaguages"
-category: skills 
-share: true
-tags: [learning, storytelling, languages]
----
-
----
-layout: post
 title: "Review: Commitment"
 description: "Review of the book Commitment"
 category: books 
