@@ -1,9 +1,19 @@
 ---
 layout: post
+title: "Explaining Languages through Storytelling"
+description: "Using storytelling to teach lanaguages"
+category: skills 
+share: true
+tags: [learning, storytelling, languages]
+---
+
+---
+layout: post
 title: "Review: Commitment"
 description: "Review of the book Commitment"
-category:books 
-tags: [options, project management, strategy, book, review]
+category: books 
+share: true
+tags: [project management, options, strategy, book, review]
 ---
 Over the past day I've been reading [Commitment](http://www.amazon.co.uk/Commitment-Novel-about-Managing-Project/dp/9082056909) by Olav Maassen, Chris Matts and Chris Geary. 
 
