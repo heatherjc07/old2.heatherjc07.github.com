@@ -14,7 +14,7 @@ Let's take a look in terms of empowering people.
 
 ## We're Empowered? No one told me
 
-The first mistake can be in assuming everyone knows about it. We need to **explicitly make people aware they're empowered**. Doing this as a one time policy launch is not sufficient. New people join and people forget. Our values and culture need to be part of the induction programme, they need to be visible in one accesible, location where people can go and see them. They need to be explained in a **simple, succinct way** so people take time to listen and understand what is means for them.
+The first mistake can be in assuming everyone knows about it. We need to **explicitly make people aware they're empowered**. Doing this as a one time policy launch is not sufficient. New people join and people forget. Our values and culture need to be part of the induction programme, they need to be visible in one accesible, location where people can go and see them. They need to be explained in a **simple, succinct way** so people take time to listen and understand what it means for them.
 
 
 ## Empowerment that's just a way of making more money for the company
@@ -34,7 +34,7 @@ The idea of empowering people needs to be more than a sentence somewhere. It mus
 
 ## Great I'm empowered but how do I make a good decision?
 
-We want people to innovate and make decisions that bring value to the company. Giving advice on how to go about making a good decision does not hinder it as long as it is **light weight**. Encouraging people to sound ideas off others, seek advice from people with different specialities and being explicit about how to get budget and equipment encourage good decision making and do not stiffle creativity. **Guidance** can be useful in reassuring people they are making the **right move** and make them **aware of the resources in place** to help them. People need to know who to go to if they have queries round how to go about it.
+We want people to innovate and make decisions that bring value to the company. Giving advice on how to go about making a good decision does not hinder it as long as it is **light weight**. Encouraging people to sound ideas off others, seek advice from people with different specialities and being explicit about how to get budget and equipment encourage good decision making and do not stiffle creativity. **Guidance** can be useful in reassuring people they are making the **right move** and make them **aware of the resources in place** to help them. People need to know who to go to if they have queries round how to go about it. 
 
 
 
