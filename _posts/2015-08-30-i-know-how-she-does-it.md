@@ -6,7 +6,7 @@ category: Books
 share: true
 tags: [work life balance, fulfilment, book, review]
 ---
-Early on in my pregnancy I was having one of those moments where I wondered how I was going to manage two small people and a career. I’m competitive and want to do well but at the same time my mum gave me and my sister a great childhood staying at home with us so I value spending quality time with my children. I came across [I Know How She Does It](http://www.amazon.co.uk/Know-How-She-Does-Successful/dp/159184732X) by Laura VanderKam and I was interested to see how other women carve out their time.
+Early on in my pregnancy I was having one of those moments where I wondered how I was going to manage two small people and a career. I’m competitive and want to do well but at the same time my mum gave me and my sister a great childhood staying at home with us so I value spending quality time with my children. I came across [I Know How She Does It](http://www.amazon.co.uk/Know-How-She-Does-Successful/dp/159184732X) by Laura Vanderkam and I was interested to see how other women carve out their time.
 
 There are loads of interesting tips within the book but some **key** things which stood out for me were:
 
