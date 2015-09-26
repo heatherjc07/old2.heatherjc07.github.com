@@ -6,7 +6,7 @@ category: development
 share: true
 tags: [coaching, soft skills, development]
 ---
-Last week I was lucky enough to be sent on a two day coaching course led by [Byran Dunlop](https://twitter.com/bryandunlop). I'd wanted to go on this for a while as I've benefited from being coached in the past. I have a number of people who I currently coach but I was looking forward to some formal training to help me maximise the positive impact I could make. It was a brilliant couple of days with lots of practical to get experience applying what we had learnt. Highlights included: 
+Last week I was lucky enough to be sent on a two day coaching course led by [Bryan Dunlop](https://twitter.com/bryandunlop). I'd wanted to go on this for a while as I've benefited from being coached in the past. I have a number of people who I currently coach but I was looking forward to some formal training to help me maximise the positive impact I could make. It was a brilliant couple of days with lots of practical to get experience applying what we had learnt. Highlights included: 
 
 * Working out where people were on the skill, will matrix and how to coach for different combinations of skill and will 
 * Giving effective feedback and the importance of not shying away from difficult conversations but giving constructive feedback to help people tackle areas for improvement
