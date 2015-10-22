@@ -1,1 +1,0 @@
-order.calculate_tax unless order.nil?

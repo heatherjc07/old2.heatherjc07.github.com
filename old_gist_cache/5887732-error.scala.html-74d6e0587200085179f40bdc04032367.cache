@@ -1,7 +1,0 @@
-@(title: String, error: String)
-<!DOCTYPE html>
-@main(title){&nbsp;}{
-<p>
-  @error
-</p>
-}

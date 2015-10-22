@@ -1,7 +1,0 @@
-Place = "first". 
-case Medal of 
-  "first" -&gt; gold; 
-  "second" -&gt; silver;
-  "third" -&gt; bronze
-end. 
-% returns gold
