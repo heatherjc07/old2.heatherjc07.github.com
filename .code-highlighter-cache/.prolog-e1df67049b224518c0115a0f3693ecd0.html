@@ -1,0 +1,17 @@
+<figure class='code-highlight-figure'><figcaption class='code-highlight-caption'><span class='code-highlight-caption-title'>unexpected.pro</span><a class='code-highlight-caption-link' href='https://gist.github.com/5375249'>link</a></figcaption><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="nf">unmarried_student</span><span class="p">(</span><span class="nv">X</span><span class="p">):-</span>
+</div></div><div data-line='2' class='code-highlight-row numbered'><div class='code-highlight-line'>    <span class="o">not</span><span class="p">(</span><span class="nf">married</span><span class="p">(</span><span class="nv">X</span><span class="p">)),</span> <span class="nf">student</span><span class="p">(</span><span class="nv">X</span><span class="p">).</span>
+</div></div><div data-line='3' class='code-highlight-row numbered'><div class='code-highlight-line'> </div></div><div data-line='4' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="nf">student</span><span class="p">(</span><span class="s-Atom">joe</span><span class="p">).</span>
+</div></div><div data-line='5' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="nf">married</span><span class="p">(</span><span class="s-Atom">john</span><span class="p">).</span>
+</div></div><div data-line='6' class='code-highlight-row numbered'><div class='code-highlight-line'> </div></div><div data-line='7' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="c1">% Running in the interpreter</span>
+</div></div><div data-line='8' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="c1">% unmarried_student(joe).</span>
+</div></div><div data-line='9' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="c1">% Returns yes</span>
+</div></div><div data-line='10' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="c1">% unmarried_student(john).</span>
+</div></div><div data-line='11' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="c1">% Returns no</span>
+</div></div><div data-line='12' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="c1">% so we&#39;d expect asking</span>
+</div></div><div data-line='13' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="c1">% unmarried_student(X).</span>
+</div></div><div data-line='14' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="c1">% to return Joe as an answer </span>
+</div></div><div data-line='15' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="c1">% instead it returns no </span>
+</div></div><div data-line='16' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="c1">% The reason for this is that the call to not(married(X)) </span>
+</div></div><div data-line='17' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="c1">% is not returning the students which are not married: </span>
+</div></div><div data-line='18' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="c1">% it is just failing because </span>
+</div></div><div data-line='19' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="c1">% there is at least a married student</span></div></div></pre></div></figure>

@@ -4,7 +4,7 @@ logo:
 disqus_shortname: technicalmusingsofamummy 
 search:           true
 # Change url to your domain. Leave localhost server or blank when working locally.
-url:              http://heatherjcampbell.com
+url: http://heatherjcampbell.com             
 
 # Owner/author information
 owner:
@@ -19,7 +19,7 @@ owner:
   google_plus:    
 
 # Analytics and webmaster tools stuff goes here
-google_analytics:   
+google_analytics: 'UA-69172837-1'   
 google_verify:      
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify:         

@@ -1,0 +1,18 @@
+<figure class='code-highlight-figure'><figcaption class='code-highlight-caption'><span class='code-highlight-caption-title'>module.rb</span><a class='code-highlight-caption-link' href='https://gist.github.com/5250428'>link</a></figcaption><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="c1"># somewhere in your_xml_lib </span>
+</div></div><div data-line='2' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="k">module</span> <span class="nn">XML</span> 
+</div></div><div data-line='3' class='code-highlight-row numbered'><div class='code-highlight-line'>  <span class="k">class</span> <span class="nc">Document</span> 
+</div></div><div data-line='4' class='code-highlight-row numbered'><div class='code-highlight-line'>    <span class="c1"># ... </span>
+</div></div><div data-line='5' class='code-highlight-row numbered'><div class='code-highlight-line'>  <span class="k">end</span> 
+</div></div><div data-line='6' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="k">end</span> 
+</div></div><div data-line='7' class='code-highlight-row numbered'><div class='code-highlight-line'> </div></div><div data-line='8' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="c1"># somewhere in their_pdf_lib </span>
+</div></div><div data-line='9' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="k">module</span> <span class="nn">PDF</span> 
+</div></div><div data-line='10' class='code-highlight-row numbered'><div class='code-highlight-line'>  <span class="k">class</span> <span class="nc">Document</span> 
+</div></div><div data-line='11' class='code-highlight-row numbered'><div class='code-highlight-line'>    <span class="c1"># ... </span>
+</div></div><div data-line='12' class='code-highlight-row numbered'><div class='code-highlight-line'>  <span class="k">end</span> 
+</div></div><div data-line='13' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="k">end</span>
+</div></div><div data-line='14' class='code-highlight-row numbered'><div class='code-highlight-line'> </div></div><div data-line='15' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="c1">#In your class</span>
+</div></div><div data-line='16' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="nb">require</span> <span class="s2">&quot;your_xml_lib&quot;</span> 
+</div></div><div data-line='17' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="nb">require</span> <span class="s2">&quot;their_pdf_lib&quot;</span> 
+</div></div><div data-line='18' class='code-highlight-row numbered'><div class='code-highlight-line'> </div></div><div data-line='19' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="c1">#this pair of calls refer to two completely different classes </span>
+</div></div><div data-line='20' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="n">pdf_document</span> <span class="o">=</span> <span class="no">PDF</span><span class="o">::</span><span class="no">Document</span><span class="o">.</span><span class="n">new</span> 
+</div></div><div data-line='21' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="n">xml_document</span> <span class="o">=</span> <span class="no">XML</span><span class="o">::</span><span class="no">Document</span><span class="o">.</span><span class="n">new</span></div></div></pre></div></figure>

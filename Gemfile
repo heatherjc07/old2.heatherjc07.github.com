@@ -9,3 +9,8 @@ gem 'activesupport'
 gem 'stringex'
 gem 'ruby-oembed'
 gem 'simple-xml'
+gem 'octopress-solarized'
+
+group :jekyll_plugins do
+  gem 'octopress-gist'
+end
