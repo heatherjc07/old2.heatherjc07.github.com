@@ -4,7 +4,7 @@ logo:
 disqus_shortname: technicalmusingsofamummy 
 search:           true
 # Change url to your domain. Leave localhost server or blank when working locally.
-url: http://heatherjcampbell.com             
+url: http://heatherjcampbell.com
 
 # Owner/author information
 owner:
@@ -38,6 +38,8 @@ links:
     external: true
   - title: Presentations
     url: /presentations/
+  - title: Reading List
+    url: /reading/
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Europe/London
