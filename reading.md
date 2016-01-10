@@ -5,7 +5,7 @@ title: Reading List
 tags: [Heather Campbell]
 modified: 2016-01-09
 image:
-  feature: books.JPG
+  feature: bookspic.JPG
 ---
 
 
