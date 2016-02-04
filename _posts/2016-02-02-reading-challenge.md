@@ -13,19 +13,19 @@ In these early days a large amount of my time is spent feeding Marc especially a
 
 Feeding Marc gives me lots of opportunity to sit, not to mention the time spent trapped under him while he sleeps (his sensors for when he is being put down are as good as Luke's. Cue eyes open and tears) so I'm finally tackling my backlog of books. I came across this article on twitter [reading 100 books in a year](http://www.inc.com/jessica-stillman/how-even-the-busiest-entrepreneur-can-read-100-books-a-year.html) and I'm following some of the tips in it.
 
-*** Buy books in advance ***
+#### Buy books in advance 
 
 Not an issue. As mentioned previously I've a backlog of books to get through. I'm easily seduced by an offer and tend to buy multiple books at a time. I've also got a long wishlist of books I want to read so reading material is not a problem.
 
-*** Always be reading ***
+#### Always be reading
 
 Sorted now that I'm being kept in one place by my little son.
 
-*** Read what you like ***
+#### Read what you like 
 
 I've a load of software books I want to read as well as some aimed at the softer side of my job. I need to find some good fiction to put into the mix. I used to read fiction and autobiographies all the time but, post children, magazines have taken over.
 
-** Tracking my Reading **
+### Tracking my Reading 
 
 I found out about the goodreads reading challenge tracker on twitter and decided to give it a whirl. It'll help me keep momentum. I've set an achievable target of 12 books, one for each month (100 was a bit ambitious for me!).
 
