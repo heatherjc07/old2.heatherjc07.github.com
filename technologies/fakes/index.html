@@ -1,0 +1,280 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Fakes &#8211; Technical Musing of a Mummy</title>
+<meta name="description" content="Using Microsoft Fakes to help isolate code under test">
+<meta name="keywords" content="TDD, Shim, Stub">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://heatherjcampbell.com/images/">
+<meta name="twitter:title" content="Fakes">
+<meta name="twitter:description" content="Using Microsoft Fakes to help isolate code under test">
+<meta name="twitter:creator" content="@hcampbell07">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fakes">
+<meta property="og:description" content="Using Microsoft Fakes to help isolate code under test">
+<meta property="og:url" content="http://heatherjcampbell.com/technologies/fakes/">
+<meta property="og:site_name" content="Technical Musing of a Mummy">
+
+
+
+
+
+<link rel="canonical" href="http://heatherjcampbell.com/technologies/fakes/">
+<link href="http://heatherjcampbell.com/feed.xml" type="application/atom+xml" rel="alternate" title="Technical Musing of a Mummy Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://heatherjcampbell.com/assets/css/main.min.css">
+<link rel="stylesheet" href="http://heatherjcampbell.com/assets/css/code.css">
+<!-- Webfonts -->
+<script src="//use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="http://heatherjcampbell.com/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://heatherjcampbell.com/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://heatherjcampbell.com/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://heatherjcampbell.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://heatherjcampbell.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://heatherjcampbell.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://heatherjcampbell.com/images/apple-touch-icon-144x144-precomposed.png">
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav">
+	    <ul>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/about/">About</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/articles/">Posts</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/tags/">Tags</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="https://twitter.com/HCampbell07/">Tweets</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/presentations/">Presentations</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/reading/">Reading List</a>
+				 
+			</li>
+	        
+	        <li><a href="http://heatherjcampbell.com/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+	        <li class="dosearch"><i class="icon-search"></i> Search</li>
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+<div class="search-wrapper">
+	<div class="search-form">
+		<input type="text" class="search-field" placeholder="Search...">
+		<i class="icon-remove-sign icon-2x"></i>
+		<ul class="search-results post-list"></ul><!-- /.search-results -->
+	</div><!-- /.search-form -->
+</div><!-- ./search-wrapper -->
+
+<header class="masthead">
+	<div class="wrap">
+        <h1 class="site-title"><a href="http://heatherjcampbell.com">Technical Musing of a Mummy</a></h1>
+		<h2 class="site-description" itemprop="description">A Blog About All Things IT Related</h2>
+	</div>
+</header><!-- /.masthead -->
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <span class="entry-tags"><a href="http://heatherjcampbell.com/tags/#TDD" title="Pages tagged TDD">TDD</a>&nbsp;&bull;&nbsp;<a href="http://heatherjcampbell.com/tags/#Shim" title="Pages tagged Shim">Shim</a>&nbsp;&bull;&nbsp;<a href="http://heatherjcampbell.com/tags/#Stub" title="Pages tagged Stub">Stub</a></span>
+        
+          <h1 class="entry-title">Fakes</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        <img src="http://heatherjcampbell.com/images/bio-photo.JPG" alt="Heather Campbell photo" class="author-photo">
+        <span class="author vcard">By <span class="fn"><a href="http://heatherjcampbell.com/about/" title="About Heather Campbell">Heather Campbell</a></span></span>
+        <span class="entry-date date published"><time datetime="2013-08-06T00:00:00+01:00"><i class="icon-calendar-empty"></i> August 06, 2013</time></span>
+        
+        
+        <span><a href="http://heatherjcampbell.com/technologies/fakes/" rel="bookmark" title="Fakes"><i class="icon-link"></i> Permalink</a></span>
+        
+        <span class="social-share-facebook">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://heatherjcampbell.com/technologies/fakes/" title="Share on Facebook" itemprop="Facebook"><i class="icon-facebook-sign"></i> Like</a></span>
+        <span class="social-share-twitter">
+            <a href="https://twitter.com/intent/tweet?hashtags=technologies&text=Fakes&url=http://heatherjcampbell.com/technologies/fakes/&via=hcampbell07" title="Share on Twitter" itemprop="Twitter"><i class="icon-twitter-sign"></i> Tweet</a></span>
+        <span class="social-share-googleplus">
+            <a href="https://plus.google.com/share?url=http://heatherjcampbell.com/technologies/fakes/" title="Share on Google Plus" itemprop="GooglePlus"><i class="icon-google-plus-sign"></i> +1</a></span>
+            <!-- /.social-share -->
+      </footer>
+      <div class="entry-content">
+        <p>I recently came across <a href="http://msdn.microsoft.com/en-us/library/hh549175.aspx">Microsoft Fakes</a> which can help you when doing TDD to isolate the code under test. Initially I thought it was only available with Visual Studio Ultimate Edition but if you install Visual Studio Update 2 it is now available in the <a href="http://blogs.msdn.com/b/visualstudioalm/archive/2013/02/08/february-ctp-for-visual-studio-update-2.aspx#fakes">premium</a> edition as well.</p>
+
+<p>Fakes gives you the ability to write stubs and shims. If your code is loosely coupled and you are programming to interfaces you can use stubs to isolate your code. A stub would implement the same interface as the object you are replacing and you can program it to expect certain inputs and return certain outputs. The part of Fakes I was more interested in was shims. As I mentioned before ideally your code will use interfaces but sometimes you need to rely on third party assemblies and won’t have control over how they are written. Where this is the case a shim can help. A shim modifies your compile time code making it use the shim code instead of the specified method call.</p>
+
+<p>There is lots of information <a href="http://msdn.microsoft.com/en-us/library/hh549175.aspx">here</a> on how to use Fakes so I won’t repeat it but just to give you an idea of how easy it is to use take a look at <a href="http://www.codeproject.com/Articles/582812/Unit-testing-with-Fakes-with-Visual-studio-Premium">this article</a>. Once you have a version of Visual Studio which supports Fakes you can include the assembly you are faking in your test project. Right click on it and select the “Add Fakes Assembly” option. This will generate you a fake assembly which you can use to implement shims in your unit tests.</p>
+
+<p>If you look at the example Microsoft provide you can see you need to use the shim within a Shim Context. In this case we are using a shim to replace the DateTime Now functionality and make it return a predefined date instead of the current time.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">ShimExample.cs</span><a class="code-highlight-caption-link" href="https://gist.github.com/6168604">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="na">[TestClass]</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">public</span> <span class="k">class</span> <span class="nc">TestClass1</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">&#x7b;</span> 
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="na">        [TestMethod]</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">        <span class="k">public</span> <span class="k">void</span> <span class="nf">TestCurrentYear</span><span class="p">()</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">        <span class="p">&#x7b;</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">            <span class="kt">int</span> <span class="n">fixedYear</span> <span class="p">=</span> <span class="m">2000</span><span class="p">;</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line">            <span class="k">using</span> <span class="p">(</span><span class="n">ShimsContext</span><span class="p">.</span><span class="n">Create</span><span class="p">())</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line">            <span class="p">&#x7b;</span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line">                 <span class="c1">// Arrange:</span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line">                <span class="c1">// Detour DateTime.Now to return a fixed date:</span>
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line">                <span class="n">System</span><span class="p">.</span><span class="n">Fakes</span><span class="p">.</span><span class="n">ShimDateTime</span><span class="p">.</span><span class="n">NowGet</span> <span class="p">=</span> 
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line">                <span class="p">()</span> <span class="p">=&gt;</span>
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line">                <span class="p">&#x7b;</span> <span class="k">return</span> <span class="k">new</span> <span class="n">DateTime</span><span class="p">(</span><span class="n">fixedYear</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span> <span class="p">&#x7d;;</span>
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line">                <span class="c1">// Instantiate the component under test:</span>
+</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line">                <span class="kt">var</span> <span class="n">componentUnderTest</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MyComponent</span><span class="p">();</span>
+</div></div><div data-line="19" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="20" class="code-highlight-row numbered"><div class="code-highlight-line">                 <span class="c1">// Act:</span>
+</div></div><div data-line="21" class="code-highlight-row numbered"><div class="code-highlight-line">                <span class="kt">int</span> <span class="n">year</span> <span class="p">=</span> <span class="n">componentUnderTest</span><span class="p">.</span><span class="n">GetTheCurrentYear</span><span class="p">();</span>
+</div></div><div data-line="22" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="23" class="code-highlight-row numbered"><div class="code-highlight-line">                <span class="c1">// Assert: </span>
+</div></div><div data-line="24" class="code-highlight-row numbered"><div class="code-highlight-line">                <span class="c1">// This will always be true if the component is working:</span>
+</div></div><div data-line="25" class="code-highlight-row numbered"><div class="code-highlight-line">                <span class="n">Assert</span><span class="p">.</span><span class="n">AreEqual</span><span class="p">(</span><span class="n">fixedYear</span><span class="p">,</span> <span class="n">year</span><span class="p">);</span>
+</div></div><div data-line="26" class="code-highlight-row numbered"><div class="code-highlight-line">            <span class="p">&#x7d;</span>
+</div></div><div data-line="27" class="code-highlight-row numbered"><div class="code-highlight-line">        <span class="p">&#x7d;</span>
+</div></div><div data-line="28" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">&#x7d;</span></div></div></pre></div></figure>
+
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://heatherjcampbell.com/development/do-your-homework/" class="btn" title="Do Your Homework">Previous article</a>
+      
+      
+        <a href="http://heatherjcampbell.com/culture/cultivating-female-talent/" class="btn" title="Cultivating Female Talent">Next article</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span>&copy; 2016 Heather Campbell. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/so-simple/">So Simple Theme</a>.</span>
+<div class="social-icons">
+	<a href="http://twitter.com/hcampbell07" title="Heather Campbell on Twitter" target="_blank"><i class="icon-twitter icon-2x"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="http://github.com/heatherjc07" title="Heather Campbell on Github" target="_blank"><i class="icon-github icon-2x"></i></a>
+	
+</div><!-- /.social-icons -->
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://heatherjcampbell.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://heatherjcampbell.com/assets/js/scripts.min.js"></script>
+
+<!-- Jekyll Simple Search option -->
+<script>
+  $(document).ready(function() {
+      $('.search-field').simpleJekyllSearch({
+          jsonFile : 'http://heatherjcampbell.com/search.json',
+          searchResults : '.search-results',
+          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          noResults: '<p>Nothing found.</p>'
+        });
+  });
+
+  (function( $, window, undefined ) {
+    
+     var bs = {
+          close: $(".icon-remove-sign"),
+          searchform: $(".search-form"),
+          canvas: $("body"),
+          dothis: $('.dosearch')
+      };
+    
+    bs.dothis.on('click', function() {
+      $('.search-wrapper').css({ display: "block" });
+      bs.searchform.toggleClass('active');
+      bs.searchform.find('input').focus();
+      bs.canvas.toggleClass('search-overlay');
+    });
+    
+      bs.close.on('click', function() {
+        $('.search-wrapper').removeAttr( 'style' );
+        bs.searchform.toggleClass('active');
+        bs.canvas.removeClass('search-overlay');
+    });
+  })( jQuery, window );
+</script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-69172837-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>	        
+
+</body>
+</html>

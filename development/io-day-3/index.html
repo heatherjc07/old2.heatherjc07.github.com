@@ -1,0 +1,416 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Io Day 3 &#8211; Technical Musing of a Mummy</title>
+<meta name="description" content="Io Day 3: Seven Languages in Seven Weeks">
+<meta name="keywords" content="seven languages in seven weeks, io, languages">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://heatherjcampbell.com/images/">
+<meta name="twitter:title" content="Io Day 3">
+<meta name="twitter:description" content="Io Day 3: Seven Languages in Seven Weeks">
+<meta name="twitter:creator" content="@hcampbell07">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Io Day 3">
+<meta property="og:description" content="Io Day 3: Seven Languages in Seven Weeks">
+<meta property="og:url" content="http://heatherjcampbell.com/development/io-day-3/">
+<meta property="og:site_name" content="Technical Musing of a Mummy">
+
+
+
+
+
+<link rel="canonical" href="http://heatherjcampbell.com/development/io-day-3/">
+<link href="http://heatherjcampbell.com/feed.xml" type="application/atom+xml" rel="alternate" title="Technical Musing of a Mummy Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://heatherjcampbell.com/assets/css/main.min.css">
+<link rel="stylesheet" href="http://heatherjcampbell.com/assets/css/code.css">
+<!-- Webfonts -->
+<script src="//use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="http://heatherjcampbell.com/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://heatherjcampbell.com/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://heatherjcampbell.com/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://heatherjcampbell.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://heatherjcampbell.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://heatherjcampbell.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://heatherjcampbell.com/images/apple-touch-icon-144x144-precomposed.png">
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav">
+	    <ul>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/about/">About</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/articles/">Posts</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/tags/">Tags</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="https://twitter.com/HCampbell07/">Tweets</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/presentations/">Presentations</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/reading/">Reading List</a>
+				 
+			</li>
+	        
+	        <li><a href="http://heatherjcampbell.com/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+	        <li class="dosearch"><i class="icon-search"></i> Search</li>
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+<div class="search-wrapper">
+	<div class="search-form">
+		<input type="text" class="search-field" placeholder="Search...">
+		<i class="icon-remove-sign icon-2x"></i>
+		<ul class="search-results post-list"></ul><!-- /.search-results -->
+	</div><!-- /.search-form -->
+</div><!-- ./search-wrapper -->
+
+<header class="masthead">
+	<div class="wrap">
+        <h1 class="site-title"><a href="http://heatherjcampbell.com">Technical Musing of a Mummy</a></h1>
+		<h2 class="site-description" itemprop="description">A Blog About All Things IT Related</h2>
+	</div>
+</header><!-- /.masthead -->
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <span class="entry-tags"><a href="http://heatherjcampbell.com/tags/#seven languages in seven weeks" title="Pages tagged seven languages in seven weeks">seven languages in seven weeks</a>&nbsp;&bull;&nbsp;<a href="http://heatherjcampbell.com/tags/#io" title="Pages tagged io">io</a>&nbsp;&bull;&nbsp;<a href="http://heatherjcampbell.com/tags/#languages" title="Pages tagged languages">languages</a></span>
+        
+          <h1 class="entry-title">Io Day 3</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        <img src="http://heatherjcampbell.com/images/bio-photo.JPG" alt="Heather Campbell photo" class="author-photo">
+        <span class="author vcard">By <span class="fn"><a href="http://heatherjcampbell.com/about/" title="About Heather Campbell">Heather Campbell</a></span></span>
+        <span class="entry-date date published"><time datetime="2012-09-06T00:00:00+01:00"><i class="icon-calendar-empty"></i> September 06, 2012</time></span>
+        
+        
+        <span><a href="http://heatherjcampbell.com/development/io-day-3/" rel="bookmark" title="Io Day 3"><i class="icon-link"></i> Permalink</a></span>
+        
+        <span class="social-share-facebook">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://heatherjcampbell.com/development/io-day-3/" title="Share on Facebook" itemprop="Facebook"><i class="icon-facebook-sign"></i> Like</a></span>
+        <span class="social-share-twitter">
+            <a href="https://twitter.com/intent/tweet?hashtags=development&text=Io Day 3&url=http://heatherjcampbell.com/development/io-day-3/&via=hcampbell07" title="Share on Twitter" itemprop="Twitter"><i class="icon-twitter-sign"></i> Tweet</a></span>
+        <span class="social-share-googleplus">
+            <a href="https://plus.google.com/share?url=http://heatherjcampbell.com/development/io-day-3/" title="Share on Google Plus" itemprop="GooglePlus"><i class="icon-google-plus-sign"></i> +1</a></span>
+            <!-- /.social-share -->
+      </footer>
+      <div class="entry-content">
+        <p><em>My experience with day three of exploring Io through <a href="http://pragprog.com/book/btlang/seven-languages-in-seven-weeks" target="_blank">Seven Languages in Seven Weeks.</a></em></p>
+
+<p>The final day of Io ramps things up and looks at how it supports metaprogramming and concurrency.</p>
+
+<h2 id="creating-a-dsl">Creating a DSL</h2>
+
+<p>The first example in the book demonstratea how powerful Io can be in terms of helping us to create a DSL by allowing us to redefine operators, symbols etc.</p>
+
+<p>Say we had a list of phone numbers represented in the following format</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">phone_list.io</span><a class="code-highlight-caption-link" href="https://gist.github.com/5270311">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">&#x7b;</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">   <span class="s">&quot;Jane Smith&quot;</span><span class="err">:</span> <span class="s">&quot;07891234112&quot;</span><span class="o">,</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">   <span class="s">&quot;Tony Walsh&quot;</span><span class="err">:</span> <span class="s">&quot;07791234333&quot;</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">&#x7d;</span></div></div></pre></div></figure>
+
+<p>We could use the following code to generate a hash from it.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">generate_hash.io</span><a class="code-highlight-caption-link" href="https://gist.github.com/5270311">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">OperatorTable</span> <span class="n">addAssignOperator</span><span class="o">(</span><span class="s">&quot;:&quot;</span><span class="o">,</span> <span class="s">&quot;atPutNumber&quot;</span><span class="o">)</span> 
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">curlyBrackets</span> <span class="o">:=</span> <span class="k">method</span><span class="o">(</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">r</span> <span class="o">:=</span> <span class="nb">Map</span> <span class="k">clone</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">call</span> <span class="n">message</span> <span class="n">arguments</span> <span class="n">foreach</span><span class="o">(</span><span class="n">arg</span><span class="o">,</span> 
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">r</span> <span class="n">doMessage</span><span class="o">(</span><span class="n">arg</span><span class="o">)</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="o">)</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">r</span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="o">)</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="nb">Map</span> <span class="n">atPutNumber</span> <span class="o">:=</span> <span class="k">method</span><span class="o">(</span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line">   <span class="n">self</span> <span class="n">atPut</span><span class="o">(</span>
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">call</span> <span class="n">evalArgAt</span><span class="o">(</span><span class="mf">0</span><span class="o">)</span> <span class="n">asMutable</span>
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">removePrefix</span><span class="o">(</span><span class="s">&quot;\&quot;&quot;</span><span class="o">)</span> <span class="n">removeSuffix</span><span class="o">(</span><span class="s">&quot;\&quot;&quot;</span><span class="o">),</span>
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">call</span> <span class="n">evalArgAt</span><span class="o">(</span><span class="mf">1</span><span class="o">))</span>
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">)</span>
+</div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="n">s</span> <span class="o">:=</span> <span class="nb">File</span> <span class="n">with</span><span class="o">(</span><span class="s">&quot;phonebook.txt&quot;</span><span class="o">)</span> <span class="n">openForReading</span> <span class="n">contents</span>
+</div></div><div data-line="19" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="n">phoneNumbers</span> <span class="o">:=</span> <span class="k">doString</span><span class="o">(</span><span class="n">s</span><span class="o">)</span>
+</div></div><div data-line="20" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="n">phoneNumbers</span> <span class="n">keys</span> <span class="n">println</span>
+</div></div><div data-line="21" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="n">phoneNumbers</span> <span class="n">values</span> <span class="n">println</span></div></div></pre></div></figure>
+
+<p>Io allows us to define our own operators so we’ve added an operator “:” which when encountered is parsed as the atPutNumber method. The first argument will be treated as the hash key, the second its value. We define a CurlyBrackets method which is called when the parser encounters {}. It creates an empty map and then iterates through the numbers in the list. For each name and phone number it calls r doMessage(arg). So for the first pairing it will execute</p>
+
+<p><code>"Jane Smith": "07891234112"</code>
+The : is then translated as atPutNumber</p>
+
+<p><code>r atPutNumber("Jane Smith", "07891234112")</code></p>
+
+<p>The atPutNumber take the name and strips the quotes and adds the phone number to the hash using the name as the key.</p>
+
+<h2 id="forward-message">Forward Message</h2>
+
+<p>Next the book looks at Io’s forward message which is similar to Ruby’s method_missing. The example shows how you can represent XML data as Io code.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">xml.io</span><a class="code-highlight-caption-link" href="https://gist.github.com/5270311">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">Builder</span> <span class="o">:=</span> <span class="nb">Object</span> <span class="k">clone</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">Builder</span> <span class="n">forward</span> <span class="o">:=</span> <span class="k">method</span><span class="o">(</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">writeln</span><span class="o">(</span><span class="s">&quot;&lt;&quot;</span><span class="o">,</span> <span class="n">call</span> <span class="n">message</span> <span class="n">name</span><span class="o">,</span> <span class="s">&quot;&gt;&quot;</span><span class="o">)</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">call</span> <span class="n">message</span> <span class="n">arguments</span> <span class="n">foreach</span><span class="o">(</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">arg</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">content</span> <span class="o">:=</span> <span class="n">self</span> <span class="n">doMessage</span><span class="o">(</span><span class="n">arg</span><span class="o">);</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="k">if</span><span class="o">(</span><span class="n">content</span> <span class="n">type</span> <span class="o">==</span> <span class="s">&quot;Sequence&quot;</span><span class="o">,</span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="n">writeln</span><span class="o">(</span><span class="n">content</span><span class="o">)))</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="n">writeln</span><span class="o">(</span><span class="s">&quot;&lt;/&quot;</span><span class="o">,</span> <span class="n">call</span> <span class="n">message</span> <span class="n">name</span><span class="o">,</span> <span class="s">&quot;&gt;&quot;</span><span class="o">))</span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">Builder</span> <span class="n">ul</span><span class="o">(</span> <span class="n">li</span><span class="o">(</span><span class="s">&quot;Io&quot;</span><span class="o">),</span><span class="n">li</span><span class="o">(</span><span class="s">&quot;Lua&quot;</span><span class="o">),</span><span class="n">li</span><span class="o">(</span><span class="s">&quot;JavaScript&quot;</span><span class="o">))</span>
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="cm">/*</span>
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="cm">Returns </span>
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="cm">&lt;ul&gt;</span>
+</div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="cm">&lt;li&gt;</span>
+</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="cm">Io</span>
+</div></div><div data-line="19" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="cm">&lt;/li&gt;</span>
+</div></div><div data-line="20" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="cm">&lt;li&gt;</span>
+</div></div><div data-line="21" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="cm">Lua</span>
+</div></div><div data-line="22" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="cm">&lt;/li&gt;</span>
+</div></div><div data-line="23" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="cm">&lt;li&gt;</span>
+</div></div><div data-line="24" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="cm">JavaScript</span>
+</div></div><div data-line="25" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="cm">&lt;/li&gt;</span>
+</div></div><div data-line="26" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="cm">&lt;/ul&gt;</span>
+</div></div><div data-line="27" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="cm">*/</span></div></div></pre></div></figure>
+
+<p>In the example we’ve overridden the forward method. When an unrecognised method is received our method gets called. It creates an open tag with the method name. It then looks at the arguments and they are string it prints it without quotes. If it is another method call it creates an open tag for it and repeats the process. Finally it prints a closing tag.</p>
+
+<h2 id="concurrency">Concurrency</h2>
+
+<p>One of the major positives for Io is its great concurrency libraries.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">concurrency.io</span><a class="code-highlight-caption-link" href="https://gist.github.com/5270311">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">vizzini</span> <span class="o">:=</span> <span class="nb">Object</span> <span class="k">clone</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">vizzini</span> <span class="n">talk</span> <span class="o">:=</span> <span class="k">method</span><span class="o">(</span><span class="s">&quot;Fezzik, are there rocks ahead?&quot;</span> <span class="n">println</span> 
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">        <span class="n">yield</span> <span class="s">&quot;No more Rhymes now, I mean it&quot;</span> <span class="n">println</span> <span class="n">yield</span><span class="o">)</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">fezzik</span> <span class="o">:=</span> <span class="nb">Object</span> <span class="k">clone</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">fezzik</span> <span class="n">rhyme</span> <span class="o">:=</span> <span class="k">method</span><span class="o">(</span><span class="n">yield</span> <span class="s">&quot;If there are, we&#39;ll all be dead.&quot;</span> 
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">       <span class="n">println</span> <span class="n">yield</span> <span class="s">&quot;Anyone want a peanut?&quot;</span> <span class="n">println</span><span class="o">)</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">vizzini</span> <span class="o">@@</span><span class="n">talk</span><span class="o">;</span> <span class="n">fezzik</span> <span class="o">@@</span><span class="n">rhyme</span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">Coroutine</span> <span class="n">currentCoroutine</span> <span class="n">pause</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="cm">/*</span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="cm">Returns </span>
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="cm">Fezzik, are there rocks ahead?</span>
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="cm">If there are, we&#39;ll all be dead.</span>
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="cm">No more Rhymes now, I mean it</span>
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="cm">If there are, we&#39;ll all be dead</span>
+</div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="cm">Scheduler: nothing left to resume so we are exiting</span>
+</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="cm">*/</span></div></div></pre></div></figure>
+
+<p>The @ and @@ fire a message asynchronously. Yield voluntarily suspends a process and transfers to another process. The talk and rhyme methods run concurrently yielding to each other at specified intervals. This is useful for solutions requiring cooperative multitasking.</p>
+
+<h2 id="futures">Futures</h2>
+
+<p>If you fire a message asynchronously using @ it returns a result object called a future. This is the value of the last statement returned. If you ask for the value before it is available the process blocks until it is ready. Futures provide automatic deadlock detection and raise an exception.</p>
+
+<h2 id="do">Do:</h2>
+
+<p><em>Enhance the XML program to add spaces to show the indentation structure.</em></p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">indent.io</span><a class="code-highlight-caption-link" href="https://gist.github.com/5270311">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">//enhanced to indent tags</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">Builder</span> <span class="o">:=</span> <span class="nb">Object</span> <span class="k">clone</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">curlyBrackets</span> <span class="o">:=</span> <span class="k">method</span><span class="o">(</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">r</span> <span class="o">:=</span> <span class="nb">List</span> <span class="k">clone</span><span class="o">;</span>  
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">call</span> <span class="n">message</span> <span class="n">arguments</span> <span class="n">foreach</span><span class="o">(</span><span class="n">arg</span><span class="o">,</span>    
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">r</span> <span class="n">append</span><span class="o">(</span><span class="n">arg</span><span class="o">))</span> 
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">)</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">indent</span> <span class="o">:=</span> <span class="s">&quot;&quot;</span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">Builder</span> <span class="n">forward</span> <span class="o">:=</span> <span class="k">method</span><span class="o">(</span>
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">writeln</span><span class="o">(</span><span class="n">indent</span><span class="o">,</span><span class="s">&quot;&lt;&quot;</span><span class="o">,</span> <span class="n">call</span> <span class="n">message</span> <span class="n">name</span><span class="o">,</span> <span class="s">&quot;&gt;&quot;</span><span class="o">)</span>
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">indent</span> <span class="o">=</span> <span class="n">indent</span> <span class="o">..</span> <span class="s">&quot;  &quot;</span>
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">call</span> <span class="n">message</span> <span class="n">arguments</span> <span class="n">foreach</span><span class="o">(</span>
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">arg</span><span class="o">,</span>
+</div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">content</span> <span class="o">:=</span> <span class="n">self</span> <span class="n">doMessage</span><span class="o">(</span><span class="n">arg</span><span class="o">);</span>
+</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="k">if</span><span class="o">(</span><span class="n">content</span> <span class="n">type</span> <span class="o">==</span> <span class="s">&quot;Sequence&quot;</span><span class="o">,</span> <span class="n">writeln</span><span class="o">(</span><span class="n">indent</span><span class="o">,</span><span class="n">content</span><span class="o">)))</span>
+</div></div><div data-line="19" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">indent</span> <span class="o">=</span> <span class="n">indent</span> <span class="n">exclusiveSlice</span><span class="o">(</span><span class="mf">2</span><span class="o">)</span>
+</div></div><div data-line="20" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">writeln</span><span class="o">(</span><span class="n">indent</span><span class="o">,</span><span class="s">&quot;&lt;/&quot;</span><span class="o">,</span> <span class="n">call</span> <span class="n">message</span> <span class="n">name</span><span class="o">,</span> <span class="s">&quot;&gt;&quot;</span><span class="o">))</span>
+</div></div><div data-line="21" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">Builder</span> <span class="n">ul</span><span class="o">(</span>
+</div></div><div data-line="22" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">li</span><span class="o">(</span><span class="s">&quot;Io&quot;</span><span class="o">),</span>
+</div></div><div data-line="23" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">li</span><span class="o">(</span><span class="s">&quot;Lua&quot;</span><span class="o">),</span>
+</div></div><div data-line="24" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">li</span><span class="o">(</span><span class="s">&quot;JavaScript&quot;</span><span class="o">))</span>
+</div></div><div data-line="25" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="26" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">days</span> <span class="o">:=</span> <span class="o">&#x7b;</span><span class="s">&quot;Monday&quot;</span><span class="o">,</span><span class="s">&quot;Tuesday&quot;</span><span class="o">,</span><span class="s">&quot;Wednesday&quot;</span><span class="o">&#x7d;;</span>
+</div></div><div data-line="27" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">days</span> <span class="n">println</span><span class="o">();</span></div></div></pre></div></figure>
+
+<p><em>Enhance the XML program to handle attributes: if the first argument is a map (use the curly brackets syntax), add attributes to the XML program. For example: book({“author”: “Tate”}…) would print <code>&lt;book author="Tate"&gt;</code></em></p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">attribute.io</span><a class="code-highlight-caption-link" href="https://gist.github.com/5270311">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">//enhanced to print attributes</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">curlyBrackets</span> <span class="o">:=</span> <span class="k">method</span><span class="o">(</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">r</span> <span class="o">:=</span> <span class="nb">Map</span> <span class="k">clone</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">call</span> <span class="n">message</span> <span class="n">arguments</span> <span class="n">foreach</span><span class="o">(</span><span class="n">arg</span><span class="o">,</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">   <span class="n">r</span> <span class="n">doMessage</span><span class="o">(</span><span class="n">arg</span><span class="o">)</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="o">)</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="n">r</span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">)</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">OperatorTable</span> <span class="n">addAssignOperator</span><span class="o">(</span><span class="s">&quot;:&quot;</span><span class="o">,</span> <span class="s">&quot;atPutAttr&quot;</span><span class="o">)</span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">Map</span> <span class="n">atPutAttr</span> <span class="o">:=</span> <span class="k">method</span><span class="o">(</span>
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">self</span> <span class="n">atPut</span><span class="o">(</span>
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">call</span> <span class="n">evalArgAt</span><span class="o">(</span><span class="mf">0</span><span class="o">)</span> <span class="n">asMutable</span> <span class="n">removePrefix</span><span class="o">(</span><span class="s">&quot;\&quot;&quot;</span><span class="o">)</span> <span class="n">removeSuffix</span><span class="o">(</span><span class="s">&quot;\&quot;&quot;</span><span class="o">),</span>
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">call</span> <span class="n">evalArgAt</span><span class="o">(</span><span class="mf">1</span><span class="o">))</span>
+</div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">)</span>
+</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="19" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">Map</span> <span class="n">buildAttributes</span> <span class="o">:=</span> <span class="k">method</span><span class="o">(</span>  
+</div></div><div data-line="20" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="n">attr_str</span> <span class="o">:=</span> <span class="s">&quot;&quot;</span>
+</div></div><div data-line="21" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="n">self</span> <span class="n">foreach</span><span class="o">(</span><span class="n">attr</span><span class="o">,</span> <span class="n">val</span><span class="o">,</span>  <span class="n">attr_str</span> <span class="o">=</span> <span class="n">attr_str</span> <span class="o">..</span> <span class="s">&quot; &quot;</span> <span class="o">..</span> <span class="n">attr</span> <span class="o">..</span> <span class="s">&quot;=\&quot;&quot;</span> <span class="o">..</span> <span class="n">val</span> <span class="o">..</span> <span class="s">&quot;\&quot;&quot;</span>    <span class="o">)</span>
+</div></div><div data-line="22" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="n">return</span> <span class="n">attr_str</span>
+</div></div><div data-line="23" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">)</span>
+</div></div><div data-line="24" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="25" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">Builder</span> <span class="o">:=</span> <span class="nb">Object</span> <span class="k">clone</span>
+</div></div><div data-line="26" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="27" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">indent</span> <span class="o">:=</span> <span class="s">&quot;&quot;</span>
+</div></div><div data-line="28" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="29" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">Builder</span> <span class="n">forward</span> <span class="o">:=</span> <span class="k">method</span><span class="o">(</span>
+</div></div><div data-line="30" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">arguments</span> <span class="o">:=</span> <span class="n">call</span> <span class="n">message</span> <span class="n">arguments</span>
+</div></div><div data-line="31" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">attrs</span> <span class="o">:=</span> <span class="s">&quot;&quot;</span>        
+</div></div><div data-line="32" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">if</span><span class="o">(</span><span class="n">arguments</span> <span class="n">size</span> <span class="o">&gt;</span> <span class="mf">0</span> <span class="n">and</span> <span class="n">arguments</span> <span class="n">first</span> <span class="n">name</span> <span class="o">==</span> <span class="s">&quot;curlyBrackets&quot;</span><span class="o">,</span>      <span class="n">attrs</span> <span class="o">=</span> <span class="n">doMessage</span><span class="o">(</span><span class="n">arguments</span> <span class="n">first</span><span class="o">)</span> <span class="n">buildAttributes</span><span class="o">)</span>
+</div></div><div data-line="33" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="34" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">writeln</span><span class="o">(</span><span class="n">indent</span><span class="o">,</span><span class="s">&quot;&lt;&quot;</span><span class="o">,</span> <span class="n">call</span> <span class="n">message</span> <span class="n">name</span><span class="o">,</span> <span class="n">attrs</span><span class="o">,</span> <span class="s">&quot;&gt;&quot;</span><span class="o">)</span>
+</div></div><div data-line="35" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">indent</span> <span class="o">=</span> <span class="n">indent</span> <span class="o">..</span> <span class="s">&quot;  &quot;</span>
+</div></div><div data-line="36" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">arguments</span> <span class="n">foreach</span><span class="o">(</span>
+</div></div><div data-line="37" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">arg</span><span class="o">,</span>
+</div></div><div data-line="38" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">content</span> <span class="o">:=</span> <span class="n">self</span> <span class="n">doMessage</span><span class="o">(</span><span class="n">arg</span><span class="o">);</span>
+</div></div><div data-line="39" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="k">if</span><span class="o">(</span><span class="n">content</span> <span class="n">type</span> <span class="o">==</span> <span class="s">&quot;Sequence&quot;</span><span class="o">,</span> <span class="n">writeln</span><span class="o">(</span><span class="n">indent</span><span class="o">,</span><span class="n">content</span><span class="o">)))</span>
+</div></div><div data-line="40" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">indent</span> <span class="o">=</span> <span class="n">indent</span> <span class="n">exclusiveSlice</span><span class="o">(</span><span class="mf">2</span><span class="o">)</span>
+</div></div><div data-line="41" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">writeln</span><span class="o">(</span><span class="n">indent</span><span class="o">,</span><span class="s">&quot;&lt;/&quot;</span><span class="o">,</span> <span class="n">call</span> <span class="n">message</span> <span class="n">name</span><span class="o">,</span> <span class="s">&quot;&gt;&quot;</span><span class="o">))</span>
+</div></div><div data-line="42" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="43" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">doFile</span><span class="o">(</span><span class="s">&quot;BuilderNewTest.io&quot;</span><span class="o">)</span></div></div></pre></div></figure>
+
+<p>Check out my code at <a href="https://github.com/heatherjc07/seven_languages_in_seven_days/tree/master/Io/Day3" target="_blank">github</a></p>
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://heatherjcampbell.com/development/ruby-day-3/" class="btn" title="Ruby Day 3">Previous article</a>
+      
+      
+        <a href="http://heatherjcampbell.com/development/io-day-2/" class="btn" title="Io Day 2">Next article</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span>&copy; 2016 Heather Campbell. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/so-simple/">So Simple Theme</a>.</span>
+<div class="social-icons">
+	<a href="http://twitter.com/hcampbell07" title="Heather Campbell on Twitter" target="_blank"><i class="icon-twitter icon-2x"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="http://github.com/heatherjc07" title="Heather Campbell on Github" target="_blank"><i class="icon-github icon-2x"></i></a>
+	
+</div><!-- /.social-icons -->
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://heatherjcampbell.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://heatherjcampbell.com/assets/js/scripts.min.js"></script>
+
+<!-- Jekyll Simple Search option -->
+<script>
+  $(document).ready(function() {
+      $('.search-field').simpleJekyllSearch({
+          jsonFile : 'http://heatherjcampbell.com/search.json',
+          searchResults : '.search-results',
+          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          noResults: '<p>Nothing found.</p>'
+        });
+  });
+
+  (function( $, window, undefined ) {
+    
+     var bs = {
+          close: $(".icon-remove-sign"),
+          searchform: $(".search-form"),
+          canvas: $("body"),
+          dothis: $('.dosearch')
+      };
+    
+    bs.dothis.on('click', function() {
+      $('.search-wrapper').css({ display: "block" });
+      bs.searchform.toggleClass('active');
+      bs.searchform.find('input').focus();
+      bs.canvas.toggleClass('search-overlay');
+    });
+    
+      bs.close.on('click', function() {
+        $('.search-wrapper').removeAttr( 'style' );
+        bs.searchform.toggleClass('active');
+        bs.canvas.removeClass('search-overlay');
+    });
+  })( jQuery, window );
+</script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-69172837-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>	        
+
+</body>
+</html>

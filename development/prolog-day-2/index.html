@@ -1,0 +1,504 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Prolog Day 2 &#8211; Technical Musing of a Mummy</title>
+<meta name="description" content="Prolog Day 2: Seven Languages in Seven Weeks">
+<meta name="keywords" content="seven languages in seven weeks, prolog, languages">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://heatherjcampbell.com/images/">
+<meta name="twitter:title" content="Prolog Day 2">
+<meta name="twitter:description" content="Prolog Day 2: Seven Languages in Seven Weeks">
+<meta name="twitter:creator" content="@hcampbell07">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Prolog Day 2">
+<meta property="og:description" content="Prolog Day 2: Seven Languages in Seven Weeks">
+<meta property="og:url" content="http://heatherjcampbell.com/development/prolog-day-2/">
+<meta property="og:site_name" content="Technical Musing of a Mummy">
+
+
+
+
+
+<link rel="canonical" href="http://heatherjcampbell.com/development/prolog-day-2/">
+<link href="http://heatherjcampbell.com/feed.xml" type="application/atom+xml" rel="alternate" title="Technical Musing of a Mummy Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://heatherjcampbell.com/assets/css/main.min.css">
+<link rel="stylesheet" href="http://heatherjcampbell.com/assets/css/code.css">
+<!-- Webfonts -->
+<script src="//use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="http://heatherjcampbell.com/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://heatherjcampbell.com/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://heatherjcampbell.com/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://heatherjcampbell.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://heatherjcampbell.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://heatherjcampbell.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://heatherjcampbell.com/images/apple-touch-icon-144x144-precomposed.png">
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav">
+	    <ul>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/about/">About</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/articles/">Posts</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/tags/">Tags</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="https://twitter.com/HCampbell07/">Tweets</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/presentations/">Presentations</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/reading/">Reading List</a>
+				 
+			</li>
+	        
+	        <li><a href="http://heatherjcampbell.com/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+	        <li class="dosearch"><i class="icon-search"></i> Search</li>
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+<div class="search-wrapper">
+	<div class="search-form">
+		<input type="text" class="search-field" placeholder="Search...">
+		<i class="icon-remove-sign icon-2x"></i>
+		<ul class="search-results post-list"></ul><!-- /.search-results -->
+	</div><!-- /.search-form -->
+</div><!-- ./search-wrapper -->
+
+<header class="masthead">
+	<div class="wrap">
+        <h1 class="site-title"><a href="http://heatherjcampbell.com">Technical Musing of a Mummy</a></h1>
+		<h2 class="site-description" itemprop="description">A Blog About All Things IT Related</h2>
+	</div>
+</header><!-- /.masthead -->
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <span class="entry-tags"><a href="http://heatherjcampbell.com/tags/#seven languages in seven weeks" title="Pages tagged seven languages in seven weeks">seven languages in seven weeks</a>&nbsp;&bull;&nbsp;<a href="http://heatherjcampbell.com/tags/#prolog" title="Pages tagged prolog">prolog</a>&nbsp;&bull;&nbsp;<a href="http://heatherjcampbell.com/tags/#languages" title="Pages tagged languages">languages</a></span>
+        
+          <h1 class="entry-title">Prolog Day 2</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        <img src="http://heatherjcampbell.com/images/bio-photo.JPG" alt="Heather Campbell photo" class="author-photo">
+        <span class="author vcard">By <span class="fn"><a href="http://heatherjcampbell.com/about/" title="About Heather Campbell">Heather Campbell</a></span></span>
+        <span class="entry-date date published"><time datetime="2012-09-25T00:00:00+01:00"><i class="icon-calendar-empty"></i> September 25, 2012</time></span>
+        
+        
+        <span><a href="http://heatherjcampbell.com/development/prolog-day-2/" rel="bookmark" title="Prolog Day 2"><i class="icon-link"></i> Permalink</a></span>
+        
+        <span class="social-share-facebook">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://heatherjcampbell.com/development/prolog-day-2/" title="Share on Facebook" itemprop="Facebook"><i class="icon-facebook-sign"></i> Like</a></span>
+        <span class="social-share-twitter">
+            <a href="https://twitter.com/intent/tweet?hashtags=development&text=Prolog Day 2&url=http://heatherjcampbell.com/development/prolog-day-2/&via=hcampbell07" title="Share on Twitter" itemprop="Twitter"><i class="icon-twitter-sign"></i> Tweet</a></span>
+        <span class="social-share-googleplus">
+            <a href="https://plus.google.com/share?url=http://heatherjcampbell.com/development/prolog-day-2/" title="Share on Google Plus" itemprop="GooglePlus"><i class="icon-google-plus-sign"></i> +1</a></span>
+            <!-- /.social-share -->
+      </footer>
+      <div class="entry-content">
+        <p><em>My experience with day two of exploring Prolog through <a href="http://pragprog.com/book/btlang/seven-languages-in-seven-weeks">Seven Languages in Seven Weeks</a>.</em></p>
+
+<p>Onto the second day of Prolog and after a simple first day I’m looking forward to delving deeper. Little did I know by the end of the chapter I’d have discovered some weird and wonderful Prolog facts like did you know it is used in Australia to determine how best to rear pigs! More on that later.</p>
+
+<h2 id="recursion">Recursion</h2>
+
+<p>The first example takes a look at the use of recursion to solve problems. In the following example we have a list of facts which specify father child relationships and we want to determine if X is an ancestor of Y. In the sample you can see the ancestor rule has two clauses. Only one of these needs to be true to make the rule true. If X is the father of Y he is an ancestor of Y. If X is the father of an ancestor of Y he is an ancestor of Y e.g. your father’s father or your grandfather.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">ancestor.pro</span><a class="code-highlight-caption-link" href="https://gist.github.com/5375249">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nf">father</span><span class="p">(</span><span class="s-Atom">samuel</span><span class="p">,</span> <span class="s-Atom">desmond</span><span class="p">).</span> 
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nf">father</span><span class="p">(</span><span class="s-Atom">desmond</span><span class="p">,</span> <span class="s-Atom">heather</span><span class="p">).</span> 
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nf">father</span><span class="p">(</span><span class="s-Atom">pat</span><span class="p">,</span> <span class="s-Atom">stephen</span><span class="p">).</span> 
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nf">father</span><span class="p">(</span><span class="s-Atom">stephen</span><span class="p">,</span> <span class="s-Atom">luke</span><span class="p">).</span>  
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nf">ancestor</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Y</span><span class="p">)</span> <span class="p">:-</span> <span class="nf">father</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Y</span><span class="p">).</span> 
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nf">ancestor</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Y</span><span class="p">)</span> <span class="p">:-</span> <span class="nf">father</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Z</span><span class="p">),</span> <span class="nf">ancestor</span><span class="p">(</span><span class="nv">Z</span><span class="p">,</span> <span class="nv">Y</span><span class="p">).</span>  
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% In the interpreter type</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% ancestor(samuel, heather). </span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% Returns true  </span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% ancestor(Who, luke). </span>
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% Returns </span>
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% Who = stephen ? a </span>
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% Who = pat </span></div></div></pre></div></figure>
+
+<p>The recursive subgoal has been placed at the end of the rule to optimize the performance. This is called tail recursion optimization.</p>
+
+<h2 id="containers">Containers</h2>
+
+<p>Lists and tuples are containers in Prolog. A list is a container of variable length <code>[1,2,3]</code>. A tuple has a fixed length <code>(1,2,3)</code></p>
+
+<p>The example below shows how Prolog tries to make the left and right sides match. This is called unification.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">unification.pro</span><a class="code-highlight-caption-link" href="https://gist.github.com/5375249">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">|</span> <span class="s-Atom">?-</span> <span class="p">(</span><span class="nv">A</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">C</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nv">B</span><span class="p">,</span> <span class="mi">3</span><span class="p">).</span> 
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nv">A</span> <span class="o">=</span> <span class="mi">1</span> 
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nv">B</span> <span class="o">=</span> <span class="mi">2</span> 
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nv">C</span> <span class="o">=</span> <span class="mi">3</span> 
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% Returns </span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% yes </span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">|</span> <span class="s-Atom">?-</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nv">X</span><span class="p">,</span> <span class="nv">X</span><span class="p">,</span> <span class="nv">Z</span><span class="p">].</span> 
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% Returns </span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% X=2 </span>
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% Z=3 </span>
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% yes </span>
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">|</span> <span class="s-Atom">?-</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nv">X</span><span class="p">,</span> <span class="nv">X</span><span class="p">,</span> <span class="nv">Z</span><span class="p">].</span> 
+</div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% Returns </span>
+</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% no </span></div></div></pre></div></figure>
+
+<p>Prolog cannot find a solution to the second query as X would have to be set to two different values.</p>
+
+<p>You can use the functions <code>Head</code>, which takes the value of the first element in a list, and <code>Tail</code>, which takes the value of the rest of the list, to achieve lots of different things.</p>
+
+<h3 id="basic-split">Basic Split</h3>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">split.pro</span><a class="code-highlight-caption-link" href="https://gist.github.com/5375249">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">!</span> <span class="s-Atom">?</span> <span class="o">-</span> <span class="p">[</span><span class="s-Atom">a</span><span class="p">,</span> <span class="s-Atom">b</span><span class="p">,</span> <span class="s-Atom">c</span><span class="p">]</span>  <span class="o">=</span> <span class="p">[</span><span class="nv">Head</span><span class="p">|</span><span class="nv">Tail</span><span class="p">].</span> 
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% Returns </span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% Head = a </span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% Tail = [b,c]</span></div></div></pre></div></figure>
+
+<h3 id="selecting-a-particular-element">Selecting a Particular Element.</h3>
+
+<p><code>_</code> is a wildcard used in the following example to select the third element.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">select.pro</span><a class="code-highlight-caption-link" href="https://gist.github.com/5375249">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">|</span> <span class="s-Atom">?-</span><span class="p">[</span><span class="s-Atom">a</span><span class="p">,</span><span class="s-Atom">b</span><span class="p">,</span><span class="s-Atom">c</span><span class="p">,</span><span class="s-Atom">d</span><span class="p">,</span><span class="s-Atom">e</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="k">_</span><span class="p">,</span><span class="k">_</span><span class="p">|[</span><span class="nv">Head</span><span class="p">|</span><span class="k">_</span><span class="p">]].</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% Returns </span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% Head = c </span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% yes </span></div></div></pre></div></figure>
+
+<h3 id="lists-and-maths">Lists and Maths</h3>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">count.pro</span><a class="code-highlight-caption-link" href="https://gist.github.com/5375249">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nf">count</span><span class="p">(</span><span class="mi">0</span><span class="p">,[]).</span> 
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nf">count</span><span class="p">(</span><span class="nv">Count</span><span class="p">,[</span><span class="nv">Head</span><span class="p">|</span><span class="nv">Tail</span><span class="p">])</span> <span class="p">:-</span> <span class="nf">count</span><span class="p">(</span><span class="nv">TailCount</span><span class="p">,</span> <span class="nv">Tail</span><span class="p">),</span> 
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="nv">Count</span> <span class="o">is</span> <span class="nv">TailCount</span> <span class="o">+</span> <span class="mf">1.</span> 
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% In the interpreter type</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% count(What, [1]). </span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% Returns </span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% What = 1 ? ; </span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% no</span></div></div></pre></div></figure>
+
+<p>It took me a bit to get my head round the code above. The first subgoal handles if the list is empty. In our case we’re sending through a list with a value. So it goes into the second sub goal with Head taking the value 1 and Tail taking the value <code>[]</code>. This matches the first rule so TailCount is set to 0 so Count = 0+1 i.e. 1.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">sum.pro</span><a class="code-highlight-caption-link" href="https://gist.github.com/5375249">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nf">sum</span><span class="p">(</span><span class="mi">0</span><span class="p">,[]).</span> 
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nf">sum</span><span class="p">(</span><span class="nv">Total</span><span class="p">,[</span><span class="nv">Head</span><span class="p">|</span><span class="nv">Tail</span><span class="p">])</span> <span class="p">:-</span> <span class="nf">sum</span><span class="p">(</span><span class="nv">Sum</span><span class="p">,</span> <span class="nv">Tail</span><span class="p">),</span> <span class="nv">Total</span> <span class="o">is</span> <span class="nv">Head</span> <span class="o">+</span> <span class="s-Atom">sum</span><span class="p">.</span> 
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% In the interpreter type</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% sum(What, [1]). </span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% Returns </span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% What = 1 ? ; </span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% no </span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% sum(What, [1,2,3]). </span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% Returns </span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% What = 6 ? ; </span>
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% no </span></div></div></pre></div></figure>
+
+<p>This is a similar idea to count. We have two subgoals, one to handle an empty list and the other to handle one which contains elements. Our list has elements so we go to the second subgoal. Head takes the value 1 and Tail the value <code>[2,3]</code>. The sum subgoal is called recursively until it matches empty list. Initialises sum to 0 and then adds the head value i.e. an individual element to it.</p>
+
+<p>We can reuse our rules to build other rules for example we can use sum and count to create an average rule.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">average.pro</span><a class="code-highlight-caption-link" href="https://gist.github.com/5375249">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nf">average</span><span class="p">(</span><span class="nv">Average</span><span class="p">,</span> <span class="nv">List</span><span class="p">)</span> <span class="p">:-</span> <span class="nf">sum</span><span class="p">(</span><span class="nv">Sum</span><span class="p">,</span> <span class="nv">List</span><span class="p">),</span> 
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="nf">count</span><span class="p">(</span><span class="nv">Count</span><span class="p">,</span> <span class="nv">List</span><span class="p">),</span> <span class="nv">Average</span> <span class="o">is</span> <span class="nv">Sum</span><span class="o">/</span><span class="nv">Count</span><span class="p">.</span> 
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% In the interpreter type</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% average(What, [1, 2, 3]). </span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% Returns </span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% What = 2.0 ? ; </span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% no </span></div></div></pre></div></figure>
+
+<h2 id="the-append-rule">The append rule</h2>
+
+<p>This rule returns true if two lists combined equal a third list.</p>
+
+<p><code>append(List1, List2, List3)</code> is true if List3 = List1 + List2</p>
+
+<p>The append rule can be used to achieve lots of different things. You can use it to build lists</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">build.pro</span><a class="code-highlight-caption-link" href="https://gist.github.com/5375249">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">|</span> <span class="s-Atom">?-</span> <span class="nf">append</span><span class="p">([</span><span class="s-Atom">blue</span><span class="p">],</span> <span class="p">[</span><span class="s-Atom">red</span><span class="p">],</span> <span class="nv">What</span><span class="p">).</span> 
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% Returns </span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% What = [blue,red] </span></div></div></pre></div></figure>
+
+<p>List subtraction</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">subtraction.pro</span><a class="code-highlight-caption-link" href="https://gist.github.com/5375249">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">|</span> <span class="s-Atom">?-</span> <span class="nf">append</span><span class="p">([</span><span class="s-Atom">cat</span><span class="p">,</span><span class="s-Atom">dog</span><span class="p">],</span> <span class="nv">Who</span><span class="p">,</span> <span class="p">[</span><span class="s-Atom">cat</span><span class="p">,</span><span class="s-Atom">dog</span><span class="p">,</span><span class="s-Atom">horse</span><span class="p">]).</span> 
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% Who = [horse] </span></div></div></pre></div></figure>
+
+<p>It computes possible splits</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">splits.pro</span><a class="code-highlight-caption-link" href="https://gist.github.com/5375249">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">|</span> <span class="o">&gt;</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">!</span> <span class="s-Atom">?-</span> <span class="nf">append</span><span class="p">(</span><span class="nv">One</span><span class="p">,</span> <span class="nv">Two</span><span class="p">,</span> <span class="p">[</span><span class="s-Atom">apples</span><span class="p">,</span> <span class="s-Atom">oranges</span><span class="p">,</span> <span class="s-Atom">bananas</span><span class="p">]).</span> 
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% One = [] </span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% Two = [apples, oranges, bananas] ? a </span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% One = [apples] </span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% Two = [oranges,bananas] </span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% One = [apples, oranges] </span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% Two = [bananas] </span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% One = [apples, oranges, bananas] </span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% Two = [] </span></div></div></pre></div></figure>
+
+<h2 id="find">Find</h2>
+
+<p><em>Some implementations of a Fibonacci series and factorials. How do they work?</em></p>
+
+<p><strong>Fibonacci</strong></p>
+
+<p>By definition, the first two numbers in the Fibonacci sequence are 0 and 1, and each subsequent number is the sum of the previous two.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">fibonacci.pro</span><a class="code-highlight-caption-link" href="https://gist.github.com/5375249">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% Fibonacci - http://cubbi.com/fibonacci/prolog.html </span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nf">fib</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">).</span> 
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nf">fib</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">).</span> 
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nf">fib</span><span class="p">(</span><span class="nv">N</span><span class="p">,</span><span class="nv">F</span><span class="p">)</span> <span class="p">:-</span> <span class="nf">succ</span><span class="p">(</span><span class="nv">N1</span><span class="p">,</span><span class="nv">N</span><span class="p">),</span> <span class="nf">succ</span><span class="p">(</span><span class="nv">N2</span><span class="p">,</span><span class="nv">N1</span><span class="p">),</span> <span class="nf">fib</span><span class="p">(</span><span class="nv">N1</span><span class="p">,</span><span class="nv">F1</span><span class="p">),</span> <span class="nf">fib</span><span class="p">(</span><span class="nv">N2</span><span class="p">,</span><span class="nv">F2</span><span class="p">),</span>  
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">            <span class="nf">plus</span><span class="p">(</span><span class="nv">F1</span><span class="p">,</span><span class="nv">F2</span><span class="p">,</span><span class="nv">F</span><span class="p">).</span></div></div></pre></div></figure>
+
+<p>The first two subgoals handle the special cases of 0 and 1 which do not have two previous number to sum. For 0 the fibonacci sequence value is 0 for 1 the fibonacci sequence value is 1. <code>succ(int1, int2)</code> is true if int 2 = int1 + 1 where int1 is greater than 0. In the above example we are using it to calculate N-1 and N-2. Then we find the N-1 fibonacci number and N-2 fibonacci number and add together to give the N Fibonacci number.</p>
+
+<p><strong>Factorial</strong></p>
+
+<p>The product of all positive integers less than or equal to n.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">factorial.pro</span><a class="code-highlight-caption-link" href="https://gist.github.com/5375249">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">%  Factorial - http://boklm.eu/prolog/page_6.html </span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="nf">factorial</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">).</span> 
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="nf">factorial</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span><span class="nv">Y</span><span class="p">)</span> <span class="p">:-</span> 
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="nv">X1</span> <span class="o">is</span> <span class="nv">X</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> 
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="nf">factorial</span><span class="p">(</span><span class="nv">X1</span><span class="p">,</span><span class="nv">Z</span><span class="p">),</span> 
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="nv">Y</span> <span class="o">is</span> <span class="nv">Z</span> <span class="o">*</span> <span class="nv">X</span><span class="p">,!.</span></div></div></pre></div></figure>
+
+<p>The first subgoal handles the special case of X = 0 which has a factorial of 1. For every other number we recursively call factorial for the previous number (X-1) and then multiply the value returned by X.</p>
+
+<p><em>A real-world community using Prolog. 
+What problems are they solving with it today?</em></p>
+
+<p>It was really interesting reading about all the different uses of Prolog. Some of the areas it is used in include farming, sporting events and weather monitoring. Very wide ranging. There is an article in Dr Dobbs on it which although it is 10 years old led me to some interesting sites.</p>
+
+<p><strong>AusPig</strong> is a decision support system for the Australian pork industry which helps farmers determine how to improve the productivity and returns of their farm. PigE is its intelligent backend. The Auspig model simulates the growth and reproduction of pigs, identifies factors that limit optimal performance of the pig, and suggest management strategies that maximize profits such as diet and housing changes.</p>
+
+<p><strong>Toernooi Assistant</strong> automates everything about tennis tournaments. It provides optimal planning and scheduling of matches, fast replanning in case of rain, player administration, seeding and drawing of lots for the arrangement of the players, processing of the match results, generation of press releases, and financial support.</p>
+
+<p><em>An implementation of the Towers of Hanoi. How does it work?</em></p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">towers.pro</span><a class="code-highlight-caption-link" href="https://gist.github.com/5375249">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">*</span> <span class="nv">The</span> <span class="nv">Towers</span> <span class="nv">Of</span> <span class="nv">Hanoi</span> 
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="o">*</span> <span class="nv">Prolog</span> 
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="o">*</span> <span class="nv">Copyright</span> <span class="p">(</span><span class="nv">C</span><span class="p">)</span> <span class="mi">1998</span> <span class="nv">Amit</span> <span class="nv">Singh</span><span class="p">.</span> <span class="nv">All</span> <span class="nv">Rights</span> <span class="nv">Reserved</span><span class="p">.</span> 
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="o">*</span> <span class="nn">http</span><span class="p">:</span><span class="o">//</span><span class="s-Atom">hanoi</span><span class="p">.</span><span class="s-Atom">kernelthread</span><span class="p">.</span><span class="s-Atom">com</span> 
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="o">*</span> 
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="o">*</span> <span class="nv">Tested</span> <span class="s-Atom">under</span> <span class="nv">SWI</span><span class="o">-</span><span class="nv">Prolog</span> <span class="mf">2.9.10</span> 
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="s-Atom">*/</span> 
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nf">hanoi</span><span class="p">(</span><span class="nv">N</span><span class="p">)</span> <span class="p">:-</span> <span class="nf">dohanoi</span><span class="p">(</span><span class="nv">N</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">).</span> 
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nf">dohanoi</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="k">_</span> <span class="p">,</span> <span class="k">_</span> <span class="p">,</span> <span class="k">_</span> <span class="p">)</span> <span class="p">:-</span> <span class="p">!.</span> 
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nf">dohanoi</span><span class="p">(</span><span class="nv">N</span><span class="p">,</span> <span class="nv">A</span><span class="p">,</span> <span class="nv">B</span><span class="p">,</span> <span class="nv">C</span><span class="p">)</span> <span class="p">:-</span> 
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="nv">N_1</span> <span class="o">is</span> <span class="nv">N</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> 
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="nf">dohanoi</span><span class="p">(</span><span class="nv">N_1</span><span class="p">,</span> <span class="nv">A</span><span class="p">,</span> <span class="nv">C</span><span class="p">,</span> <span class="nv">B</span><span class="p">),</span> 
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="nf">moveit</span><span class="p">(</span><span class="nv">A</span><span class="p">,</span> <span class="nv">B</span><span class="p">),</span> <span class="nf">dohanoi</span><span class="p">(</span><span class="nv">N_1</span><span class="p">,</span> <span class="nv">C</span><span class="p">,</span> <span class="nv">B</span><span class="p">,</span> <span class="nv">A</span><span class="p">).</span> 
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nf">moveit</span><span class="p">(</span><span class="nv">F</span><span class="p">,</span> <span class="nv">T</span><span class="p">)</span> <span class="p">:-</span> <span class="nf">write</span><span class="p">([</span><span class="s-Atom">move</span><span class="p">,</span> <span class="nv">F</span><span class="p">,</span> <span class="p">--&gt;,</span> <span class="nv">T</span><span class="p">]),</span> <span class="s-Atom">nl</span><span class="p">.</span></div></div></pre></div></figure>
+
+<p><em>What are some of the problems of dealing with “not” expressions? Why do you have to be careful with negation in Prolog?</em></p>
+
+<p>When you use not(x) in Prolog it does not mean x is false it means x cannot be proven to be true.</p>
+
+<p>An example of how this can lead to some unexpected behavior</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">unexpected.pro</span><a class="code-highlight-caption-link" href="https://gist.github.com/5375249">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nf">unmarried_student</span><span class="p">(</span><span class="nv">X</span><span class="p">):-</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="o">not</span><span class="p">(</span><span class="nf">married</span><span class="p">(</span><span class="nv">X</span><span class="p">)),</span> <span class="nf">student</span><span class="p">(</span><span class="nv">X</span><span class="p">).</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nf">student</span><span class="p">(</span><span class="s-Atom">joe</span><span class="p">).</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nf">married</span><span class="p">(</span><span class="s-Atom">john</span><span class="p">).</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% Running in the interpreter</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% unmarried_student(joe).</span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% Returns yes</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% unmarried_student(john).</span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% Returns no</span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% so we&#39;d expect asking</span>
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% unmarried_student(X).</span>
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% to return Joe as an answer </span>
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% instead it returns no </span>
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% The reason for this is that the call to not(married(X)) </span>
+</div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% is not returning the students which are not married: </span>
+</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% it is just failing because </span>
+</div></div><div data-line="19" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% there is at least a married student</span></div></div></pre></div></figure>
+
+<h2 id="do">Do</h2>
+
+<p>Reverse the elements of a list.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">reverse.pro</span><a class="code-highlight-caption-link" href="https://gist.github.com/5375249">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">%Initially our reversed list is empty</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nf">reverse</span><span class="p">(</span><span class="nv">List</span><span class="p">,</span> <span class="nv">ReverseList</span><span class="p">):-</span> <span class="nf">reverse</span><span class="p">(</span><span class="nv">List</span><span class="p">,</span> <span class="p">[],</span> <span class="nv">ReverseList</span><span class="p">).</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">%Once we reach end of list we set ReverseList </span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">%equal to the reverse list we&#39;ve been building</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nf">reverse</span><span class="p">([],</span> <span class="nv">ReverseList</span><span class="p">,</span><span class="nv">ReverseList</span><span class="p">).</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">%We take the head of our list and </span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">%add it to the start of our reversed list</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nf">reverse</span><span class="p">([</span><span class="nv">Head</span><span class="p">|</span><span class="nv">Tail</span><span class="p">],</span> <span class="nv">SoFar</span><span class="p">,</span> <span class="nv">ReverseList</span><span class="p">)</span> <span class="p">:-</span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line">          <span class="nf">reverse</span><span class="p">(</span><span class="nv">Tail</span><span class="p">,</span> <span class="p">[</span><span class="nv">Head</span><span class="p">|</span><span class="nv">SoFar</span><span class="p">],</span> <span class="nv">ReverseList</span><span class="p">).</span></div></div></pre></div></figure>
+
+<p>Find the smallest element of a list.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">smallest.pro</span><a class="code-highlight-caption-link" href="https://gist.github.com/5375249">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% If list is only one value long</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% set Min to this value</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nf">min</span><span class="p">([</span><span class="nv">Head</span><span class="p">|[]],</span> <span class="nv">Head</span><span class="p">).</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% if current min smaller than head</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% return it</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nf">min</span><span class="p">([</span><span class="nv">Head</span> <span class="p">|</span> <span class="nv">Tail</span><span class="p">],</span> <span class="nv">TailMin</span><span class="p">)</span> <span class="p">:-</span> <span class="nf">min</span><span class="p">(</span><span class="nv">Tail</span><span class="p">,</span> <span class="nv">TailMin</span><span class="p">),</span> <span class="nv">TailMin</span> <span class="o">=&lt;</span> <span class="nv">Head</span><span class="p">.</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% otherwise return Head</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nf">min</span><span class="p">([</span><span class="nv">Head</span> <span class="p">|</span> <span class="nv">Tail</span><span class="p">],</span> <span class="nv">Head</span><span class="p">)</span> <span class="p">:-</span> <span class="nf">min</span><span class="p">(</span><span class="nv">Tail</span><span class="p">,</span> <span class="nv">TailMin</span><span class="p">),</span> <span class="nv">TailMin</span> <span class="o">&gt;</span> <span class="nv">Head</span><span class="p">.</span></div></div></pre></div></figure>
+
+<p>Sort the elements of a list.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">unexpected.pro</span><a class="code-highlight-caption-link" href="https://gist.github.com/5375249">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nf">unmarried_student</span><span class="p">(</span><span class="nv">X</span><span class="p">):-</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="o">not</span><span class="p">(</span><span class="nf">married</span><span class="p">(</span><span class="nv">X</span><span class="p">)),</span> <span class="nf">student</span><span class="p">(</span><span class="nv">X</span><span class="p">).</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nf">student</span><span class="p">(</span><span class="s-Atom">joe</span><span class="p">).</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nf">married</span><span class="p">(</span><span class="s-Atom">john</span><span class="p">).</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% Running in the interpreter</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% unmarried_student(joe).</span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% Returns yes</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% unmarried_student(john).</span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% Returns no</span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% so we&#39;d expect asking</span>
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% unmarried_student(X).</span>
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% to return Joe as an answer </span>
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% instead it returns no </span>
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% The reason for this is that the call to not(married(X)) </span>
+</div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% is not returning the students which are not married: </span>
+</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% it is just failing because </span>
+</div></div><div data-line="19" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">% there is at least a married student</span></div></div></pre></div></figure>
+
+<p>View my code at <a href="https://github.com/heatherjc07/seven_languages_in_seven_days/tree/master/Prolog/Day2">github</a></p>
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://heatherjcampbell.com/development/final-thoughts-on-three-days-of-io/" class="btn" title="Final Thoughts on Three Days of Io">Previous article</a>
+      
+      
+        <a href="http://heatherjcampbell.com/development/final-thoughts-on-three-days-of-prolog/" class="btn" title="Final Thoughts on Three Days of Prolog">Next article</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span>&copy; 2016 Heather Campbell. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/so-simple/">So Simple Theme</a>.</span>
+<div class="social-icons">
+	<a href="http://twitter.com/hcampbell07" title="Heather Campbell on Twitter" target="_blank"><i class="icon-twitter icon-2x"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="http://github.com/heatherjc07" title="Heather Campbell on Github" target="_blank"><i class="icon-github icon-2x"></i></a>
+	
+</div><!-- /.social-icons -->
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://heatherjcampbell.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://heatherjcampbell.com/assets/js/scripts.min.js"></script>
+
+<!-- Jekyll Simple Search option -->
+<script>
+  $(document).ready(function() {
+      $('.search-field').simpleJekyllSearch({
+          jsonFile : 'http://heatherjcampbell.com/search.json',
+          searchResults : '.search-results',
+          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          noResults: '<p>Nothing found.</p>'
+        });
+  });
+
+  (function( $, window, undefined ) {
+    
+     var bs = {
+          close: $(".icon-remove-sign"),
+          searchform: $(".search-form"),
+          canvas: $("body"),
+          dothis: $('.dosearch')
+      };
+    
+    bs.dothis.on('click', function() {
+      $('.search-wrapper').css({ display: "block" });
+      bs.searchform.toggleClass('active');
+      bs.searchform.find('input').focus();
+      bs.canvas.toggleClass('search-overlay');
+    });
+    
+      bs.close.on('click', function() {
+        $('.search-wrapper').removeAttr( 'style' );
+        bs.searchform.toggleClass('active');
+        bs.canvas.removeClass('search-overlay');
+    });
+  })( jQuery, window );
+</script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-69172837-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>	        
+
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Functional Programming with Java &#8211; Technical Musing of a Mummy</title>
+<meta name="description" content="Review of plural sight course Functional Programming with Java and some of my takeaways">
+<meta name="keywords" content="java, online courses, functional programming">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://heatherjcampbell.com/images/">
+<meta name="twitter:title" content="Functional Programming with Java">
+<meta name="twitter:description" content="Review of plural sight course Functional Programming with Java and some of my takeaways">
+<meta name="twitter:creator" content="@hcampbell07">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Functional Programming with Java">
+<meta property="og:description" content="Review of plural sight course Functional Programming with Java and some of my takeaways">
+<meta property="og:url" content="http://heatherjcampbell.com/technologies/functional-programming-with-java/">
+<meta property="og:site_name" content="Technical Musing of a Mummy">
+
+
+
+
+
+<link rel="canonical" href="http://heatherjcampbell.com/technologies/functional-programming-with-java/">
+<link href="http://heatherjcampbell.com/feed.xml" type="application/atom+xml" rel="alternate" title="Technical Musing of a Mummy Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://heatherjcampbell.com/assets/css/main.min.css">
+<link rel="stylesheet" href="http://heatherjcampbell.com/assets/css/code.css">
+<!-- Webfonts -->
+<script src="//use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="http://heatherjcampbell.com/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://heatherjcampbell.com/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://heatherjcampbell.com/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://heatherjcampbell.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://heatherjcampbell.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://heatherjcampbell.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://heatherjcampbell.com/images/apple-touch-icon-144x144-precomposed.png">
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav">
+	    <ul>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/about/">About</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/articles/">Posts</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/tags/">Tags</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="https://twitter.com/HCampbell07/">Tweets</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/presentations/">Presentations</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/reading/">Reading List</a>
+				 
+			</li>
+	        
+	        <li><a href="http://heatherjcampbell.com/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+	        <li class="dosearch"><i class="icon-search"></i> Search</li>
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+<div class="search-wrapper">
+	<div class="search-form">
+		<input type="text" class="search-field" placeholder="Search...">
+		<i class="icon-remove-sign icon-2x"></i>
+		<ul class="search-results post-list"></ul><!-- /.search-results -->
+	</div><!-- /.search-form -->
+</div><!-- ./search-wrapper -->
+
+<header class="masthead">
+	<div class="wrap">
+        <h1 class="site-title"><a href="http://heatherjcampbell.com">Technical Musing of a Mummy</a></h1>
+		<h2 class="site-description" itemprop="description">A Blog About All Things IT Related</h2>
+	</div>
+</header><!-- /.masthead -->
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <span class="entry-tags"><a href="http://heatherjcampbell.com/tags/#java" title="Pages tagged java">java</a>&nbsp;&bull;&nbsp;<a href="http://heatherjcampbell.com/tags/#online courses" title="Pages tagged online courses">online courses</a>&nbsp;&bull;&nbsp;<a href="http://heatherjcampbell.com/tags/#functional programming" title="Pages tagged functional programming">functional programming</a></span>
+        
+          <h1 class="entry-title">Functional Programming with Java</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        <img src="http://heatherjcampbell.com/images/bio-photo.JPG" alt="Heather Campbell photo" class="author-photo">
+        <span class="author vcard">By <span class="fn"><a href="http://heatherjcampbell.com/about/" title="About Heather Campbell">Heather Campbell</a></span></span>
+        <span class="entry-date date published"><time datetime="2015-10-22T00:00:00+01:00"><i class="icon-calendar-empty"></i> October 22, 2015</time></span>
+        
+        
+        <span><a href="http://heatherjcampbell.com/technologies/functional-programming-with-java/" rel="bookmark" title="Functional Programming with Java"><i class="icon-link"></i> Permalink</a></span>
+        
+        <span class="social-share-facebook">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://heatherjcampbell.com/technologies/functional-programming-with-java/" title="Share on Facebook" itemprop="Facebook"><i class="icon-facebook-sign"></i> Like</a></span>
+        <span class="social-share-twitter">
+            <a href="https://twitter.com/intent/tweet?hashtags=technologies&text=Functional Programming with Java&url=http://heatherjcampbell.com/technologies/functional-programming-with-java/&via=hcampbell07" title="Share on Twitter" itemprop="Twitter"><i class="icon-twitter-sign"></i> Tweet</a></span>
+        <span class="social-share-googleplus">
+            <a href="https://plus.google.com/share?url=http://heatherjcampbell.com/technologies/functional-programming-with-java/" title="Share on Google Plus" itemprop="GooglePlus"><i class="icon-google-plus-sign"></i> +1</a></span>
+            <!-- /.social-share -->
+      </footer>
+      <div class="entry-content">
+        <p>I just completed <a href="https://twitter.com/jessitron">Jessica Kerr’s</a> Pluralsight course <a href="http://www.pluralsight.com/courses/java-functional-programming">Functional Programming with Java</a>. It’s not the first time I’ve played about with Java 8 and its functional features or functional programming in general. I still found the course useful especially as I applied what it covered to a project I worked on several years ago which was purely Object Orientated. This gave me a chance to put it in to practice and get a feel of the benefits this additional functionality provided.</p>
+
+<p>BTW if you haven’t read/watched anything created by Jessica before I really recommend that you should check out her <a href="http://blog.jessitron.com">blog</a> or <a href="https://twitter.com/jessitron">twitter feed</a>. The quality of what she produces was one of the things which attracted me to the course.</p>
+
+<h3 id="create-easy-to-read-code">Create easy to read code</h3>
+
+<p>If you’ve ever had to support or enhance someone elses code you’ll appreciate the importance of creating code which is easy to follow. In an ideal world code should be <a href="https://en.wikipedia.org/wiki/Self-documenting">self-documenting</a>. Two of the big benefits I found when rewriting the project using functional programming was it really focuses you on breaking the code down into small reusable functions and, where appropriate, separating out the side effects from the core computation.</p>
+
+<p>I think the ability to chain functions together allows you to create code that reads much more like the business requirements it is trying to satisfy. Functions can be passed as parameters and used as return values.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">prescription.java</span><a class="code-highlight-caption-link" href="https://gist.github.com/5a0e4d916fcf5ccd44ce">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Predicate</span> <span class="o">&lt;</span><span class="n">PrescriptionItem</span><span class="o">&gt;</span> <span class="n">PAYABLE</span> 
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">                          <span class="o">=</span> <span class="n">i</span> <span class="o">-&gt;</span> <span class="n">i</span><span class="o">.</span><span class="na">getStatus</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;Payable&quot;</span><span class="o">);</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="cm">/* cost of prescription is sum of total cost of payable items on </span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="cm">   the prescription */</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kt">double</span> <span class="n">totalCostOfPrescription</span> <span class="o">=</span> <span class="n">prescriptionItems</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span>        
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">                                 <span class="n">filter</span><span class="o">(</span><span class="n">PrescriptionItem</span><span class="o">.</span><span class="na">PAYABLE</span><span class="o">).</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line">                                 <span class="n">map</span><span class="o">(</span><span class="n">item</span> <span class="o">-&gt;</span> <span class="n">item</span><span class="o">.</span><span class="na">totalCost</span><span class="o">()).</span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line">                                 <span class="n">reduce</span><span class="o">(</span><span class="nl">Double:</span><span class="o">:</span><span class="n">sum</span><span class="o">).</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line">                                 <span class="n">orElse</span><span class="o">(</span><span class="mf">0.00</span><span class="o">);</span></div></div></pre></div></figure>
+
+<p>We can go one step further, a reasonable assumption is that we’ll want to filter prescription items on more than one criteria so lets create a common filter function that accepts a predicate, a statement that returns true or false depending on the value passed in.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">prescription2.java</span><a class="code-highlight-caption-link" href="https://gist.github.com/5a0e4d916fcf5ccd44ce">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Predicate</span> <span class="o">&lt;</span><span class="n">PrescriptionItem</span><span class="o">&gt;</span> <span class="n">PAYABLE</span> 
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">                          <span class="o">=</span> <span class="n">i</span> <span class="o">-&gt;</span> <span class="n">i</span><span class="o">.</span><span class="na">getStatus</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;Payable&quot;</span><span class="o">);</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kd">private</span> <span class="n">Stream</span><span class="o">&lt;</span><span class="n">PrescriptionItem</span><span class="o">&gt;</span> <span class="nf">prescriptionItemStream</span><span class="o">()</span> <span class="o">&#x7b;</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">getPrescriptionItems</span><span class="o">().</span><span class="na">stream</span><span class="o">();</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">&#x7d;</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kd">public</span> <span class="n">Stream</span><span class="o">&lt;</span><span class="n">PrescriptionItem</span><span class="o">&gt;</span> <span class="nf">filterPrescriptionItems</span><span class="o">(</span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line">                   <span class="n">Predicate</span><span class="o">&lt;</span><span class="n">PrescriptionItem</span><span class="o">&gt;</span> <span class="n">filterCriteria</span><span class="o">)</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">&#x7b;</span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">return</span> <span class="nf">prescriptionItemStream</span><span class="o">().</span><span class="na">filter</span><span class="o">(</span><span class="n">filterCriteria</span><span class="o">);</span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">&#x7d;</span>
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kd">public</span> <span class="n">Stream</span><span class="o">&lt;</span><span class="n">PrescriptionItem</span><span class="o">&gt;</span> <span class="nf">getPayablePrescriptionItems</span><span class="o">()</span>
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">&#x7b;</span>
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">return</span> <span class="nf">filterPrescriptionItems</span><span class="o">(</span><span class="n">PrescriptionItem</span><span class="o">.</span><span class="na">PAYABLE</span><span class="o">);</span>
+</div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">&#x7d;</span>
+</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="19" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="cm">/* cost of prescription is sum of total cost of payable items on </span>
+</div></div><div data-line="20" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="cm">   the prescription */</span>
+</div></div><div data-line="21" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kt">double</span> <span class="n">totalCostOfPrescription</span> <span class="o">=</span> <span class="n">getPayablePrescriptionItems</span><span class="o">().</span>
+</div></div><div data-line="22" class="code-highlight-row numbered"><div class="code-highlight-line">                                 <span class="n">map</span><span class="o">(</span><span class="n">item</span> <span class="o">-&gt;</span> <span class="n">item</span><span class="o">.</span><span class="na">totalCost</span><span class="o">()).</span>
+</div></div><div data-line="23" class="code-highlight-row numbered"><div class="code-highlight-line">                                 <span class="n">reduce</span><span class="o">(</span><span class="nl">Double:</span><span class="o">:</span><span class="n">sum</span><span class="o">).</span>
+</div></div><div data-line="24" class="code-highlight-row numbered"><div class="code-highlight-line">                                 <span class="n">orElse</span><span class="o">(</span><span class="mf">0.00</span><span class="o">);</span></div></div></pre></div></figure>
+
+<p>In the example we’re filtering, mapping and reducing each item. You might think to look at it we’re iterating through and filtering each item, then iterating again and mapping and then iterating again and reducing. Infact it is much more efficient than that. There is only one iteration round the prescription items which the functions being called on each item in turn. I recommend checking out the ‘One Trip Through’ and ‘Lazy Streams’ sections of the <a href="http://www.pluralsight.com/courses/java-functional-programming">Course</a></p>
+
+<p>Another bonus to the code above is we’re being <a href="https://en.wikipedia.org/wiki/Declarative_programming">declarative</a>. We’re writing code that represents the business logic rather than the control flow to carry it out.</p>
+
+<h3 id="avoid-duplication-and-magic">Avoid duplication and magic</h3>
+
+<p>I can’t take credit for the following example as it is lifted from Jessica’s course. The function can be used to time a piece of code. It wraps the code which is passed in using the Supplier. To avoid tying ourselves to a particular means of displaying the code we pass in the output method using Consumer. In the example below I’m using System.out but in real life it is more likely to be your logging framework.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">timeOperation.java</span><a class="code-highlight-caption-link" href="https://gist.github.com/5a0e4d916fcf5ccd44ce">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="n">A</span> <span class="nf">timeOperation</span> <span class="o">(</span><span class="n">String</span> <span class="n">operationName</span><span class="o">,</span> 
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">              <span class="n">Consumer</span> <span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">output</span><span class="o">,</span> <span class="n">Supplier</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="n">code</span><span class="o">)&#x7b;</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="kd">final</span> <span class="n">Date</span> <span class="n">before</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Date</span><span class="o">();</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">A</span> <span class="n">result</span> <span class="o">=</span> <span class="n">code</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="kd">final</span> <span class="n">Long</span> <span class="n">duration</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Date</span><span class="o">().</span><span class="na">getTime</span><span class="o">()</span> <span class="o">-</span> <span class="n">before</span><span class="o">.</span><span class="na">getTime</span><span class="o">();</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">output</span><span class="o">.</span><span class="na">accept</span><span class="o">(</span><span class="n">operationName</span> <span class="o">+</span> <span class="s">&quot; took &quot;</span> <span class="o">+</span> <span class="n">duration</span> <span class="o">+</span> <span class="s">&quot; milliseconds&quot;</span><span class="o">);</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">&#x7d;</span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">Timer</span><span class="o">.</span><span class="na">timeOperation</span><span class="o">(</span><span class="s">&quot;CalculatePrescriptionCost&quot;</span><span class="o">,</span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line">                     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">,</span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line">                     <span class="o">()</span> <span class="o">-&gt;</span> <span class="n">calculatePrescriptionCost</span><span class="o">(</span><span class="n">prescription</span><span class="o">));</span></div></div></pre></div></figure>
+
+<p>This follows the <a href="https://en.wikipedia.org/wiki/Separation_of_concerns">separation of concerns</a> design principle. We’re not mixing our timing code with our calculation logic. It is reusable so we’re keeping our code <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a>. This can be achieved other ways currently e.g. via annotations but this is much more explicit with the implementation and the link less hidden.</p>
+
+<h3 id="simplication-of-making-operations-parallel">Simplication of making operations parallel</h3>
+
+<p>Suppose we’re gathering stats on the treatment carried out by a particular contractor. This could be very CPU intensive and we might want to parallelize it. You can see in the example below it is as simple as adding parallel() after the stream, our business logic stays the same.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">parallalContractorTreatmentStats.java</span><a class="code-highlight-caption-link" href="https://gist.github.com/5a0e4d916fcf5ccd44ce">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">// get stats for total cost of treatment carrier out by each contractor</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">Map</span> <span class="o">&lt;</span><span class="n">Contractor</span><span class="o">,</span> <span class="n">DoubleSummaryStatistics</span><span class="o">&gt;</span>  <span class="n">summary</span> <span class="o">=</span> 
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">         <span class="n">treatmentStream</span><span class="o">().</span><span class="na">collect</span><span class="o">(</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">            <span class="n">Collectors</span><span class="o">.</span><span class="na">groupingBy</span><span class="o">(</span><span class="n">treatment</span> <span class="o">-&gt;</span> <span class="n">treatment</span><span class="o">.</span><span class="na">contractor</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">              <span class="n">Collectors</span><span class="o">.</span><span class="na">summarizingDouble</span><span class="o">(</span><span class="nl">treatment:</span><span class="o">:</span><span class="n">total</span><span class="o">()));</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">Summary</span><span class="o">.</span><span class="na">keySet</span><span class="o">().</span><span class="na">stream</span><span class="o">().</span><span class="na">forEach</span><span class="o">(</span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">contractor</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">contractor</span> <span class="o">+</span> <span class="s">&quot;treatment stats: &quot;</span>  <span class="o">+</span> <span class="n">summary</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">contractor</span><span class="o">)));</span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">// making it parallel is as each as this</span>
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">Map</span> <span class="o">&lt;</span><span class="n">Contractor</span><span class="o">,</span> <span class="n">DoubleSummaryStatistics</span><span class="o">&gt;</span>  <span class="n">summary</span> <span class="o">=</span> 
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line">         <span class="n">treatmentStream</span><span class="o">().</span><span class="na">parallel</span><span class="o">().</span><span class="na">collect</span><span class="o">(</span>
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line">            <span class="n">Collectors</span><span class="o">.</span><span class="na">groupingBy</span><span class="o">(</span><span class="n">treatment</span> <span class="o">-&gt;</span> <span class="n">treatment</span><span class="o">.</span><span class="na">contractor</span>
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line">              <span class="n">Collectors</span><span class="o">.</span><span class="na">summarizingDouble</span><span class="o">(</span><span class="nl">treatment:</span><span class="o">:</span><span class="n">total</span><span class="o">()));</span>
+</div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">Summary</span><span class="o">.</span><span class="na">keySet</span><span class="o">().</span><span class="na">stream</span><span class="o">().</span><span class="na">forEach</span><span class="o">(</span>
+</div></div><div data-line="19" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">contractor</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span>
+</div></div><div data-line="20" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">contractor</span> <span class="o">+</span> <span class="s">&quot;treatment stats: &quot;</span>  <span class="o">+</span> <span class="n">summary</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">contractor</span><span class="o">)));</span></div></div></pre></div></figure>
+
+<h3 id="the-power-of-optional-versus-null">The power of optional versus null</h3>
+
+<p>I hadn’t thought fully about the power of optional versus null until listening to the course. Jessica includes an example of how, using optional, we can avoid doing null checks at various levels within our business logic and just handle the empty check at UI level.</p>
+
+<p>In the example below there might be no instances of treatment which includes wisdom tooth extraction but we don’t need to care about that when retrieving a contractor who has carried it out. If the treatment is empty the map doesn’t get carried out. We only handle it in the UI when we’re displaying our message using orElse to indicate if no matching contractor was found.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">findExampleOfTreatment.java</span><a class="code-highlight-caption-link" href="https://gist.github.com/5a0e4d916fcf5ccd44ce">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kd">static</span> <span class="n">Optional</span> <span class="o">&lt;</span><span class="n">Treatment</span><span class="o">&gt;</span> <span class="nf">findExampleOfTreatment</span><span class="o">(</span><span class="n">String</span> <span class="n">treatmentName</span><span class="o">)&#x7b;</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">return</span> <span class="nf">treatmentStream</span><span class="o">().</span><span class="na">filter</span><span class="o">(</span><span class="n">treatment</span> <span class="o">-&gt;</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">treatment</span><span class="o">.</span><span class="na">items</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">anyMatch</span><span class="o">(</span><span class="n">item</span> <span class="o">-&gt;</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="n">item</span><span class="o">.</span><span class="na">treatmentName</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">treatmentName</span><span class="o">))).</span><span class="na">findFirst</span><span class="o">();</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">&#x7d;</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kd">static</span> <span class="n">Optional</span> <span class="o">&lt;</span><span class="n">Contractor</span><span class="o">&gt;</span> <span class="nf">findContractorWhoExtractsWisdomTeeth</span><span class="o">()&#x7b;</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">return</span> <span class="nf">findExampleOfTreatment</span><span class="o">(</span><span class="s">&quot;Wisdom Tooth Extraction&quot;</span><span class="o">).</span><span class="na">Map</span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line">     <span class="o">(</span><span class="n">treatment</span> <span class="o">-&gt;</span> <span class="n">treatment</span><span class="o">.</span><span class="na">contractor</span><span class="o">);</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">&#x7d;</span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="o">[]</span> <span class="n">args</span><span class="o">)&#x7b;</span>
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Who has experience extracting a Wisdom Tooth? &quot;</span> 
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line">     <span class="o">+</span> <span class="n">findContractorWhoExtractsWisdomTeeth</span><span class="o">().</span><span class="na">getFullname</span><span class="o">().</span><span class="na">orElse</span><span class="o">(</span><span class="s">&quot;No one!&quot;</span><span class="o">));</span>
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">&#x7d;</span></div></div></pre></div></figure>
+
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://heatherjcampbell.com/culture/making-time-to-talk/" class="btn" title="Making Time to Talk">Previous article</a>
+      
+      
+        <a href="http://heatherjcampbell.com/learning/developer-tea/" class="btn" title="Developer Tea">Next article</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span>&copy; 2016 Heather Campbell. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/so-simple/">So Simple Theme</a>.</span>
+<div class="social-icons">
+	<a href="http://twitter.com/hcampbell07" title="Heather Campbell on Twitter" target="_blank"><i class="icon-twitter icon-2x"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="http://github.com/heatherjc07" title="Heather Campbell on Github" target="_blank"><i class="icon-github icon-2x"></i></a>
+	
+</div><!-- /.social-icons -->
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://heatherjcampbell.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://heatherjcampbell.com/assets/js/scripts.min.js"></script>
+
+<!-- Jekyll Simple Search option -->
+<script>
+  $(document).ready(function() {
+      $('.search-field').simpleJekyllSearch({
+          jsonFile : 'http://heatherjcampbell.com/search.json',
+          searchResults : '.search-results',
+          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          noResults: '<p>Nothing found.</p>'
+        });
+  });
+
+  (function( $, window, undefined ) {
+    
+     var bs = {
+          close: $(".icon-remove-sign"),
+          searchform: $(".search-form"),
+          canvas: $("body"),
+          dothis: $('.dosearch')
+      };
+    
+    bs.dothis.on('click', function() {
+      $('.search-wrapper').css({ display: "block" });
+      bs.searchform.toggleClass('active');
+      bs.searchform.find('input').focus();
+      bs.canvas.toggleClass('search-overlay');
+    });
+    
+      bs.close.on('click', function() {
+        $('.search-wrapper').removeAttr( 'style' );
+        bs.searchform.toggleClass('active');
+        bs.canvas.removeClass('search-overlay');
+    });
+  })( jQuery, window );
+</script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-69172837-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>	        
+
+</body>
+</html>

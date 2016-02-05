@@ -1,0 +1,460 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Ruby Day 3 &#8211; Technical Musing of a Mummy</title>
+<meta name="description" content="Ruby Day 3: Seven Languages in Seven Weeks">
+<meta name="keywords" content="seven languages in seven weeks, ruby, languages">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://heatherjcampbell.com/images/">
+<meta name="twitter:title" content="Ruby Day 3">
+<meta name="twitter:description" content="Ruby Day 3: Seven Languages in Seven Weeks">
+<meta name="twitter:creator" content="@hcampbell07">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ruby Day 3">
+<meta property="og:description" content="Ruby Day 3: Seven Languages in Seven Weeks">
+<meta property="og:url" content="http://heatherjcampbell.com/development/ruby-day-3/">
+<meta property="og:site_name" content="Technical Musing of a Mummy">
+
+
+
+
+
+<link rel="canonical" href="http://heatherjcampbell.com/development/ruby-day-3/">
+<link href="http://heatherjcampbell.com/feed.xml" type="application/atom+xml" rel="alternate" title="Technical Musing of a Mummy Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://heatherjcampbell.com/assets/css/main.min.css">
+<link rel="stylesheet" href="http://heatherjcampbell.com/assets/css/code.css">
+<!-- Webfonts -->
+<script src="//use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="http://heatherjcampbell.com/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://heatherjcampbell.com/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://heatherjcampbell.com/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://heatherjcampbell.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://heatherjcampbell.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://heatherjcampbell.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://heatherjcampbell.com/images/apple-touch-icon-144x144-precomposed.png">
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav">
+	    <ul>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/about/">About</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/articles/">Posts</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/tags/">Tags</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="https://twitter.com/HCampbell07/">Tweets</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/presentations/">Presentations</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/reading/">Reading List</a>
+				 
+			</li>
+	        
+	        <li><a href="http://heatherjcampbell.com/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+	        <li class="dosearch"><i class="icon-search"></i> Search</li>
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+<div class="search-wrapper">
+	<div class="search-form">
+		<input type="text" class="search-field" placeholder="Search...">
+		<i class="icon-remove-sign icon-2x"></i>
+		<ul class="search-results post-list"></ul><!-- /.search-results -->
+	</div><!-- /.search-form -->
+</div><!-- ./search-wrapper -->
+
+<header class="masthead">
+	<div class="wrap">
+        <h1 class="site-title"><a href="http://heatherjcampbell.com">Technical Musing of a Mummy</a></h1>
+		<h2 class="site-description" itemprop="description">A Blog About All Things IT Related</h2>
+	</div>
+</header><!-- /.masthead -->
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <span class="entry-tags"><a href="http://heatherjcampbell.com/tags/#seven languages in seven weeks" title="Pages tagged seven languages in seven weeks">seven languages in seven weeks</a>&nbsp;&bull;&nbsp;<a href="http://heatherjcampbell.com/tags/#ruby" title="Pages tagged ruby">ruby</a>&nbsp;&bull;&nbsp;<a href="http://heatherjcampbell.com/tags/#languages" title="Pages tagged languages">languages</a></span>
+        
+          <h1 class="entry-title">Ruby Day 3</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        <img src="http://heatherjcampbell.com/images/bio-photo.JPG" alt="Heather Campbell photo" class="author-photo">
+        <span class="author vcard">By <span class="fn"><a href="http://heatherjcampbell.com/about/" title="About Heather Campbell">Heather Campbell</a></span></span>
+        <span class="entry-date date published"><time datetime="2012-09-04T00:00:00+01:00"><i class="icon-calendar-empty"></i> September 04, 2012</time></span>
+        
+        
+        <span><a href="http://heatherjcampbell.com/development/ruby-day-3/" rel="bookmark" title="Ruby Day 3"><i class="icon-link"></i> Permalink</a></span>
+        
+        <span class="social-share-facebook">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://heatherjcampbell.com/development/ruby-day-3/" title="Share on Facebook" itemprop="Facebook"><i class="icon-facebook-sign"></i> Like</a></span>
+        <span class="social-share-twitter">
+            <a href="https://twitter.com/intent/tweet?hashtags=development&text=Ruby Day 3&url=http://heatherjcampbell.com/development/ruby-day-3/&via=hcampbell07" title="Share on Twitter" itemprop="Twitter"><i class="icon-twitter-sign"></i> Tweet</a></span>
+        <span class="social-share-googleplus">
+            <a href="https://plus.google.com/share?url=http://heatherjcampbell.com/development/ruby-day-3/" title="Share on Google Plus" itemprop="GooglePlus"><i class="icon-google-plus-sign"></i> +1</a></span>
+            <!-- /.social-share -->
+      </footer>
+      <div class="entry-content">
+        <p><em>My experience with day three of exploring Ruby through <a href="http://pragprog.com/book/btlang/seven-languages-in-seven-weeks" target="_blank">Seven Languages in Seven Weeks</a>.</em></p>
+
+<p>The third day takes you past the standard features to look at solving non trivial problems with Ruby. It focuses on Metaprogramming - writing programs that write programs.</p>
+
+<p>An example of the use of metaprogramming is in ActiveRecord, a piece of rails used to connect business objects and database tables.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">active.rb</span><a class="code-highlight-caption-link" href="https://gist.github.com/5250428">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">class</span> <span class="nc">School</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="n">has_many</span> <span class="ss">:teachers</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="n">has_many</span> <span class="ss">:pupils</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="n">has_one</span> <span class="ss">:head_master</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">end</span></div></div></pre></div></figure>
+
+<p>The has_many method adds all the instance variables and methods needed to establish a many to one relationship. has_one adds all the instance variables and methods needed to establish a one to one relationship. The methods read like English making them easy to understand.</p>
+
+<h2 id="open-classes">Open Classes</h2>
+
+<p>You have the ability to change the definition of any class at any time e.g. to add behaviour. For example we might want to add a common blank? method across two classes to allow us to check strings.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">open.rb</span><a class="code-highlight-caption-link" href="https://gist.github.com/5250428">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">class</span> <span class="nc">NilClass</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">def</span> <span class="nf">blank?</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="kp">true</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">end</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">end</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">class</span> <span class="nc">String</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">def</span> <span class="nf">blank?</span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="nb">self</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">end</span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">end</span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;person&quot;</span><span class="p">,</span><span class="kp">nil</span><span class="o">].</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">element</span><span class="o">|</span>
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="nb">puts</span> <span class="n">element</span> <span class="k">unless</span> <span class="n">element</span><span class="o">.</span><span class="n">blank?</span>
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">end</span></div></div></pre></div></figure>
+
+<p>The classes have already been defined so this invocation modifies the classes adding a blank? method. We then make use of ducktyping as we check an array for blank elements. It doesn’t matter if the element is a nil or a String as both support the blank? behaviour.
+The ability to redefine can make for very readable code but you need to use it responsibly.</p>
+
+<p>You may have heard of DSL, Domain Specific Languages, a language created to represent information for a particular domain. Open classes in Ruby can be useful in creating a DSL e.g. expressing units in a language relevant to your business domain.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">dsl.rb</span><a class="code-highlight-caption-link" href="https://gist.github.com/5250428">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">class</span> <span class="nc">Numeric</span> 
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">def</span> <span class="nf">ounces</span> 
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="nb">self</span> 
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">end</span> 
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">def</span> <span class="nf">pound</span> 
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="nb">self</span> <span class="o">*</span> <span class="mi">16</span><span class="o">.</span><span class="n">ounces</span> 
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">end</span> 
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">def</span> <span class="nf">stone</span> 
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="nb">self</span> <span class="o">*</span> <span class="mi">14</span><span class="o">.</span><span class="n">pound</span> 
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">end</span> 
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">end</span> 
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">puts</span> <span class="mi">32</span><span class="o">.</span><span class="n">ounces</span> 
+</div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">puts</span> <span class="mi">4</span><span class="o">.</span><span class="n">pound</span>
+</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="19" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1"># Returns </span>
+</div></div><div data-line="20" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1"># 32</span>
+</div></div><div data-line="21" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1"># 64 </span></div></div></pre></div></figure>
+
+<h2 id="methodmissing">method_missing</h2>
+
+<p>If Ruby goes to call a method and finds it doesn’t exist it calls a debug method method_missing which prints out some diagnostic information. It can aid with debugging but it can also be overridden to provide some very expressive syntax. 
+e.g. representing Roman numerals 
+Could create a method and have syntax like</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">roman_num1.rb</span><a class="code-highlight-caption-link" href="https://gist.github.com/5250428">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="no">Roman</span><span class="o">.</span><span class="n">number_for</span> <span class="s2">&quot;ii&quot;</span></div></div></pre></div></figure>
+
+<p>However you can create even easier read syntax overriding the method_missing method</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">roman_num2.rb</span><a class="code-highlight-caption-link" href="https://gist.github.com/5250428">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">class</span> <span class="nc">Roman</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">method_missing</span> <span class="nb">name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">roman</span> <span class="o">=</span> <span class="nb">name</span><span class="o">.</span><span class="n">to_s</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">roman</span><span class="o">.</span><span class="n">gsub!</span><span class="p">(</span><span class="s2">&quot;IV&quot;</span><span class="p">,</span> <span class="s2">&quot;IIII&quot;</span><span class="p">)</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">roman</span><span class="o">.</span><span class="n">gsub!</span><span class="p">(</span><span class="s2">&quot;IX&quot;</span><span class="p">,</span> <span class="s2">&quot;VIIII&quot;</span><span class="p">)</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">roman</span><span class="o">.</span><span class="n">gsub!</span><span class="p">(</span><span class="s2">&quot;XL&quot;</span><span class="p">,</span> <span class="s2">&quot;XXXX&quot;</span><span class="p">)</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">roman</span><span class="o">.</span><span class="n">gsub!</span><span class="p">(</span><span class="s2">&quot;XC&quot;</span><span class="p">,</span> <span class="s2">&quot;LXXXX&quot;</span><span class="p">)</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line">     <span class="p">(</span><span class="n">roman</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;I&quot;</span><span class="p">)</span> <span class="o">+</span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="n">roman</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;V&quot;</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">+</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="n">roman</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;X&quot;</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="n">roman</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;L&quot;</span><span class="p">)</span> <span class="o">*</span> <span class="mi">50</span> <span class="o">+</span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="n">roman</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">end</span>
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">end</span>
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">puts</span> <span class="no">Roman</span><span class="o">.</span><span class="n">X</span>
+</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">puts</span> <span class="no">Roman</span><span class="o">.</span><span class="n">XC</span>
+</div></div><div data-line="19" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">puts</span> <span class="no">Roman</span><span class="o">.</span><span class="n">XII</span>
+</div></div><div data-line="20" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="21" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="22" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1"># Returns </span>
+</div></div><div data-line="23" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1"># 10</span>
+</div></div><div data-line="24" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1"># 90</span>
+</div></div><div data-line="25" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1"># 12 </span></div></div></pre></div></figure>
+
+<p>We take the name of the method called and convert it to a string. We then handle special cases like 4, 9 etc. by converting from the 5 - 1 syntax (IV) or 10 -1 syntax (IX) to one which is easily added up i.e. 4 value 1’s and a 5 value and 4 value 1s. We then calculate the total amount converting characters to their numeric equivalent. It comes at price because now if we are missing a method Ruby won’t be able to tell us. The class would need to be enhanced to make sure it was accepting valid Roman numerals.</p>
+
+<h2 id="modules">Modules</h2>
+
+<p>I found it hard understanding the Modules part of the chapter so I looked elsewhere for some examples to help build my understanding. I’ve taken some examples from ‘Ruby Best Practices’</p>
+
+<p>Modules can be used for namespacing. e.g. in the example below both XML and PDF have document classes.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">module.rb</span><a class="code-highlight-caption-link" href="https://gist.github.com/5250428">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1"># somewhere in your_xml_lib </span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">module</span> <span class="nn">XML</span> 
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">class</span> <span class="nc">Document</span> 
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1"># ... </span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">end</span> 
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">end</span> 
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1"># somewhere in their_pdf_lib </span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">module</span> <span class="nn">PDF</span> 
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">class</span> <span class="nc">Document</span> 
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1"># ... </span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">end</span> 
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">end</span>
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">#In your class</span>
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">require</span> <span class="s2">&quot;your_xml_lib&quot;</span> 
+</div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">require</span> <span class="s2">&quot;their_pdf_lib&quot;</span> 
+</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="19" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">#this pair of calls refer to two completely different classes </span>
+</div></div><div data-line="20" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">pdf_document</span> <span class="o">=</span> <span class="no">PDF</span><span class="o">::</span><span class="no">Document</span><span class="o">.</span><span class="n">new</span> 
+</div></div><div data-line="21" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">xml_document</span> <span class="o">=</span> <span class="no">XML</span><span class="o">::</span><span class="no">Document</span><span class="o">.</span><span class="n">new</span></div></div></pre></div></figure>
+
+<p>As previously discussed in my Ruby Day 2 blog modules can be used to add behaviour to classes by including a module. E.g. providing methods to allow objects to be ordered, comparable and enumerable modules.</p>
+
+<p>You can also extend the behaviour of the class itself by extending it with a module. include makes the module’s methods available to the instance of a class, while extend makes these methods available to the class itself.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">roar.rb</span><a class="code-highlight-caption-link" href="https://gist.github.com/5250428">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">module</span> <span class="nn">Roar</span> 
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">def</span> <span class="nf">roar</span> 
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="nb">puts</span> <span class="s1">&#39;roooooaar!&#39;</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">end</span> 
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">end</span> 
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">class</span> <span class="nc">Lion</span> 
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="kp">include</span> <span class="no">Roar</span> 
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">end</span> 
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1"># roooooaar!</span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="no">Lion</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">roar</span> 
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1"># NoMethodError: undefined method &#39;roar&#39; for Lion:Class </span>
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="no">Lion</span><span class="o">.</span><span class="n">roar</span> 
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">class</span> <span class="nc">Lion</span> 
+</div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="kp">extend</span> <span class="no">Roar</span> 
+</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">end</span> 
+</div></div><div data-line="19" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="20" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1"># roooooaar!</span>
+</div></div><div data-line="21" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="no">Lion</span><span class="o">.</span><span class="n">roar</span>
+</div></div><div data-line="22" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1"># NoMethodError: undefined method &#39;roar&#39; for #Lion </span>
+</div></div><div data-line="23" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="no">Lion</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">roar</span></div></div></pre></div></figure>
+
+<p>The following bit of code mixes the methods defined by Greeter directly into the Greeter object itself.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">greeter.rb</span><a class="code-highlight-caption-link" href="https://gist.github.com/5250428">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">module</span> <span class="nn">Greeter</span> 
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="kp">extend</span> <span class="nb">self</span> 
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">def</span> <span class="nf">hello</span> 
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="s2">&quot;hi&quot;</span> 
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">end</span> 
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">end</span> 
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="no">Greeter</span><span class="o">.</span><span class="n">hello</span> 
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1"># Returns </span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1"># &quot;hi&quot;</span></div></div></pre></div></figure>
+
+<h2 id="self-study">Self Study</h2>
+
+<p>Modify the CSV application to support an each method to return a CsvRow object. Use method_missing on that CsvRow to return the value for the column for a given heading.
+For example, for the file:
+one, two
+lions, tigers
+allow an API that works like this: 
+csv = RubyCsv.new
+csv.each {|row| puts row.one}
+This should print “lions”.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">csv.rb</span><a class="code-highlight-caption-link" href="https://gist.github.com/5250428">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">module</span> <span class="nn">ActsAsCsv</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">included</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">base</span><span class="o">.</span><span class="n">extend</span> <span class="no">ClassMethods</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">end</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">module</span> <span class="nn">ClassMethods</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="k">def</span> <span class="nf">acts_as_csv</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="kp">include</span> <span class="no">InstanceMethods</span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="k">end</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">end</span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">module</span> <span class="nn">InstanceMethods</span>
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="k">def</span> <span class="nf">read</span>
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="vi">@csv_contents</span> <span class="o">=</span> <span class="o">[]</span>
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="n">filename</span> <span class="o">=</span> <span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">to_s</span><span class="o">.</span><span class="n">downcase</span> <span class="o">+</span> <span class="s1">&#39;.txt&#39;</span>
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="n">file</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+</div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="vi">@headers</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">gets</span><span class="o">.</span><span class="n">chomp</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="n">file</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">row</span><span class="o">|</span>
+</div></div><div data-line="19" class="code-highlight-row numbered"><div class="code-highlight-line">        <span class="vi">@csv_contents</span> <span class="o">&lt;&lt;</span> <span class="n">row</span><span class="o">.</span><span class="n">chomp</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+</div></div><div data-line="20" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="k">end</span>
+</div></div><div data-line="21" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="k">end</span>
+</div></div><div data-line="22" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="23" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="k">def</span> <span class="nf">each</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>    
+</div></div><div data-line="24" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="vi">@csv_contents</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">r</span><span class="o">|</span>
+</div></div><div data-line="25" class="code-highlight-row numbered"><div class="code-highlight-line">        <span class="n">row</span> <span class="o">=</span> <span class="no">CsvRow</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="vi">@headers</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+</div></div><div data-line="26" class="code-highlight-row numbered"><div class="code-highlight-line">        <span class="n">block</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</div></div><div data-line="27" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="k">end</span>
+</div></div><div data-line="28" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="k">end</span>
+</div></div><div data-line="29" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="30" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="kp">attr_accessor</span> <span class="ss">:headers</span><span class="p">,</span> <span class="ss">:csv_contents</span><span class="p">,</span> <span class="ss">:csv_rows</span>
+</div></div><div data-line="31" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="32" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="k">def</span> <span class="nf">initialize</span>
+</div></div><div data-line="33" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="n">read</span>
+</div></div><div data-line="34" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="k">end</span>
+</div></div><div data-line="35" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">end</span>
+</div></div><div data-line="36" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="37" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">class</span> <span class="nc">CsvRow</span>
+</div></div><div data-line="38" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="39" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="kp">attr_accessor</span> <span class="ss">:header_row</span><span class="p">,</span> <span class="ss">:content_row</span>
+</div></div><div data-line="40" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="41" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">header_row</span><span class="p">,</span> <span class="n">content_row</span><span class="p">)</span>
+</div></div><div data-line="42" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="vi">@header_row</span> <span class="o">=</span> <span class="n">header_row</span>
+</div></div><div data-line="43" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="vi">@content_row</span> <span class="o">=</span> <span class="n">content_row</span>
+</div></div><div data-line="44" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="k">end</span>
+</div></div><div data-line="45" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="46" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="k">def</span> <span class="nf">method_missing</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+</div></div><div data-line="47" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="n">idx</span> <span class="o">=</span> <span class="vi">@header_row</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">name</span><span class="o">.</span><span class="n">to_s</span><span class="p">)</span>
+</div></div><div data-line="48" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="k">return</span> <span class="vi">@content_row</span><span class="o">[</span><span class="n">idx</span><span class="o">]</span>  
+</div></div><div data-line="49" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="k">end</span>
+</div></div><div data-line="50" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">end</span>  
+</div></div><div data-line="51" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">end</span>
+</div></div><div data-line="52" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="53" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">class</span> <span class="nc">RubyCsv</span> <span class="c1"># no inheritance! You can mix it in</span>
+</div></div><div data-line="54" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="kp">include</span> <span class="no">ActsAsCsv</span>
+</div></div><div data-line="55" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">acts_as_csv</span>
+</div></div><div data-line="56" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="57" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">end</span>
+</div></div><div data-line="58" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="59" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">m</span> <span class="o">=</span> <span class="no">RubyCsv</span><span class="o">.</span><span class="n">new</span>
+</div></div><div data-line="60" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">puts</span> <span class="n">m</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">inspect</span>
+</div></div><div data-line="61" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">puts</span> <span class="n">m</span><span class="o">.</span><span class="n">csv_contents</span><span class="o">.</span><span class="n">inspect</span>
+</div></div><div data-line="62" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">m</span><span class="o">.</span><span class="n">each</span><span class="p">&#x7b;</span><span class="o">|</span><span class="n">row</span><span class="o">|</span> <span class="nb">puts</span> <span class="n">row</span><span class="o">.</span><span class="n">Surname</span><span class="p">&#x7d;</span></div></div></pre></div></figure>
+
+<p>Check out my code at <a href="https://github.com/heatherjc07/seven_languages_in_seven_days/tree/master/Ruby/Day3" target="_blank">github</a></p>
+
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://heatherjcampbell.com/development/final-thoughts-on-three-days-of-ruby/" class="btn" title="Final Thoughts on Three Days of Ruby">Previous article</a>
+      
+      
+        <a href="http://heatherjcampbell.com/development/io-day-3/" class="btn" title="Io Day 3">Next article</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span>&copy; 2016 Heather Campbell. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/so-simple/">So Simple Theme</a>.</span>
+<div class="social-icons">
+	<a href="http://twitter.com/hcampbell07" title="Heather Campbell on Twitter" target="_blank"><i class="icon-twitter icon-2x"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="http://github.com/heatherjc07" title="Heather Campbell on Github" target="_blank"><i class="icon-github icon-2x"></i></a>
+	
+</div><!-- /.social-icons -->
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://heatherjcampbell.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://heatherjcampbell.com/assets/js/scripts.min.js"></script>
+
+<!-- Jekyll Simple Search option -->
+<script>
+  $(document).ready(function() {
+      $('.search-field').simpleJekyllSearch({
+          jsonFile : 'http://heatherjcampbell.com/search.json',
+          searchResults : '.search-results',
+          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          noResults: '<p>Nothing found.</p>'
+        });
+  });
+
+  (function( $, window, undefined ) {
+    
+     var bs = {
+          close: $(".icon-remove-sign"),
+          searchform: $(".search-form"),
+          canvas: $("body"),
+          dothis: $('.dosearch')
+      };
+    
+    bs.dothis.on('click', function() {
+      $('.search-wrapper').css({ display: "block" });
+      bs.searchform.toggleClass('active');
+      bs.searchform.find('input').focus();
+      bs.canvas.toggleClass('search-overlay');
+    });
+    
+      bs.close.on('click', function() {
+        $('.search-wrapper').removeAttr( 'style' );
+        bs.searchform.toggleClass('active');
+        bs.canvas.removeClass('search-overlay');
+    });
+  })( jQuery, window );
+</script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-69172837-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>	        
+
+</body>
+</html>

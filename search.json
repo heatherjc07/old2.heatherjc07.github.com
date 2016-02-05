@@ -1,0 +1,699 @@
+[
+	
+		{
+		  "title"      : "Review: The Phoenix Project",
+		  "category"   : "reading",
+		  "url"        : "http://heatherjcampbell.com/reading/review-the-phoenix-project/",
+		  "date"       : "2016-02-04 00:00:00 +0000",
+		  "shortdate"  : "February 04, 2016"
+		} ,
+	
+		{
+		  "title"      : "Reading Challenge",
+		  "category"   : "reading",
+		  "url"        : "http://heatherjcampbell.com/reading/reading-challenge/",
+		  "date"       : "2016-02-02 00:00:00 +0000",
+		  "shortdate"  : "February 02, 2016"
+		} ,
+	
+		{
+		  "title"      : "Developer Tea",
+		  "category"   : "learning",
+		  "url"        : "http://heatherjcampbell.com/learning/developer-tea/",
+		  "date"       : "2016-01-21 00:00:00 +0000",
+		  "shortdate"  : "January 21, 2016"
+		} ,
+	
+		{
+		  "title"      : "Functional Programming with Java",
+		  "category"   : "technologies",
+		  "url"        : "http://heatherjcampbell.com/technologies/functional-programming-with-java/",
+		  "date"       : "2015-10-22 00:00:00 +0100",
+		  "shortdate"  : "October 22, 2015"
+		} ,
+	
+		{
+		  "title"      : "Making Time to Talk",
+		  "category"   : "culture",
+		  "url"        : "http://heatherjcampbell.com/culture/making-time-to-talk/",
+		  "date"       : "2015-10-20 00:00:00 +0100",
+		  "shortdate"  : "October 20, 2015"
+		} ,
+	
+		{
+		  "title"      : "Why I&#39;m Bought in to Coaching",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/why-im-bought-in-to-coaching/",
+		  "date"       : "2015-09-26 00:00:00 +0100",
+		  "shortdate"  : "September 26, 2015"
+		} ,
+	
+		{
+		  "title"      : "I Know How She Does It",
+		  "category"   : "Books",
+		  "url"        : "http://heatherjcampbell.com/books/i-know-how-she-does-it/",
+		  "date"       : "2015-08-30 00:00:00 +0100",
+		  "shortdate"  : "August 30, 2015"
+		} ,
+	
+		{
+		  "title"      : "Just Trying Not To Lean Out",
+		  "category"   : "life",
+		  "url"        : "http://heatherjcampbell.com/life/just-trying-not-to-lean-out/",
+		  "date"       : "2015-07-28 00:00:00 +0100",
+		  "shortdate"  : "July 28, 2015"
+		} ,
+	
+		{
+		  "title"      : "Does Everyone Know They&#39;re Empowered?",
+		  "category"   : "culture",
+		  "url"        : "http://heatherjcampbell.com/culture/does-everyone-know-theyre-empowered/",
+		  "date"       : "2015-03-28 00:00:00 +0000",
+		  "shortdate"  : "March 28, 2015"
+		} ,
+	
+		{
+		  "title"      : "Review: Commitment",
+		  "category"   : "books",
+		  "url"        : "http://heatherjcampbell.com/books/review-commitment/",
+		  "date"       : "2015-02-24 00:00:00 +0000",
+		  "shortdate"  : "February 24, 2015"
+		} ,
+	
+		{
+		  "title"      : "Attitude",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/attitude/",
+		  "date"       : "2014-12-31 00:00:00 +0000",
+		  "shortdate"  : "December 31, 2014"
+		} ,
+	
+		{
+		  "title"      : "If Something&#39;s Important Make it Visible",
+		  "category"   : "Agile",
+		  "url"        : "http://heatherjcampbell.com/agile/if-somethings-important-make-it-visible/",
+		  "date"       : "2014-11-28 00:00:00 +0000",
+		  "shortdate"  : "November 28, 2014"
+		} ,
+	
+		{
+		  "title"      : "Sound Learning Advice",
+		  "category"   : "learning",
+		  "url"        : "http://heatherjcampbell.com/learning/sound-learning-advice/",
+		  "date"       : "2014-11-26 00:00:00 +0000",
+		  "shortdate"  : "November 26, 2014"
+		} ,
+	
+		{
+		  "title"      : "Review: Talking with Tech Leads",
+		  "category"   : "",
+		  "url"        : "http://heatherjcampbell.com/review-talking-with-tech-leads/",
+		  "date"       : "2014-10-24 00:00:00 +0100",
+		  "shortdate"  : "October 24, 2014"
+		} ,
+	
+		{
+		  "title"      : "Review: Show Your Work!",
+		  "category"   : "books",
+		  "url"        : "http://heatherjcampbell.com/books/review-show-your-work/",
+		  "date"       : "2014-10-12 00:00:00 +0100",
+		  "shortdate"  : "October 12, 2014"
+		} ,
+	
+		{
+		  "title"      : "The Little Book of Lunch",
+		  "category"   : "",
+		  "url"        : "http://heatherjcampbell.com/the-little-book-of-lunch/",
+		  "date"       : "2014-09-08 00:00:00 +0100",
+		  "shortdate"  : "September 08, 2014"
+		} ,
+	
+		{
+		  "title"      : "Scenius",
+		  "category"   : "",
+		  "url"        : "http://heatherjcampbell.com/scenius/",
+		  "date"       : "2014-08-10 00:00:00 +0100",
+		  "shortdate"  : "August 10, 2014"
+		} ,
+	
+		{
+		  "title"      : "Invention Machine",
+		  "category"   : "",
+		  "url"        : "http://heatherjcampbell.com/invention-machine/",
+		  "date"       : "2014-08-10 00:00:00 +0100",
+		  "shortdate"  : "August 10, 2014"
+		} ,
+	
+		{
+		  "title"      : "Review: Driving Technical Change",
+		  "category"   : "",
+		  "url"        : "http://heatherjcampbell.com/review-driving-technical-change/",
+		  "date"       : "2014-06-17 00:00:00 +0100",
+		  "shortdate"  : "June 17, 2014"
+		} ,
+	
+		{
+		  "title"      : "Weekly Roundup May 27th 2014",
+		  "category"   : "",
+		  "url"        : "http://heatherjcampbell.com/weekly-roundup-3/",
+		  "date"       : "2014-05-27 00:00:00 +0100",
+		  "shortdate"  : "May 27, 2014"
+		} ,
+	
+		{
+		  "title"      : "Weekly Roundup May 11th 2014",
+		  "category"   : "Roundup",
+		  "url"        : "http://heatherjcampbell.com/roundup/weekly-roundup-2/",
+		  "date"       : "2014-05-11 00:00:00 +0100",
+		  "shortdate"  : "May 11, 2014"
+		} ,
+	
+		{
+		  "title"      : "Weekly Roundup May 4th 2014",
+		  "category"   : "Roundup",
+		  "url"        : "http://heatherjcampbell.com/roundup/weekly-roundup-1/",
+		  "date"       : "2014-05-04 00:00:00 +0100",
+		  "shortdate"  : "May 04, 2014"
+		} ,
+	
+		{
+		  "title"      : "Weekly Roundup  April 7th 2014",
+		  "category"   : "Roundup",
+		  "url"        : "http://heatherjcampbell.com/roundup/weekly-roundup/",
+		  "date"       : "2014-04-07 00:00:00 +0100",
+		  "shortdate"  : "April 07, 2014"
+		} ,
+	
+		{
+		  "title"      : "Don&#39;t Let a Lack of Time be an Excuse",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/dont-let-a-lack-of-time-be-an-excuse/",
+		  "date"       : "2014-03-31 00:00:00 +0100",
+		  "shortdate"  : "March 31, 2014"
+		} ,
+	
+		{
+		  "title"      : "A Fresh Look",
+		  "category"   : "",
+		  "url"        : "http://heatherjcampbell.com/a-fresh-look/",
+		  "date"       : "2014-03-30 00:00:00 +0000",
+		  "shortdate"  : "March 30, 2014"
+		} ,
+	
+		{
+		  "title"      : "reveal.js",
+		  "category"   : "tutorial",
+		  "url"        : "http://heatherjcampbell.com/tutorial/revealjs/",
+		  "date"       : "2014-02-28 00:00:00 +0000",
+		  "shortdate"  : "February 28, 2014"
+		} ,
+	
+		{
+		  "title"      : "WWC Belfast: Intro to Ruby",
+		  "category"   : "presentations",
+		  "url"        : "http://heatherjcampbell.com/presentations/wwc-belfast-intro-to-ruby/",
+		  "date"       : "2014-01-23 00:00:00 +0000",
+		  "shortdate"  : "January 23, 2014"
+		} ,
+	
+		{
+		  "title"      : "Real Happiness at Work",
+		  "category"   : "books",
+		  "url"        : "http://heatherjcampbell.com/books/real-happiness-at-work/",
+		  "date"       : "2014-01-23 00:00:00 +0000",
+		  "shortdate"  : "January 23, 2014"
+		} ,
+	
+		{
+		  "title"      : "Don&#39;t Give Up on The Late Bloomer",
+		  "category"   : "culture",
+		  "url"        : "http://heatherjcampbell.com/culture/dont-give-up-on-the-late-bloomer/",
+		  "date"       : "2013-12-31 00:00:00 +0000",
+		  "shortdate"  : "December 31, 2013"
+		} ,
+	
+		{
+		  "title"      : "Clojure Day 2",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/clojure-day-2/",
+		  "date"       : "2013-12-29 00:00:00 +0000",
+		  "shortdate"  : "December 29, 2013"
+		} ,
+	
+		{
+		  "title"      : "Clojure Day 1",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/clojure-day-1/",
+		  "date"       : "2013-12-28 00:00:00 +0000",
+		  "shortdate"  : "December 28, 2013"
+		} ,
+	
+		{
+		  "title"      : "Agile Weekly: Prescriptive Coaching?",
+		  "category"   : "Agile",
+		  "url"        : "http://heatherjcampbell.com/agile/agile-weekly-prescriptive-coaching/",
+		  "date"       : "2013-12-28 00:00:00 +0000",
+		  "shortdate"  : "December 28, 2013"
+		} ,
+	
+		{
+		  "title"      : "Get Involved!",
+		  "category"   : "reviews",
+		  "url"        : "http://heatherjcampbell.com/reviews/get-involved/",
+		  "date"       : "2013-12-01 00:00:00 +0000",
+		  "shortdate"  : "December 01, 2013"
+		} ,
+	
+		{
+		  "title"      : "Women Who Code Belfast",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/women-who-code-belfast/",
+		  "date"       : "2013-11-25 00:00:00 +0000",
+		  "shortdate"  : "November 25, 2013"
+		} ,
+	
+		{
+		  "title"      : "vJUG",
+		  "category"   : "meetups",
+		  "url"        : "http://heatherjcampbell.com/meetups/vjug/",
+		  "date"       : "2013-11-25 00:00:00 +0000",
+		  "shortdate"  : "November 25, 2013"
+		} ,
+	
+		{
+		  "title"      : "Cultivating Female Talent",
+		  "category"   : "culture",
+		  "url"        : "http://heatherjcampbell.com/culture/cultivating-female-talent/",
+		  "date"       : "2013-09-09 00:00:00 +0100",
+		  "shortdate"  : "September 09, 2013"
+		} ,
+	
+		{
+		  "title"      : "Fakes",
+		  "category"   : "technologies",
+		  "url"        : "http://heatherjcampbell.com/technologies/fakes/",
+		  "date"       : "2013-08-06 00:00:00 +0100",
+		  "shortdate"  : "August 06, 2013"
+		} ,
+	
+		{
+		  "title"      : "Do Your Homework",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/do-your-homework/",
+		  "date"       : "2013-07-25 00:00:00 +0100",
+		  "shortdate"  : "July 25, 2013"
+		} ,
+	
+		{
+		  "title"      : "Prepare Psychologically",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/prepare-psychologically/",
+		  "date"       : "2013-07-17 00:00:00 +0100",
+		  "shortdate"  : "July 17, 2013"
+		} ,
+	
+		{
+		  "title"      : "Review: AOP in .NET.",
+		  "category"   : "books",
+		  "url"        : "http://heatherjcampbell.com/books/review-aop-in-net/",
+		  "date"       : "2013-07-15 00:00:00 +0100",
+		  "shortdate"  : "July 15, 2013"
+		} ,
+	
+		{
+		  "title"      : "Finding Your Pushback Style",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/finding-your-pushback-style/",
+		  "date"       : "2013-07-13 00:00:00 +0100",
+		  "shortdate"  : "July 13, 2013"
+		} ,
+	
+		{
+		  "title"      : "Pushback",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/pushback/",
+		  "date"       : "2013-07-12 00:00:00 +0100",
+		  "shortdate"  : "July 12, 2013"
+		} ,
+	
+		{
+		  "title"      : "Leaning In",
+		  "category"   : "culture",
+		  "url"        : "http://heatherjcampbell.com/culture/leaning-in/",
+		  "date"       : "2013-07-04 00:00:00 +0100",
+		  "shortdate"  : "July 04, 2013"
+		} ,
+	
+		{
+		  "title"      : "Rapid Presentation Layer Development with Play",
+		  "category"   : "tutorial",
+		  "url"        : "http://heatherjcampbell.com/tutorial/rapid-presentation-layer-development-with-play/",
+		  "date"       : "2013-06-28 00:00:00 +0100",
+		  "shortdate"  : "June 28, 2013"
+		} ,
+	
+		{
+		  "title"      : "Explaining Languages through Storytelling",
+		  "category"   : "skills",
+		  "url"        : "http://heatherjcampbell.com/skills/explaining-languages-through-storytelling/",
+		  "date"       : "2013-06-26 00:00:00 +0100",
+		  "shortdate"  : "June 26, 2013"
+		} ,
+	
+		{
+		  "title"      : "Global Settings in Scala",
+		  "category"   : "tutorial",
+		  "url"        : "http://heatherjcampbell.com/tutorial/global-settings-in-scala/",
+		  "date"       : "2013-06-24 00:00:00 +0100",
+		  "shortdate"  : "June 24, 2013"
+		} ,
+	
+		{
+		  "title"      : "MongoDB and AWS",
+		  "category"   : "presentations",
+		  "url"        : "http://heatherjcampbell.com/presentations/mongodb-and-aws/",
+		  "date"       : "2013-05-24 00:00:00 +0100",
+		  "shortdate"  : "May 24, 2013"
+		} ,
+	
+		{
+		  "title"      : "Jumping In",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/jumping-in/",
+		  "date"       : "2013-05-09 00:00:00 +0100",
+		  "shortdate"  : "May 09, 2013"
+		} ,
+	
+		{
+		  "title"      : "10gen MongoDB Courses: My Experience So Far",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/10gen-mongodb-courses-my-experience-so-far/",
+		  "date"       : "2013-03-04 00:00:00 +0000",
+		  "shortdate"  : "March 04, 2013"
+		} ,
+	
+		{
+		  "title"      : "MongoDB Day 1 (CRUD Part 3: Update)",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/mongodb-day-1-crud-part-3-update/",
+		  "date"       : "2013-02-06 00:00:00 +0000",
+		  "shortdate"  : "February 06, 2013"
+		} ,
+	
+		{
+		  "title"      : "MongoDB Day 1 (CRUD Part 2: Read)",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/mongodb-day-1-crud-part-2-read/",
+		  "date"       : "2013-02-05 00:00:00 +0000",
+		  "shortdate"  : "February 05, 2013"
+		} ,
+	
+		{
+		  "title"      : "MongoDB Day 1 (Intro)",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/mongodb-day-1-intro/",
+		  "date"       : "2013-01-30 00:00:00 +0000",
+		  "shortdate"  : "January 30, 2013"
+		} ,
+	
+		{
+		  "title"      : "MongoDB Day 1 (CRUD Part 1: Create)",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/mongodb-day-1-crud-part-1-create/",
+		  "date"       : "2013-01-30 00:00:00 +0000",
+		  "shortdate"  : "January 30, 2013"
+		} ,
+	
+		{
+		  "title"      : "Neo4j Day 1 (Gremlin)",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/neo4j-day-1-gremlin/",
+		  "date"       : "2013-01-28 00:00:00 +0000",
+		  "shortdate"  : "January 28, 2013"
+		} ,
+	
+		{
+		  "title"      : "Neo4j Day 1 (Installing and Exploring the Web GUI)",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/neo4j-day-1-installing-and-exploring-the-web-gui/",
+		  "date"       : "2013-01-22 00:00:00 +0000",
+		  "shortdate"  : "January 22, 2013"
+		} ,
+	
+		{
+		  "title"      : "10gen Online MongoDB Courses",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/10gen-online-mongodb-courses/",
+		  "date"       : "2013-01-22 00:00:00 +0000",
+		  "shortdate"  : "January 22, 2013"
+		} ,
+	
+		{
+		  "title"      : "SDISW: Databases and Database Models",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/sdisw-databases-and-database-models/",
+		  "date"       : "2013-01-04 00:00:00 +0000",
+		  "shortdate"  : "January 04, 2013"
+		} ,
+	
+		{
+		  "title"      : "NoSQL",
+		  "category"   : "books",
+		  "url"        : "http://heatherjcampbell.com/books/nosql/",
+		  "date"       : "2012-12-21 00:00:00 +0000",
+		  "shortdate"  : "December 21, 2012"
+		} ,
+	
+		{
+		  "title"      : "The 3 Pillars of Personal Effectiveness",
+		  "category"   : "books",
+		  "url"        : "http://heatherjcampbell.com/books/the-3-pillars-of-personal-effectiveness/",
+		  "date"       : "2012-11-21 00:00:00 +0000",
+		  "shortdate"  : "November 21, 2012"
+		} ,
+	
+		{
+		  "title"      : "Communication",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/communication/",
+		  "date"       : "2012-11-19 00:00:00 +0000",
+		  "shortdate"  : "November 19, 2012"
+		} ,
+	
+		{
+		  "title"      : "Erlang Day 3",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/erlang-day-3/",
+		  "date"       : "2012-11-05 00:00:00 +0000",
+		  "shortdate"  : "November 05, 2012"
+		} ,
+	
+		{
+		  "title"      : "Erlang Day 2",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/erlang-day-2/",
+		  "date"       : "2012-11-01 00:00:00 +0000",
+		  "shortdate"  : "November 01, 2012"
+		} ,
+	
+		{
+		  "title"      : "Erlang Day 1",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/erlang-day-1/",
+		  "date"       : "2012-10-26 00:00:00 +0100",
+		  "shortdate"  : "October 26, 2012"
+		} ,
+	
+		{
+		  "title"      : "Prolog Day 3",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/prolog-day-3/",
+		  "date"       : "2012-09-27 00:00:00 +0100",
+		  "shortdate"  : "September 27, 2012"
+		} ,
+	
+		{
+		  "title"      : "Final Thoughts on Three Days of Prolog",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/final-thoughts-on-three-days-of-prolog/",
+		  "date"       : "2012-09-27 00:00:00 +0100",
+		  "shortdate"  : "September 27, 2012"
+		} ,
+	
+		{
+		  "title"      : "Prolog Day 2",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/prolog-day-2/",
+		  "date"       : "2012-09-25 00:00:00 +0100",
+		  "shortdate"  : "September 25, 2012"
+		} ,
+	
+		{
+		  "title"      : "Final Thoughts on Three Days of Io",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/final-thoughts-on-three-days-of-io/",
+		  "date"       : "2012-09-13 00:00:00 +0100",
+		  "shortdate"  : "September 13, 2012"
+		} ,
+	
+		{
+		  "title"      : "Prolog Day 1",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/prolog-day-1/",
+		  "date"       : "2012-09-12 00:00:00 +0100",
+		  "shortdate"  : "September 12, 2012"
+		} ,
+	
+		{
+		  "title"      : "Io Day 2",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/io-day-2/",
+		  "date"       : "2012-09-10 00:00:00 +0100",
+		  "shortdate"  : "September 10, 2012"
+		} ,
+	
+		{
+		  "title"      : "Io Day 3",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/io-day-3/",
+		  "date"       : "2012-09-06 00:00:00 +0100",
+		  "shortdate"  : "September 06, 2012"
+		} ,
+	
+		{
+		  "title"      : "Ruby Day 3",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/ruby-day-3/",
+		  "date"       : "2012-09-04 00:00:00 +0100",
+		  "shortdate"  : "September 04, 2012"
+		} ,
+	
+		{
+		  "title"      : "Final Thoughts on Three Days of Ruby",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/final-thoughts-on-three-days-of-ruby/",
+		  "date"       : "2012-08-30 00:00:00 +0100",
+		  "shortdate"  : "August 30, 2012"
+		} ,
+	
+		{
+		  "title"      : "Ruby Day 2",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/ruby-day-2/",
+		  "date"       : "2012-08-27 00:00:00 +0100",
+		  "shortdate"  : "August 27, 2012"
+		} ,
+	
+		{
+		  "title"      : "Io Day 1",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/io-day-1/",
+		  "date"       : "2012-08-27 00:00:00 +0100",
+		  "shortdate"  : "August 27, 2012"
+		} ,
+	
+		{
+		  "title"      : "Seven Languages in Seven Weeks",
+		  "category"   : "books",
+		  "url"        : "http://heatherjcampbell.com/books/seven-languages-in-seven-weeks/",
+		  "date"       : "2012-08-20 00:00:00 +0100",
+		  "shortdate"  : "August 20, 2012"
+		} ,
+	
+		{
+		  "title"      : "Ruby Day 1",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/ruby-day-1/",
+		  "date"       : "2012-08-20 00:00:00 +0100",
+		  "shortdate"  : "August 20, 2012"
+		} ,
+	
+		{
+		  "title"      : "Some Soft Skill Reading",
+		  "category"   : "books",
+		  "url"        : "http://heatherjcampbell.com/books/some-soft-skill-reading/",
+		  "date"       : "2012-07-18 00:00:00 +0100",
+		  "shortdate"  : "July 18, 2012"
+		} ,
+	
+		{
+		  "title"      : "Gracious Behaviour",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/gracious-behaviour/",
+		  "date"       : "2012-07-18 00:00:00 +0100",
+		  "shortdate"  : "July 18, 2012"
+		} ,
+	
+		{
+		  "title"      : "When Your Soft Skills Get Called Into Question",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/when-your-soft-skills-get-called-into-question/",
+		  "date"       : "2012-07-17 00:00:00 +0100",
+		  "shortdate"  : "July 17, 2012"
+		} ,
+	
+		{
+		  "title"      : "JavaScript MicroFrameworks",
+		  "category"   : "technologies",
+		  "url"        : "http://heatherjcampbell.com/technologies/javascript-microframeworks/",
+		  "date"       : "2012-06-24 00:00:00 +0100",
+		  "shortdate"  : "June 24, 2012"
+		} ,
+	
+		{
+		  "title"      : "Technology Radar March 2012",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/technology-radar-march-2012/",
+		  "date"       : "2012-06-20 00:00:00 +0100",
+		  "shortdate"  : "June 20, 2012"
+		} ,
+	
+		{
+		  "title"      : "Last Responsible Moment",
+		  "category"   : "skills",
+		  "url"        : "http://heatherjcampbell.com/skills/last-responsible-moment/",
+		  "date"       : "2012-06-20 00:00:00 +0100",
+		  "shortdate"  : "June 20, 2012"
+		} ,
+	
+		{
+		  "title"      : "Social Relationship Marketing",
+		  "category"   : "development",
+		  "url"        : "http://heatherjcampbell.com/development/social-relationship-marketing/",
+		  "date"       : "2012-06-15 00:00:00 +0100",
+		  "shortdate"  : "June 15, 2012"
+		} ,
+	
+		{
+		  "title"      : "Oracle Cloud Event",
+		  "category"   : "products",
+		  "url"        : "http://heatherjcampbell.com/products/oracle-cloud-event/",
+		  "date"       : "2012-06-15 00:00:00 +0100",
+		  "shortdate"  : "June 15, 2012"
+		} ,
+	
+		{
+		  "title"      : "The Process of Selecting a Product",
+		  "category"   : "skills",
+		  "url"        : "http://heatherjcampbell.com/skills/the-process-of-selecting-a-product/",
+		  "date"       : "2012-06-14 00:00:00 +0100",
+		  "shortdate"  : "June 14, 2012"
+		} ,
+	
+		{
+		  "title"      : "Creating a Custom Annotation",
+		  "category"   : "tutorial",
+		  "url"        : "http://heatherjcampbell.com/tutorial/creating-a-custom-annotation/",
+		  "date"       : "2012-06-14 00:00:00 +0100",
+		  "shortdate"  : "June 14, 2012"
+		} ,
+	
+		{
+		  "title"      : "Passionate Programmer",
+		  "category"   : "books",
+		  "url"        : "http://heatherjcampbell.com/books/passionate-programmer/",
+		  "date"       : "2012-06-13 00:00:00 +0100",
+		  "shortdate"  : "June 13, 2012"
+		} 
+	
+]

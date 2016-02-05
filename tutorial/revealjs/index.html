@@ -1,0 +1,330 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>reveal.js &#8211; Technical Musing of a Mummy</title>
+<meta name="description" content="Getting started with reveal.js">
+<meta name="keywords" content="reveal.js, javascript, presentations">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://heatherjcampbell.com/images/">
+<meta name="twitter:title" content="reveal.js">
+<meta name="twitter:description" content="Getting started with reveal.js">
+<meta name="twitter:creator" content="@hcampbell07">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="reveal.js">
+<meta property="og:description" content="Getting started with reveal.js">
+<meta property="og:url" content="http://heatherjcampbell.com/tutorial/revealjs/">
+<meta property="og:site_name" content="Technical Musing of a Mummy">
+
+
+
+
+
+<link rel="canonical" href="http://heatherjcampbell.com/tutorial/revealjs/">
+<link href="http://heatherjcampbell.com/feed.xml" type="application/atom+xml" rel="alternate" title="Technical Musing of a Mummy Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://heatherjcampbell.com/assets/css/main.min.css">
+<link rel="stylesheet" href="http://heatherjcampbell.com/assets/css/code.css">
+<!-- Webfonts -->
+<script src="//use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="http://heatherjcampbell.com/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://heatherjcampbell.com/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://heatherjcampbell.com/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://heatherjcampbell.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://heatherjcampbell.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://heatherjcampbell.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://heatherjcampbell.com/images/apple-touch-icon-144x144-precomposed.png">
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav">
+	    <ul>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/about/">About</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/articles/">Posts</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/tags/">Tags</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="https://twitter.com/HCampbell07/">Tweets</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/presentations/">Presentations</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/reading/">Reading List</a>
+				 
+			</li>
+	        
+	        <li><a href="http://heatherjcampbell.com/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+	        <li class="dosearch"><i class="icon-search"></i> Search</li>
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+<div class="search-wrapper">
+	<div class="search-form">
+		<input type="text" class="search-field" placeholder="Search...">
+		<i class="icon-remove-sign icon-2x"></i>
+		<ul class="search-results post-list"></ul><!-- /.search-results -->
+	</div><!-- /.search-form -->
+</div><!-- ./search-wrapper -->
+
+<header class="masthead">
+	<div class="wrap">
+        <h1 class="site-title"><a href="http://heatherjcampbell.com">Technical Musing of a Mummy</a></h1>
+		<h2 class="site-description" itemprop="description">A Blog About All Things IT Related</h2>
+	</div>
+</header><!-- /.masthead -->
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <span class="entry-tags"><a href="http://heatherjcampbell.com/tags/#reveal.js" title="Pages tagged reveal.js">reveal.js</a>&nbsp;&bull;&nbsp;<a href="http://heatherjcampbell.com/tags/#javascript" title="Pages tagged javascript">javascript</a>&nbsp;&bull;&nbsp;<a href="http://heatherjcampbell.com/tags/#presentations" title="Pages tagged presentations">presentations</a></span>
+        
+          <h1 class="entry-title">reveal.js</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        <img src="http://heatherjcampbell.com/images/bio-photo.JPG" alt="Heather Campbell photo" class="author-photo">
+        <span class="author vcard">By <span class="fn"><a href="http://heatherjcampbell.com/about/" title="About Heather Campbell">Heather Campbell</a></span></span>
+        <span class="entry-date date published"><time datetime="2014-02-28T00:00:00+00:00"><i class="icon-calendar-empty"></i> February 28, 2014</time></span>
+        
+        
+        <span><a href="http://heatherjcampbell.com/tutorial/revealjs/" rel="bookmark" title="reveal.js"><i class="icon-link"></i> Permalink</a></span>
+        
+        <span class="social-share-facebook">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://heatherjcampbell.com/tutorial/revealjs/" title="Share on Facebook" itemprop="Facebook"><i class="icon-facebook-sign"></i> Like</a></span>
+        <span class="social-share-twitter">
+            <a href="https://twitter.com/intent/tweet?hashtags=tutorial&text=reveal.js&url=http://heatherjcampbell.com/tutorial/revealjs/&via=hcampbell07" title="Share on Twitter" itemprop="Twitter"><i class="icon-twitter-sign"></i> Tweet</a></span>
+        <span class="social-share-googleplus">
+            <a href="https://plus.google.com/share?url=http://heatherjcampbell.com/tutorial/revealjs/" title="Share on Google Plus" itemprop="GooglePlus"><i class="icon-google-plus-sign"></i> +1</a></span>
+            <!-- /.social-share -->
+      </footer>
+      <div class="entry-content">
+        <p>Fed up with Powerpoint I decided to take a look at <a href="http://lab.hakim.se/reveal-js/#/">reveal.js</a> to see how simple it would be to put together a presentation with it and I found it really easy to get up and running with. reveal.js is a framework for creating presentations using html. If you come from a coding background and are used to working with CSS, HTML and JavaScript you’ve got all the skills to start creating beautiful presentations. There is also an <a href="http://slid.es/">online graphical interface</a> for noncoders or anyone who prefers that.</p>
+
+<h2 id="getting-started">Getting started</h2>
+
+<p>First thing to do is get a <a href="https://github.com/hakimel/reveal.js/">copy</a> of the framework from Github. The framework includes a number of sample themes for slides, support for printing and exporting your slides to PDF and a number of plugins including support for speaker notes, writing your slides in markdown syntax and the ability to zoom.</p>
+
+<h2 id="creating-the-layout-of-your-presentation">Creating the layout of your presentation</h2>
+
+<p>Just to show you how simple it is here is an example presentation which is basically one html file. Copy this code and store in the top level directory of your reveal.js directory.</p>
+
+<pre><code>&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;HTML5 Presentations How-To&lt;/title&gt;
+    &lt;link rel="stylesheet" href="css/reveal.min.css"&gt;
+    &lt;link rel="stylesheet" href="css/theme/default.css"&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+   &lt;div class="reveal"&gt;
+     &lt;div class="slides"&gt;
+       &lt;section&gt;
+         &lt;h1&gt;Reveal.js&lt;/h1&gt;
+         &lt;h3&gt;Creating beautiful presentations&lt;/h3&gt;
+       &lt;/section&gt;
+       &lt;section&gt;
+         &lt;h1&gt;Getting Started&lt;/h1&gt;
+         &lt;p&gt;It's really easy when you know...&lt;/p&gt;
+         &lt;p class="fragment"&gt;JavaScript&lt;/p&gt;
+         &lt;p class="fragment"&gt;HTML&lt;/p&gt;
+         &lt;p class="fragment"&gt;CSS&lt;/p&gt;
+       &lt;/section&gt;
+       &lt;section&gt;
+         &lt;h1&gt;It come with...&lt;/h1&gt;
+           &lt;ul&gt;
+             &lt;li&gt;themes&lt;/li&gt;
+             &lt;li&gt;plugins&lt;/li&gt;
+           &lt;/ul&gt;
+           &lt;p&gt; to get your started!&lt;/p&gt;
+       &lt;/section&gt;
+       &lt;section&gt;
+          &lt;section&gt;
+            &lt;h1&gt;Plugins are neat&lt;/h1&gt;
+            &lt;h3&gt;They let you do stuff like..&lt;/h3&gt;
+          &lt;/section&gt;
+          &lt;section&gt;
+            &lt;h1&gt;Include speaker notes&lt;/h1&gt;
+          &lt;/section&gt;
+          &lt;section&gt;
+            &lt;h1&gt;Write your slides in markdown&lt;/h1&gt;
+          &lt;/section&gt;
+          &lt;section&gt;
+            &lt;h1&gt;And best of all you can create your own&lt;/h1&gt;
+          &lt;/section&gt;
+       &lt;/section&gt;
+       &lt;script src="lib/js/head.min.js"&gt;&lt;/script&gt;
+       &lt;script src="js/reveal.min.js"&gt;&lt;/script&gt;
+       Reveal.initialize({
+         controls: true,
+         keyboard: true,
+         center: true,
+         mouseWheel: true
+	  });
+      &lt;/div&gt;
+     &lt;/div&gt;
+   &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+
+<p>In the header you can see I’ve included the reveal.js stylesheet and used the default theme that comes with it. At the bottom of the file just before the closing body tag I’ve included the reveal.js JavaScript files and initialised an instance of Reveal. When I create an instance I can specify certain properties to control how my presentation displays. In the example I’ve allowed the presentation to be navigated via the mouse or keyboard. I’ve displayed controls in the bottom right corner which shows you how you can navigate the slides. Center just means vertical centring of slides.
+The slides are held within a reveal div and slides div. Each slide is represented by a section. You can gradually display elements using the fragment class as demonstrated on the second slide and you can vertically move between slides as well as the traditional horizontal navigation. This is demonstrated in the last slide and achieved by nesting sections within a section.</p>
+
+<p>To view it you just open up the html file in your browser. The F key allows you to view the presentation full screen.</p>
+
+<h2 id="moving-beyond-the-basics">Moving Beyond the Basics</h2>
+
+<p>As I mentioned before reveal.js comes with lots of great features to start you off including themes, different ways of transitioning between slides and plugins to allow you to extend what the standard framework does. Once you are comfortable with this you can customise the framework developing your own themes, transitions and plugins using CSS and JavaScript. The API allows you to hook into events such as the initial display of the page and moving between slides. It gives you a lot of flexibility and because it is basically JavaScript/CSS/HTML it is very portable although it won’t behave nicely on older browsers.</p>
+
+<h2 id="summing-up">Summing Up</h2>
+
+<p>If you are interesting in seeing sample presentations take a look <a href="https://github.com/hakimel/reveal.js/wiki/Example-Presentations">here</a>. I read <a href="http://www.packtpub.com/how-to-html5-presentations/book">Instant HTML5 Presentations How-to</a> and found it a really quick way to get an overview of how I could develop and customise presentation using reveal.js. I know I could have found this out myself on the web but sometimes it is great to have everything pulled together into a tutorial so you know what is available and what you want to explore further.</p>
+
+<p>As for the framework I really like how simple it is to pull a presentation together and create something which has a nice finish. I’ll definitely be using it for my next presentation.</p>
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://heatherjcampbell.com/presentations/wwc-belfast-intro-to-ruby/" class="btn" title="WWC Belfast: Intro to Ruby">Previous article</a>
+      
+      
+        <a href="http://heatherjcampbell.com/a-fresh-look/" class="btn" title="A Fresh Look">Next article</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span>&copy; 2016 Heather Campbell. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/so-simple/">So Simple Theme</a>.</span>
+<div class="social-icons">
+	<a href="http://twitter.com/hcampbell07" title="Heather Campbell on Twitter" target="_blank"><i class="icon-twitter icon-2x"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="http://github.com/heatherjc07" title="Heather Campbell on Github" target="_blank"><i class="icon-github icon-2x"></i></a>
+	
+</div><!-- /.social-icons -->
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://heatherjcampbell.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://heatherjcampbell.com/assets/js/scripts.min.js"></script>
+
+<!-- Jekyll Simple Search option -->
+<script>
+  $(document).ready(function() {
+      $('.search-field').simpleJekyllSearch({
+          jsonFile : 'http://heatherjcampbell.com/search.json',
+          searchResults : '.search-results',
+          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          noResults: '<p>Nothing found.</p>'
+        });
+  });
+
+  (function( $, window, undefined ) {
+    
+     var bs = {
+          close: $(".icon-remove-sign"),
+          searchform: $(".search-form"),
+          canvas: $("body"),
+          dothis: $('.dosearch')
+      };
+    
+    bs.dothis.on('click', function() {
+      $('.search-wrapper').css({ display: "block" });
+      bs.searchform.toggleClass('active');
+      bs.searchform.find('input').focus();
+      bs.canvas.toggleClass('search-overlay');
+    });
+    
+      bs.close.on('click', function() {
+        $('.search-wrapper').removeAttr( 'style' );
+        bs.searchform.toggleClass('active');
+        bs.canvas.removeClass('search-overlay');
+    });
+  })( jQuery, window );
+</script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-69172837-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>	        
+
+</body>
+</html>

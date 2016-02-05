@@ -1,0 +1,372 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Rapid Presentation Layer Development with Play &#8211; Technical Musing of a Mummy</title>
+<meta name="description" content="Using templates in Scala Play applications">
+<meta name="keywords" content="scala, play, development">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://heatherjcampbell.com/images/">
+<meta name="twitter:title" content="Rapid Presentation Layer Development with Play">
+<meta name="twitter:description" content="Using templates in Scala Play applications">
+<meta name="twitter:creator" content="@hcampbell07">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rapid Presentation Layer Development with Play">
+<meta property="og:description" content="Using templates in Scala Play applications">
+<meta property="og:url" content="http://heatherjcampbell.com/tutorial/rapid-presentation-layer-development-with-play/">
+<meta property="og:site_name" content="Technical Musing of a Mummy">
+
+
+
+
+
+<link rel="canonical" href="http://heatherjcampbell.com/tutorial/rapid-presentation-layer-development-with-play/">
+<link href="http://heatherjcampbell.com/feed.xml" type="application/atom+xml" rel="alternate" title="Technical Musing of a Mummy Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://heatherjcampbell.com/assets/css/main.min.css">
+<link rel="stylesheet" href="http://heatherjcampbell.com/assets/css/code.css">
+<!-- Webfonts -->
+<script src="//use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="http://heatherjcampbell.com/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://heatherjcampbell.com/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://heatherjcampbell.com/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://heatherjcampbell.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://heatherjcampbell.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://heatherjcampbell.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://heatherjcampbell.com/images/apple-touch-icon-144x144-precomposed.png">
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav">
+	    <ul>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/about/">About</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/articles/">Posts</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/tags/">Tags</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="https://twitter.com/HCampbell07/">Tweets</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/presentations/">Presentations</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/reading/">Reading List</a>
+				 
+			</li>
+	        
+	        <li><a href="http://heatherjcampbell.com/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+	        <li class="dosearch"><i class="icon-search"></i> Search</li>
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+<div class="search-wrapper">
+	<div class="search-form">
+		<input type="text" class="search-field" placeholder="Search...">
+		<i class="icon-remove-sign icon-2x"></i>
+		<ul class="search-results post-list"></ul><!-- /.search-results -->
+	</div><!-- /.search-form -->
+</div><!-- ./search-wrapper -->
+
+<header class="masthead">
+	<div class="wrap">
+        <h1 class="site-title"><a href="http://heatherjcampbell.com">Technical Musing of a Mummy</a></h1>
+		<h2 class="site-description" itemprop="description">A Blog About All Things IT Related</h2>
+	</div>
+</header><!-- /.masthead -->
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <span class="entry-tags"><a href="http://heatherjcampbell.com/tags/#scala" title="Pages tagged scala">scala</a>&nbsp;&bull;&nbsp;<a href="http://heatherjcampbell.com/tags/#play" title="Pages tagged play">play</a>&nbsp;&bull;&nbsp;<a href="http://heatherjcampbell.com/tags/#development" title="Pages tagged development">development</a></span>
+        
+          <h1 class="entry-title">Rapid Presentation Layer Development with Play</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        <img src="http://heatherjcampbell.com/images/bio-photo.JPG" alt="Heather Campbell photo" class="author-photo">
+        <span class="author vcard">By <span class="fn"><a href="http://heatherjcampbell.com/about/" title="About Heather Campbell">Heather Campbell</a></span></span>
+        <span class="entry-date date published"><time datetime="2013-06-28T00:00:00+01:00"><i class="icon-calendar-empty"></i> June 28, 2013</time></span>
+        
+        
+        <span><a href="http://heatherjcampbell.com/tutorial/rapid-presentation-layer-development-with-play/" rel="bookmark" title="Rapid Presentation Layer Development with Play"><i class="icon-link"></i> Permalink</a></span>
+        
+        <span class="social-share-facebook">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://heatherjcampbell.com/tutorial/rapid-presentation-layer-development-with-play/" title="Share on Facebook" itemprop="Facebook"><i class="icon-facebook-sign"></i> Like</a></span>
+        <span class="social-share-twitter">
+            <a href="https://twitter.com/intent/tweet?hashtags=tutorial&text=Rapid Presentation Layer Development with Play&url=http://heatherjcampbell.com/tutorial/rapid-presentation-layer-development-with-play/&via=hcampbell07" title="Share on Twitter" itemprop="Twitter"><i class="icon-twitter-sign"></i> Tweet</a></span>
+        <span class="social-share-googleplus">
+            <a href="https://plus.google.com/share?url=http://heatherjcampbell.com/tutorial/rapid-presentation-layer-development-with-play/" title="Share on Google Plus" itemprop="GooglePlus"><i class="icon-google-plus-sign"></i> +1</a></span>
+            <!-- /.social-share -->
+      </footer>
+      <div class="entry-content">
+        <p>One of the really nice features of Play is its <a href="http://www.playframework.com/documentation/2.1.1/ScalaTemplates">template engine</a>. It’s something I made use of heavily in my latest piece of work developing a proof of concept for a customer. The template engine allows you to create reusable blocks of layout which you can use across multiple pages in your site. It’s really easy to get started with templates as they don’t require you to learn a new language. Mine consisted of Scala and HTML.</p>
+
+<p>Examples of things I ended up using templates for included:</p>
+
+<ul>
+  <li>The main page layout</li>
+  <li>Headers</li>
+  <li>Footers</li>
+  <li>Navigation menu</li>
+  <li>Form elements</li>
+  <li>Table</li>
+</ul>
+
+<p>Lets take a look at a couple of simple examples.</p>
+
+<h2 id="the-main-page-layout">The main page layout</h2>
+
+<p>Lets look at a very basic example of using a template for our common page structure. In the example below I’ve created a template to represent the basic structure of my site. In reality this would probably include more HTML. It accepts three parameters, a title, script (any additional JavaScript, CSS the  page requires) and content (content for the body of the page).</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">main.scala.html</span><a class="code-highlight-caption-link" href="https://gist.github.com/5887732">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line">@(title: String)(script: Html)(content: Html)
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nt">&lt;html&gt;</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="nt">&lt;head&gt;</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="nt">&lt;title&gt;</span>@title<span class="nt">&lt;/title&gt;</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">media=</span><span class="s">&quot;screen&quot;</span> 
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line">       <span class="na">href=</span><span class="s">&quot;@routes.Assets.at(&quot;</span><span class="na">stylesheets</span><span class="err">/</span><span class="na">application</span><span class="err">.</span><span class="na">css</span><span class="err">&quot;)&quot;</span><span class="nt">&gt;</span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;@routes.Assets.at(&quot;</span><span class="na">javascripts</span><span class="err">/</span><span class="na">jquery-1</span><span class="err">.</span><span class="na">9</span><span class="err">.</span><span class="na">0</span><span class="err">.</span><span class="na">min</span><span class="err">.</span><span class="na">js</span><span class="err">&quot;)&quot;</span> 
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line">       <span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line">    @script
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="nt">&lt;/head&gt;</span>
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="nt">&lt;body&gt;</span>
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line">    @content
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="nt">&lt;/body&gt;</span>
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nt">&lt;/html&gt;</span></div></div></pre></div></figure>
+
+<p>I can then use the main template to create different views in my application. The first example is a common error page. The title is an input parameter, I’m not including any additional script and my contents are an html paragraph with the error message.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">error.scala.html</span><a class="code-highlight-caption-link" href="https://gist.github.com/5887732">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line">@(title: String, error: String)
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">@main(title)&#x7b;<span class="ni">&amp;nbsp;</span>&#x7d;&#x7b;
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nt">&lt;p&gt;</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">  @error
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nt">&lt;/p&gt;</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">&#x7d;</div></div></pre></div></figure>
+
+<p>When you create a template it is compiled as a Scala function with the following naming convention:</p>
+
+<p>A template called views/error.scala.html would generate a function called views.html.error. I could call the error template from my controller using the following syntax</p>
+
+<pre><code>views.html.error("My title","My error")
+</code></pre>
+
+<p>The second example is a message page with additional JavaScript include and html.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">message.scala.html</span><a class="code-highlight-caption-link" href="https://gist.github.com/5887732">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line">@(title: String, msg: String)
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">@main(title)&#x7b;<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;@routes.Assets.at(&quot;</span><span class="na">javascripts</span><span class="err">/</span><span class="na">message</span><span class="err">.</span><span class="na">js</span><span class="err">&quot;)&quot;</span> 
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>&#x7d;&#x7b;
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;group&quot;</span><span class="nt">&gt;</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="nt">&lt;article</span> <span class="na">role=</span><span class="s">&quot;article&quot;</span> <span class="na">class=</span><span class="s">&quot;group&quot;</span><span class="nt">&gt;</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">        <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">&quot;content-group&quot;</span><span class="nt">&gt;</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;group&quot;</span><span class="nt">&gt;</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line">                <span class="nt">&lt;p&gt;</span>@msg<span class="nt">&lt;/p&gt;</span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line">            <span class="nt">&lt;/div&gt;</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line">        <span class="nt">&lt;/section&gt;</span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="nt">&lt;/article&gt;</span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nt">&lt;/div&gt;</span>
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line">&#x7d;</div></div></pre></div></figure>
+
+<h2 id="a-common-page-element">A common page element</h2>
+
+<p>Templates can also be used for common page elements. For example in  each of my pages with a form I might want to display an error summary if the information entered was incorrect. I would probably want this to take a standard format so it would be a good candidate for creating a template. The template accepts a sequence of form errors and for each error creates a list item displaying the message and a link to the relevant form element.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">errorSummary.scala.html</span><a class="code-highlight-caption-link" href="https://gist.github.com/5887732">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line">@(errors: Seq[FormError])
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;validation-summary&quot;</span><span class="nt">&gt;</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="nt">&lt;h1&gt;</span>There was a problem submitting the form<span class="nt">&lt;/h1&gt;</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="nt">&lt;p&gt;</span>Please try the following:<span class="nt">&lt;/p&gt;</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="nt">&lt;ol&gt;</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">        @errors.map &#x7b; err =&gt;
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#@err.key&quot;</span><span class="nt">&gt;</span>@Messages(err.message)<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line">        &#x7d;
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="nt">&lt;/ol&gt;</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nt">&lt;/div&gt;</span></div></div></pre></div></figure>
+
+<h2 id="a-common-form-element">A common form element</h2>
+
+<p>Play provides <a href="http://www.playframework.com/documentation/2.1.1/ScalaFormHelpers">form template helpers</a> to assist in the development of forms. Taking a look at the source for these can help you understand how to create your own like the inputDatePicker field template below.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">inputDatePicker.scala.html</span><a class="code-highlight-caption-link" href="https://gist.github.com/5887732">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line">@(field: play.api.data.Field, args: (Symbol,Any)*)
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">@import play.api.i18n._
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">@argsMap = @&#x7b; args.toMap &#x7d;
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">@htmlArgs = @&#x7b; args.filter(!_._1.name.startsWith(&quot;_&quot;)).toMap &#x7d;
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">@classes = @&#x7b; argsMap.getOrElse(&#39;_classes, &quot;&quot;).asInstanceOf[String] &#x7d;
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;group @if(field.hasErrors) &#x7b;validation&#x7d;&quot;</span><span class="nt">&gt;</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;validation-message&quot;</span><span class="nt">&gt;</span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line">        @field.errors.map(e =&gt; Messages(e.message)).mkString(&quot;, &quot;)<span class="nt">&lt;/span&gt;</span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;@field.id&quot;</span><span class="nt">&gt;</span>@argsMap.getOrElse(&#39;_label, field.name)
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line">        @if(argsMap.getOrElse(&#39;_mandatory, false).asInstanceOf[Boolean]) &#x7b;
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line">        <span class="nt">&lt;abbr</span> <span class="na">title=</span><span class="s">&quot;Mandatory&quot;</span><span class="nt">&gt;</span>*<span class="nt">&lt;/abbr&gt;</span>
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line">        &#x7d;
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="nt">&lt;/label&gt;</span>
+</div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;@field.id&quot;</span> <span class="na">name=</span><span class="s">&quot;@field.name&quot;</span> <span class="na">class=</span><span class="s">&quot;input-date&quot;</span><span class="na">type=</span><span class="s">&quot;text&quot;</span> 
+</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line">       <span class="na">value=</span><span class="s">&quot;@field.value&quot;</span> <span class="err">@</span><span class="na">toHtmlArgs</span><span class="err">(</span><span class="na">htmlArgs</span><span class="err">)</span><span class="nt">&gt;</span>
+</div></div><div data-line="19" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nt">&lt;/p&gt;</span></div></div></pre></div></figure>
+
+<p>I would use this in a form within a template.</p>
+
+<pre><code>@inputDatePicker(
+   field = form("dateOfBirth"),
+   args = '_label -&gt; "Date", 
+ '_mandatory -&gt; true
+   )
+</code></pre>
+
+<h2 id="why-do-it">Why do it?</h2>
+<p>Taking the time at the start of development to identify the repeating elements in the presentation layer of your site and modelling them as templates can:</p>
+
+<ol>
+  <li>Improve your speed of development</li>
+  <li>Help create a consistent look and feel for your site</li>
+  <li>Reduce the overhead to modify the structure of the pages in your site</li>
+  <li>Reduce the overhead of adding to your site</li>
+</ol>
+
+<p>I hope this post gave you a few ideas for how you can use them in your next application.</p>
+
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://heatherjcampbell.com/skills/explaining-languages-through-storytelling/" class="btn" title="Explaining Languages through Storytelling">Previous article</a>
+      
+      
+        <a href="http://heatherjcampbell.com/culture/leaning-in/" class="btn" title="Leaning In">Next article</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span>&copy; 2016 Heather Campbell. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/so-simple/">So Simple Theme</a>.</span>
+<div class="social-icons">
+	<a href="http://twitter.com/hcampbell07" title="Heather Campbell on Twitter" target="_blank"><i class="icon-twitter icon-2x"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="http://github.com/heatherjc07" title="Heather Campbell on Github" target="_blank"><i class="icon-github icon-2x"></i></a>
+	
+</div><!-- /.social-icons -->
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://heatherjcampbell.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://heatherjcampbell.com/assets/js/scripts.min.js"></script>
+
+<!-- Jekyll Simple Search option -->
+<script>
+  $(document).ready(function() {
+      $('.search-field').simpleJekyllSearch({
+          jsonFile : 'http://heatherjcampbell.com/search.json',
+          searchResults : '.search-results',
+          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          noResults: '<p>Nothing found.</p>'
+        });
+  });
+
+  (function( $, window, undefined ) {
+    
+     var bs = {
+          close: $(".icon-remove-sign"),
+          searchform: $(".search-form"),
+          canvas: $("body"),
+          dothis: $('.dosearch')
+      };
+    
+    bs.dothis.on('click', function() {
+      $('.search-wrapper').css({ display: "block" });
+      bs.searchform.toggleClass('active');
+      bs.searchform.find('input').focus();
+      bs.canvas.toggleClass('search-overlay');
+    });
+    
+      bs.close.on('click', function() {
+        $('.search-wrapper').removeAttr( 'style' );
+        bs.searchform.toggleClass('active');
+        bs.canvas.removeClass('search-overlay');
+    });
+  })( jQuery, window );
+</script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-69172837-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>	        
+
+</body>
+</html>

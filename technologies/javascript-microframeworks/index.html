@@ -1,0 +1,270 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>JavaScript MicroFrameworks &#8211; Technical Musing of a Mummy</title>
+<meta name="description" content="Introduction to JavaScript MicroFrameworks">
+<meta name="keywords" content="JavaScript, MicroFrameworks">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://heatherjcampbell.com/images/">
+<meta name="twitter:title" content="JavaScript MicroFrameworks">
+<meta name="twitter:description" content="Introduction to JavaScript MicroFrameworks">
+<meta name="twitter:creator" content="@hcampbell07">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript MicroFrameworks">
+<meta property="og:description" content="Introduction to JavaScript MicroFrameworks">
+<meta property="og:url" content="http://heatherjcampbell.com/technologies/javascript-microframeworks/">
+<meta property="og:site_name" content="Technical Musing of a Mummy">
+
+
+
+
+
+<link rel="canonical" href="http://heatherjcampbell.com/technologies/javascript-microframeworks/">
+<link href="http://heatherjcampbell.com/feed.xml" type="application/atom+xml" rel="alternate" title="Technical Musing of a Mummy Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://heatherjcampbell.com/assets/css/main.min.css">
+<link rel="stylesheet" href="http://heatherjcampbell.com/assets/css/code.css">
+<!-- Webfonts -->
+<script src="//use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="http://heatherjcampbell.com/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://heatherjcampbell.com/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://heatherjcampbell.com/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://heatherjcampbell.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://heatherjcampbell.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://heatherjcampbell.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://heatherjcampbell.com/images/apple-touch-icon-144x144-precomposed.png">
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav">
+	    <ul>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/about/">About</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/articles/">Posts</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/tags/">Tags</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="https://twitter.com/HCampbell07/">Tweets</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/presentations/">Presentations</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/reading/">Reading List</a>
+				 
+			</li>
+	        
+	        <li><a href="http://heatherjcampbell.com/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+	        <li class="dosearch"><i class="icon-search"></i> Search</li>
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+<div class="search-wrapper">
+	<div class="search-form">
+		<input type="text" class="search-field" placeholder="Search...">
+		<i class="icon-remove-sign icon-2x"></i>
+		<ul class="search-results post-list"></ul><!-- /.search-results -->
+	</div><!-- /.search-form -->
+</div><!-- ./search-wrapper -->
+
+<header class="masthead">
+	<div class="wrap">
+        <h1 class="site-title"><a href="http://heatherjcampbell.com">Technical Musing of a Mummy</a></h1>
+		<h2 class="site-description" itemprop="description">A Blog About All Things IT Related</h2>
+	</div>
+</header><!-- /.masthead -->
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <span class="entry-tags"><a href="http://heatherjcampbell.com/tags/#JavaScript" title="Pages tagged JavaScript">JavaScript</a>&nbsp;&bull;&nbsp;<a href="http://heatherjcampbell.com/tags/#MicroFrameworks" title="Pages tagged MicroFrameworks">MicroFrameworks</a></span>
+        
+          <h1 class="entry-title">JavaScript MicroFrameworks</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        <img src="http://heatherjcampbell.com/images/bio-photo.JPG" alt="Heather Campbell photo" class="author-photo">
+        <span class="author vcard">By <span class="fn"><a href="http://heatherjcampbell.com/about/" title="About Heather Campbell">Heather Campbell</a></span></span>
+        <span class="entry-date date published"><time datetime="2012-06-24T00:00:00+01:00"><i class="icon-calendar-empty"></i> June 24, 2012</time></span>
+        
+        
+        <span><a href="http://heatherjcampbell.com/technologies/javascript-microframeworks/" rel="bookmark" title="JavaScript MicroFrameworks"><i class="icon-link"></i> Permalink</a></span>
+        
+        <span class="social-share-facebook">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://heatherjcampbell.com/technologies/javascript-microframeworks/" title="Share on Facebook" itemprop="Facebook"><i class="icon-facebook-sign"></i> Like</a></span>
+        <span class="social-share-twitter">
+            <a href="https://twitter.com/intent/tweet?hashtags=technologies&text=JavaScript MicroFrameworks&url=http://heatherjcampbell.com/technologies/javascript-microframeworks/&via=hcampbell07" title="Share on Twitter" itemprop="Twitter"><i class="icon-twitter-sign"></i> Tweet</a></span>
+        <span class="social-share-googleplus">
+            <a href="https://plus.google.com/share?url=http://heatherjcampbell.com/technologies/javascript-microframeworks/" title="Share on Google Plus" itemprop="GooglePlus"><i class="icon-google-plus-sign"></i> +1</a></span>
+            <!-- /.social-share -->
+      </footer>
+      <div class="entry-content">
+        <p>Micro-Frameworks are frameworks developed to provide a particular piece of functionality and do it really well. Thomas Fuchs has created a site, <a href="http://microjs.com/" target="_blank">microjs</a> ,to help make people aware of the best Micro-Frameworks and show how compact and powerful they can be. His aim is to encourage people to make an active choice about the right JavaScript Framework for their project and not just plump for the current defacto choice. I intend to take a look  through some of the frameworks and read the code behind a few of them with the aim to improving my knowledge and understanding of JavaScript . I’m hoping reading the code behind a well written Micro-Framework will be an education in how to write good JavaScript because of their size and the fact they focus on one problem</p>
+
+<p>There are two main reasons why you would look at using Micro-Frameworks. The first is to give you functionality which your main framework does not provide. Here you would use it in addition to your main framework. The second is if you feel that the cost on performance of using a large library, which provides a range of functionality, is too high for the benefits it gives you. Perhaps you only require a small subset of the power it provides. With the performance of websites being an important factor in retaining customers it’s natural that developers are looking for ways to reduce the amount of code loading to improve page load times. In this case a micro framework or combination of micro frameworks to create a custom framework might prove the best solution.</p>
+
+<p>When selecting a Micro-Framework for either reason a developer must remember to consider all of the factors they would normally look at when selecting a framework. These include:</p>
+
+<ul>
+  <li>The number of people working on the framework. Typically you want a number of people to be developing it to increase the chance of the framework continuing to develop and mature.</li>
+  <li>The stability/level of testing. This is especially important in a corporate project. You need to have confidence that each release is well tested and won’t introduce bugs into your application.</li>
+  <li>Cross Browser support. You need to have confidence your site will behave/appear correctly across browsers.</li>
+  <li>How active the community is behind it. This can impact on the longevity of a framework, the level of documentation and support.</li>
+</ul>
+
+<p>When aiming to save on file size by creating your own custom framework from multiple micro-frameworks developers need to consider how much of a saving they will actually make. Whether the saving is worth the effort required to combine multiple frameworks with their application. If there are other approaches to solving the performance issue. There are JavaScript frameworks which are modular and allow you to leave out the functionality which you don’t require. For example MooTools provides a core builder which allows you to build a file of your chosen components. There are also ways you can improve how your page appears to respond for a user for example</p>
+
+<ul>
+  <li>Placing the references to your scripts at the bottom of the page.</li>
+  <li>Using script loaders that once loaded (as they are written in js too) allow your page to be displayed while loading the JavaScript files your page requires. (dynamically creating a element and assigning its src attribute leads to a download that doesn’t block other downloads or page processes)</li>
+  <li>Using lazy loading of JavaScript as and when you require it</li>
+</ul>
+
+<p>Starting to look at Micro-Frameworks has reminded me of the importance of being aware of the options available to me and the importance of paying due diligence to all of my choices. While reading about it I’ve become more aware of some of the different approaches that can be taken to improving the performance of pages containing JavaScript. It has also encouraged me to try to take a look at some of the underlying code behind Micro-Frameworks to help improve my JavaScript. Something I’ve badly neglected up until now.</p>
+
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://heatherjcampbell.com/development/technology-radar-march-2012/" class="btn" title="Technology Radar March 2012">Previous article</a>
+      
+      
+        <a href="http://heatherjcampbell.com/development/when-your-soft-skills-get-called-into-question/" class="btn" title="When Your Soft Skills Get Called Into Question">Next article</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span>&copy; 2016 Heather Campbell. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/so-simple/">So Simple Theme</a>.</span>
+<div class="social-icons">
+	<a href="http://twitter.com/hcampbell07" title="Heather Campbell on Twitter" target="_blank"><i class="icon-twitter icon-2x"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="http://github.com/heatherjc07" title="Heather Campbell on Github" target="_blank"><i class="icon-github icon-2x"></i></a>
+	
+</div><!-- /.social-icons -->
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://heatherjcampbell.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://heatherjcampbell.com/assets/js/scripts.min.js"></script>
+
+<!-- Jekyll Simple Search option -->
+<script>
+  $(document).ready(function() {
+      $('.search-field').simpleJekyllSearch({
+          jsonFile : 'http://heatherjcampbell.com/search.json',
+          searchResults : '.search-results',
+          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          noResults: '<p>Nothing found.</p>'
+        });
+  });
+
+  (function( $, window, undefined ) {
+    
+     var bs = {
+          close: $(".icon-remove-sign"),
+          searchform: $(".search-form"),
+          canvas: $("body"),
+          dothis: $('.dosearch')
+      };
+    
+    bs.dothis.on('click', function() {
+      $('.search-wrapper').css({ display: "block" });
+      bs.searchform.toggleClass('active');
+      bs.searchform.find('input').focus();
+      bs.canvas.toggleClass('search-overlay');
+    });
+    
+      bs.close.on('click', function() {
+        $('.search-wrapper').removeAttr( 'style' );
+        bs.searchform.toggleClass('active');
+        bs.canvas.removeClass('search-overlay');
+    });
+  })( jQuery, window );
+</script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-69172837-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>	        
+
+</body>
+</html>

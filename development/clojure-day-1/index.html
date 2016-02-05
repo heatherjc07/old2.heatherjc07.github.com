@@ -1,0 +1,547 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Clojure Day 1 &#8211; Technical Musing of a Mummy</title>
+<meta name="description" content="Clojure Day 1: Seven Languages in Seven Weeks">
+<meta name="keywords" content="seven languages in seven weeks, clojure, languages">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://heatherjcampbell.com/images/">
+<meta name="twitter:title" content="Clojure Day 1">
+<meta name="twitter:description" content="Clojure Day 1: Seven Languages in Seven Weeks">
+<meta name="twitter:creator" content="@hcampbell07">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Clojure Day 1">
+<meta property="og:description" content="Clojure Day 1: Seven Languages in Seven Weeks">
+<meta property="og:url" content="http://heatherjcampbell.com/development/clojure-day-1/">
+<meta property="og:site_name" content="Technical Musing of a Mummy">
+
+
+
+
+
+<link rel="canonical" href="http://heatherjcampbell.com/development/clojure-day-1/">
+<link href="http://heatherjcampbell.com/feed.xml" type="application/atom+xml" rel="alternate" title="Technical Musing of a Mummy Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://heatherjcampbell.com/assets/css/main.min.css">
+<link rel="stylesheet" href="http://heatherjcampbell.com/assets/css/code.css">
+<!-- Webfonts -->
+<script src="//use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="http://heatherjcampbell.com/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://heatherjcampbell.com/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://heatherjcampbell.com/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://heatherjcampbell.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://heatherjcampbell.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://heatherjcampbell.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://heatherjcampbell.com/images/apple-touch-icon-144x144-precomposed.png">
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav">
+	    <ul>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/about/">About</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/articles/">Posts</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/tags/">Tags</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="https://twitter.com/HCampbell07/">Tweets</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/presentations/">Presentations</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/reading/">Reading List</a>
+				 
+			</li>
+	        
+	        <li><a href="http://heatherjcampbell.com/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+	        <li class="dosearch"><i class="icon-search"></i> Search</li>
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+<div class="search-wrapper">
+	<div class="search-form">
+		<input type="text" class="search-field" placeholder="Search...">
+		<i class="icon-remove-sign icon-2x"></i>
+		<ul class="search-results post-list"></ul><!-- /.search-results -->
+	</div><!-- /.search-form -->
+</div><!-- ./search-wrapper -->
+
+<header class="masthead">
+	<div class="wrap">
+        <h1 class="site-title"><a href="http://heatherjcampbell.com">Technical Musing of a Mummy</a></h1>
+		<h2 class="site-description" itemprop="description">A Blog About All Things IT Related</h2>
+	</div>
+</header><!-- /.masthead -->
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <span class="entry-tags"><a href="http://heatherjcampbell.com/tags/#seven languages in seven weeks" title="Pages tagged seven languages in seven weeks">seven languages in seven weeks</a>&nbsp;&bull;&nbsp;<a href="http://heatherjcampbell.com/tags/#clojure" title="Pages tagged clojure">clojure</a>&nbsp;&bull;&nbsp;<a href="http://heatherjcampbell.com/tags/#languages" title="Pages tagged languages">languages</a></span>
+        
+          <h1 class="entry-title">Clojure Day 1</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        <img src="http://heatherjcampbell.com/images/bio-photo.JPG" alt="Heather Campbell photo" class="author-photo">
+        <span class="author vcard">By <span class="fn"><a href="http://heatherjcampbell.com/about/" title="About Heather Campbell">Heather Campbell</a></span></span>
+        <span class="entry-date date published"><time datetime="2013-12-28T00:00:00+00:00"><i class="icon-calendar-empty"></i> December 28, 2013</time></span>
+        
+        
+        <span><a href="http://heatherjcampbell.com/development/clojure-day-1/" rel="bookmark" title="Clojure Day 1"><i class="icon-link"></i> Permalink</a></span>
+        
+        <span class="social-share-facebook">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://heatherjcampbell.com/development/clojure-day-1/" title="Share on Facebook" itemprop="Facebook"><i class="icon-facebook-sign"></i> Like</a></span>
+        <span class="social-share-twitter">
+            <a href="https://twitter.com/intent/tweet?hashtags=development&text=Clojure Day 1&url=http://heatherjcampbell.com/development/clojure-day-1/&via=hcampbell07" title="Share on Twitter" itemprop="Twitter"><i class="icon-twitter-sign"></i> Tweet</a></span>
+        <span class="social-share-googleplus">
+            <a href="https://plus.google.com/share?url=http://heatherjcampbell.com/development/clojure-day-1/" title="Share on Google Plus" itemprop="GooglePlus"><i class="icon-google-plus-sign"></i> +1</a></span>
+            <!-- /.social-share -->
+      </footer>
+      <div class="entry-content">
+        <p><em>My experience with day one of exploring Clojure through <a href="http://pragprog.com/book/btlang/seven-languages-in-seven-weeks" target="_blank">Seven Languages in Seven Weeks</a>.</em></p>
+
+<p>Clojure is a language I’ve been meaning to get around to looking at for a while so I guess now’s my chance. It is another language that runs on the JVM like Scala and is based on Lisp. Running on the JVM means it has access to all the Java libraries. This means you’ll often find a library which does what you need instead of having to implement everything form scratch. It is another functional language and is dynamically typed.</p>
+
+<p>After Fortran, Lisp is the oldest commercially active language. The acronym stands for LISt Processing and it is a language of lists. A function call uses the first list element as the function and the rest as the arguments more on this later but it takes a while to get your head around the syntax after years of infix notation. It’s a very flexible language ideal for metaprogramming.</p>
+
+<p>Although Clojure is a relatively new language it has a strong community which is good news for me as it makes learning it a whole lot easier!</p>
+
+<p>Full instructions on how to get set up are included on the <a href="http://dev.clojure.org/display/doc/Getting+Started">Clojure</a> site. In the book Tate uses <a href="https://github.com/technomancy/leiningen">Leiningen tool2</a>, a Clojure build tool to simplify his builds. It is a popular tool and there are a range of <a href="https://github.com/technomancy/leiningen/wiki/Plugins">plugins</a> for it which the community have created and are available via github. I see there is also a <a href="https://github.com/talios/clojure-maven-plugin">Clojure Maven Plugin</a> which I’ll have to take a look at sometime having used Maven for most of my recent Java projects. Simple code can be tested in Clojure’s console called REPL. For more complex tasks you’ll need an IDE with Clojure support. Netbeans, VIM, Eclipse and emacs all provide suitable IDEs.</p>
+
+<p>Full instructions on how to get set up are included on the Clojure site. In the book Tate uses Leiningen tool2, a Clojure build tool to simplify his builds. It is a popular tool and there are a range of plugins for it which the community have created and are available via github. I see there is also a Clojure Maven Plugin which I’ll have to take a look at sometime having used Maven for most of my recent Java projects. Simple code can be tested in Clojure’s console called REPL. For more complex tasks you’ll need an IDE with Clojure support. Netbeans, VIM, Eclipse and emacs all provide suitable IDEs.</p>
+
+<h2 id="calling-basic-functions">Calling Basic Functions</h2>
+
+<p>The first thing to get your head around in Clojure is the prefix notation. A function call is enclosed entirely in parenthesis, with the first element being the function name and the rest the arguments.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">basic1.clj</span><a class="code-highlight-caption-link" href="https://gist.github.com/8164020">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">(</span><span class="nb">+ </span><span class="mi">1</span> <span class="mi">1</span><span class="p">)</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; 2</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nb">* </span><span class="mi">10</span> <span class="mi">10</span><span class="p">)</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; 100</span></div></div></pre></div></figure>
+
+<p>A nice addition for division is the ratio data type. This allows you to delay computation to avoid loss of precision</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">basic2.clj</span><a class="code-highlight-caption-link" href="https://gist.github.com/8164020">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">(</span><span class="nb">/ </span><span class="mi">1</span> <span class="mi">3</span><span class="p">)</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; 1/3</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nb">class </span><span class="p">(</span><span class="nb">/ </span><span class="mi">1</span> <span class="mi">3</span><span class="p">))</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; clojure.lang.Ratio</span></div></div></pre></div></figure>
+
+<p>Surrounding each function call in parenthesis has the advantage of making it very clear what arguments belong to what call. Clojure evaluates the functions in parenthetical order.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">basic3.clj</span><a class="code-highlight-caption-link" href="https://gist.github.com/8164020">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">(</span><span class="nb">/ </span><span class="p">(</span><span class="nb">/ </span><span class="mi">12</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="nb">/ </span><span class="mi">6</span> <span class="mi">2</span><span class="p">))</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; 2</span></div></div></pre></div></figure>
+
+<p>You can achieve some neat things with minimal syntax. In the example below I’m checking if the list of arguments is in ascending order.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">basic4.clj</span><a class="code-highlight-caption-link" href="https://gist.github.com/8164020">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">(</span><span class="nb">&lt; </span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; true</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nb">&lt; </span><span class="mi">1</span> <span class="mi">3</span> <span class="mi">2</span> <span class="mi">4</span><span class="p">)</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; false</span></div></div></pre></div></figure>
+
+<p>Here’s a string example. The str function calls the underlying Java toString function to concantenate strings togethers.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">basic5.clj</span><a class="code-highlight-caption-link" href="https://gist.github.com/8164020">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">(</span><span class="nb">str </span><span class="s">&quot;one: &quot;</span> <span class="mi">1</span> <span class="s">&quot; two: &quot;</span> <span class="mi">2</span><span class="p">)</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; &quot;one: 1 two: 2&quot;</span></div></div></pre></div></figure>
+
+<p>Here’s how you code an if else. The first parenthesis is the condition to test, the second the code to be carried out if it is true and the third the code to be carried out if it is false.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">basic6.clj</span><a class="code-highlight-caption-link" href="https://gist.github.com/8164020">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&gt; </span><span class="mi">5</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="nb">println </span><span class="s">&quot;True&quot;</span><span class="p">)</span> <span class="p">(</span><span class="nb">println </span><span class="s">&quot;False&quot;</span><span class="p">))</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; True</span></div></div></pre></div></figure>
+
+<h2 id="lists-maps-sets-and-vectors">Lists, Maps, Sets and Vectors</h2>
+
+<h3 id="lists">Lists</h3>
+
+<p>As lists evaluate to functions you can’t do (1 2 3) as this will generate an error instead you need to do one of the following.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">list1.clj</span><a class="code-highlight-caption-link" href="https://gist.github.com/8164020">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">(</span><span class="nb">list </span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; (1 2 3)</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="o">&#39;</span><span class="p">(</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; (1 2 3)</span></div></div></pre></div></figure>
+
+<p>Clojure provides functions to allow you to manipulate the list. Here are some examples below.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">list2.clj</span><a class="code-highlight-caption-link" href="https://gist.github.com/8164020">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">;get first element</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nb">first </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;banana&quot;</span> <span class="s">&quot;apple&quot;</span> <span class="s">&quot;pear&quot;</span><span class="p">))</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; &quot;banana&quot;</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">;get last element</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nb">last </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;banana&quot;</span> <span class="s">&quot;apple&quot;</span> <span class="s">&quot;pear&quot;</span><span class="p">))</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; &quot;pear&quot;</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">;get list minus the head</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nb">rest </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;banana&quot;</span> <span class="s">&quot;apple&quot;</span> <span class="s">&quot;pear&quot;</span><span class="p">))</span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; (&quot;apple&quot; &quot;pear&quot;)</span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">;construct a new list given a head and tail</span>
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nb">cons </span><span class="s">&quot;kiwi&quot;</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;banana&quot;</span> <span class="s">&quot;apple&quot;</span> <span class="s">&quot;pear&quot;</span><span class="p">))</span>
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; (&quot;kiwi&quot; &quot;banana&quot; &quot;apple&quot; &quot;pear&quot;)</span></div></div></pre></div></figure>
+
+<h3 id="vector">Vector</h3>
+
+<p>Here is how you define a vector.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">vector2.clj</span><a class="code-highlight-caption-link" href="https://gist.github.com/8164020">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">[</span><span class="ss">:monday</span> <span class="ss">:sunday</span> <span class="ss">:friday</span><span class="p">]</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; [:monday :sunday :friday]</span></div></div></pre></div></figure>
+
+<p>Here are some examples of functions you can use to manipulate a list.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">vector.clj</span><a class="code-highlight-caption-link" href="https://gist.github.com/8164020">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">; get the first element</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nb">first </span><span class="p">[</span><span class="ss">:monday</span> <span class="ss">:sunday</span> <span class="ss">:friday</span><span class="p">])</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; :monday</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; get the element at position 2</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nb">nth </span><span class="p">[</span><span class="ss">:monday</span> <span class="ss">:sunday</span> <span class="ss">:friday</span><span class="p">]</span> <span class="mi">2</span><span class="p">)</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; :friday</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; get the element at position 0</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nb">nth </span><span class="p">[</span><span class="ss">:monday</span> <span class="ss">:sunday</span> <span class="ss">:friday</span><span class="p">]</span> <span class="mi">0</span><span class="p">)</span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; :monday</span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; get the last element</span>
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nb">last </span><span class="p">[</span><span class="ss">:monday</span> <span class="ss">:sunday</span> <span class="ss">:friday</span><span class="p">])</span>
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; :friday</span>
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; get the element at index 2</span>
+</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">([</span><span class="ss">:monday</span> <span class="ss">:sunday</span> <span class="ss">:friday</span><span class="p">]</span> <span class="mi">2</span><span class="p">)</span>
+</div></div><div data-line="19" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; :friday</span>
+</div></div><div data-line="20" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="21" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">;get the first element</span>
+</div></div><div data-line="22" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nb">first </span><span class="p">[</span><span class="ss">:monday</span> <span class="ss">:sunday</span> <span class="ss">:friday</span><span class="p">])</span>
+</div></div><div data-line="23" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="ss">:monday</span> 
+</div></div><div data-line="24" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="25" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">;get the rest of the vector minus the head</span>
+</div></div><div data-line="26" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nb">rest </span><span class="p">[</span><span class="ss">:monday</span> <span class="ss">:sunday</span> <span class="ss">:friday</span><span class="p">])</span>
+</div></div><div data-line="27" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="ss">:sunday</span> <span class="ss">:friday</span><span class="p">)</span>
+</div></div><div data-line="28" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="29" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; combining vectors</span>
+</div></div><div data-line="30" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nb">concat </span><span class="p">[</span><span class="ss">:pig</span><span class="p">]</span> <span class="p">[</span><span class="ss">:cow</span><span class="p">])</span>
+</div></div><div data-line="31" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; (:pig :cow)</span></div></div></pre></div></figure>
+
+<p>Note in the last example Clojure is returning a sequence and rendering it as a list rather than a vector in the repl.</p>
+
+<h3 id="sets">Sets</h3>
+
+<p>You define a set using the #{} syntax.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">set1.clj</span><a class="code-highlight-caption-link" href="https://gist.github.com/8164020">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">#</span><span class="p">&#x7b;</span><span class="ss">:dog</span> <span class="ss">:cat</span> <span class="ss">:pig</span><span class="p">&#x7d;</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; #&#x7b;:dog :cat :pig&#x7d;</span></div></div></pre></div></figure>
+
+<p>We can assign the set to a variable called animals and then manipulate them.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">set2.clj</span><a class="code-highlight-caption-link" href="https://gist.github.com/8164020">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">(</span><span class="k">def </span><span class="nv">animals</span> <span class="o">#</span><span class="p">&#x7b;</span><span class="ss">:dog</span> <span class="ss">:cat</span> <span class="ss">:pig</span><span class="p">&#x7d;)</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="nv">animals</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; #&#x7b;:dog :cat :pig&#x7d;</span></div></div></pre></div></figure>
+
+<p>Here are some examples of how we can manipulate a set using functions provided by Clojure.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">set3.clj</span><a class="code-highlight-caption-link" href="https://gist.github.com/8164020">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">; count the number of elements in the set</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nb">count </span><span class="nv">animals</span><span class="p">)</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; 3</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">;sort the set</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nb">sort </span><span class="nv">animals</span><span class="p">)</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="ss">:cat</span> <span class="ss">:dog</span> <span class="ss">:pig</span><span class="p">)</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">;merge sets</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nf">clojure.set/union</span> <span class="o">#</span><span class="p">&#x7b;</span><span class="ss">:black</span><span class="p">&#x7d;</span> <span class="o">#</span><span class="p">&#x7b;</span><span class="ss">:white</span><span class="p">&#x7d;)</span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">;#&#x7b;:black :white&#x7d;</span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">;determine difference</span>
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nf">clojure.set/difference</span> <span class="o">#</span><span class="p">&#x7b;</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">&#x7d;</span> <span class="o">#</span><span class="p">&#x7b;</span><span class="mi">2</span><span class="p">&#x7d;)</span>
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; #&#x7b;1 3&#x7d;</span></div></div></pre></div></figure>
+
+<p>It is possible to create a sorted set that takes items in any order and returns them in sorted order.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">set4.clj</span><a class="code-highlight-caption-link" href="https://gist.github.com/8164020">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">(</span><span class="nb">sorted-set </span><span class="mi">4</span> <span class="mi">9</span> <span class="mi">2</span><span class="p">)</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="o">#</span><span class="p">&#x7b;</span><span class="mi">2</span> <span class="mi">4</span> <span class="mi">9</span><span class="p">&#x7d;</span></div></div></pre></div></figure>
+
+<h3 id="maps">Maps</h3>
+
+<p>You represent a map with curly braces</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">map1.clj</span><a class="code-highlight-caption-link" href="https://gist.github.com/8164020">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">&#x7b;</span><span class="ss">:dumbo</span> <span class="ss">:elephant</span> <span class="ss">:snoopy</span> <span class="ss">:dog</span><span class="p">&#x7d;</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; &#x7b;:dumbo :elephant, :snoopy :dog&#x7d;</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">&#x7b;</span><span class="ss">:france</span> <span class="s">&quot;Paris&quot;</span>, <span class="ss">:ireland</span> <span class="s">&quot;Dublin&quot;</span><span class="p">&#x7d;</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; &#x7b;:france &quot;Paris&quot;, :ireland &quot;Dublin&quot;&#x7d;</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nb">merge </span><span class="p">&#x7b;</span><span class="ss">:france</span> <span class="s">&quot;Paris&quot;</span>, <span class="ss">:ireland</span> <span class="s">&quot;Dublin&quot;</span><span class="p">&#x7d;</span> <span class="p">&#x7b;</span><span class="ss">:norway</span> <span class="s">&quot;Oslo&quot;</span><span class="p">&#x7d;)</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; &#x7b;:france &quot;Paris&quot;, :ireland &quot;Dublin&quot;, :norway &quot;Oslo&quot;&#x7d;</span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; define a map called capitals</span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="k">def </span><span class="nv">capitals</span> <span class="p">&#x7b;</span><span class="ss">:france</span> <span class="s">&quot;Paris&quot;</span>, <span class="ss">:ireland</span> <span class="s">&quot;Dublin&quot;</span><span class="p">&#x7d;)</span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="nv">capitals</span>
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; &#x7b;:france &quot;Paris&quot;, :ireland &quot;Dublin&quot;&#x7d;</span>
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">;retrieve a value by passing in the key</span>
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nf">capitals</span> <span class="ss">:ireland</span><span class="p">)</span>
+</div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; &quot;Dublin&quot;</span></div></div></pre></div></figure>
+
+<p>In the example below we can see that maps and keywords are functions so :ireland as a function looks itself up in map.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">map2.clj</span><a class="code-highlight-caption-link" href="https://gist.github.com/8164020">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">(</span><span class="ss">:ireland</span> <span class="nv">capitals</span><span class="p">)</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; &quot;Dublin&quot;</span></div></div></pre></div></figure>
+
+<p>You can create a sorted map that takes items in any order and returns them sorted.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">map3.clj</span><a class="code-highlight-caption-link" href="https://gist.github.com/8164020">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">(</span><span class="nb">sorted-map </span><span class="mi">1</span> <span class="ss">:one</span>, <span class="mi">3</span> <span class="ss">:three</span>, <span class="mi">2</span> <span class="ss">:two</span><span class="p">)</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; &#x7b;1 :one, 2 :two, 3 :three&#x7d;</span></div></div></pre></div></figure>
+
+<h3 id="functions">Functions</h3>
+
+<p>Here is an example of how to define a function. We use the keyword defn to define it. The first String describes the function. This can be displayed using (doc force-it). We then have a parameter list. In this case there is one parameter, jedi. Finally we have the function body which simply concantenates the parameter to a string.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">force-it.clj</span><a class="code-highlight-caption-link" href="https://gist.github.com/8164020">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">(</span><span class="kd">defn </span><span class="nv">force-it</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="s">&quot;The first function a young Jedi needs&quot;</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">[</span><span class="nv">jedi</span><span class="p">]</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nb">str </span><span class="s">&quot;Use the force,&quot;</span> <span class="nv">jedi</span><span class="p">))</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nf">force-it</span> <span class="s">&quot;Luke&quot;</span><span class="p">)</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; &quot;Use the force,Luke&quot;</span></div></div></pre></div></figure>
+
+<h3 id="bindings">Bindings</h3>
+
+<p>Binding is the process of assigning parameters based on inbound arguments. Clojure provides a concept called destructuring which allows you to access any part of a parameter as an argument. Destructuring is a form of pattern matching. In the example below, board represents a noughts and crosses board. If we want to select the second element of the second list i.e. the centre value we could use the following code. Really nice and powerful syntax.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">binding1.clj</span><a class="code-highlight-caption-link" href="https://gist.github.com/8164020">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">(</span><span class="k">def </span><span class="nv">board</span> <span class="p">[[</span><span class="ss">:x</span> <span class="ss">:o</span> <span class="ss">:x</span><span class="p">]</span> <span class="p">[</span><span class="ss">:o</span> <span class="ss">:x</span> <span class="ss">:o</span><span class="p">]</span> <span class="p">[</span><span class="ss">:o</span> <span class="ss">:x</span> <span class="ss">:o</span><span class="p">]])</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="kd">defn </span><span class="nv">center</span> <span class="p">[[</span><span class="nv">_</span> <span class="p">[</span><span class="nv">_</span> <span class="nv">c</span> <span class="nv">_</span><span class="p">]</span> <span class="nv">_</span><span class="p">]]</span> <span class="nv">c</span><span class="p">)</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nf">center</span> <span class="nv">board</span><span class="p">)</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; :x</span></div></div></pre></div></figure>
+
+<p>We’re ignoring the first and third elements, which are the top and bottom rows in our board. We then select the second element of the middle row. This can be further simplified to the following as we don’t care about what follows the value we’re selecting.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">binding2.clj</span><a class="code-highlight-caption-link" href="https://gist.github.com/8164020">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">(</span><span class="kd">defn </span><span class="nv">center</span> <span class="p">[[</span><span class="nv">_</span> <span class="p">[</span><span class="nv">_</span> <span class="nv">c</span><span class="p">]]]</span> <span class="nv">c</span><span class="p">)</span></div></div></pre></div></figure>
+
+<p>You can use destructuring in a let statement as well as an argument list .let binds a variable to a value. We could use let to hide the destructuring from the clients of the center function. Both forms produce equivalent results. It all depends on where you want the destructuring to happen.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">binding3.clj</span><a class="code-highlight-caption-link" href="https://gist.github.com/8164020">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">(</span><span class="kd">defn </span><span class="nv">center</span> <span class="p">[</span><span class="nv">board</span><span class="p">]</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="k">let </span><span class="p">[[</span><span class="nv">_</span> <span class="p">[</span><span class="nv">_</span> <span class="nv">c</span><span class="p">]]</span> <span class="nv">board</span><span class="p">]</span> <span class="nv">c</span><span class="p">))</span></div></div></pre></div></figure>
+
+<p>You can destructure a map.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">binding4.clj</span><a class="code-highlight-caption-link" href="https://gist.github.com/8164020">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">(</span><span class="k">def </span><span class="nv">person</span> <span class="p">&#x7b;</span><span class="ss">:name</span> <span class="s">&quot;Heather&quot;</span> <span class="ss">:profession</span> <span class="s">&quot;Developer&quot;</span><span class="p">&#x7d;)</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="k">let </span><span class="p">[&#x7b;</span><span class="nb">name </span><span class="ss">:name</span><span class="p">&#x7d;</span> <span class="nv">person</span><span class="p">]</span> <span class="p">(</span><span class="nb">str </span><span class="s">&quot;The person&#39;s name is &quot;</span> <span class="nv">name</span><span class="p">))</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; &quot;The person&#39;s name is Heather&quot;</span></div></div></pre></div></figure>
+
+<h3 id="anonymous-functions">Anonymous Functions</h3>
+
+<p>Clojure allows the creation of anonymous functions using the fn function.</p>
+
+<p>Map in the example below is a higher-order function as it takes a function count as input. It generates a list of the length of people’s names.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">anon1.clj</span><a class="code-highlight-caption-link" href="https://gist.github.com/8164020">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">(</span><span class="k">def </span><span class="nv">people</span> <span class="p">[</span><span class="s">&quot;David Coulthard&quot;</span>, <span class="s">&quot;Damon Hill&quot;</span><span class="p">])</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nb">map count </span><span class="nv">people</span><span class="p">)</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; (15 10)</span></div></div></pre></div></figure>
+
+<p>The example below uses an anonymous function to build a list of double the length of people’s names.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">anon2.clj</span><a class="code-highlight-caption-link" href="https://gist.github.com/8164020">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">(</span><span class="nb">map </span><span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">w</span><span class="p">]</span> <span class="p">(</span><span class="nb">* </span><span class="mi">2</span> <span class="p">(</span><span class="nb">count </span><span class="nv">w</span><span class="p">)))</span> <span class="nv">people</span><span class="p">)</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; (30 20)</span></div></div></pre></div></figure>
+
+<p>This can be shortened to the following where # defines an anonymous function, with % bound to each item of the sequence.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">anon3.clj</span><a class="code-highlight-caption-link" href="https://gist.github.com/8164020">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">(</span><span class="nb">map </span><span class="o">#</span><span class="p">(</span><span class="nb">* </span><span class="mi">2</span> <span class="p">(</span><span class="nb">count </span><span class="nv">%</span><span class="p">))</span> <span class="nv">people</span><span class="p">)</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; (30 20)</span></div></div></pre></div></figure>
+
+<h2 id="higher-order-functions">Higher order functions</h2>
+
+<p>apply applies a function to an argument list.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">apply.clj</span><a class="code-highlight-caption-link" href="https://gist.github.com/8164020">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">(</span><span class="k">def </span><span class="nv">v</span> <span class="p">[</span><span class="mi">3</span> <span class="mi">1</span> <span class="mi">2</span><span class="p">])</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nb">apply + </span><span class="nv">v</span><span class="p">)</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">;6</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nb">apply max </span><span class="nv">v</span><span class="p">)</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">;3</span></div></div></pre></div></figure>
+
+<p>The filter function takes a function that is a test and returns the sequence of elements that pass the test.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">filter.clj</span><a class="code-highlight-caption-link" href="https://gist.github.com/8164020">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">(</span><span class="k">def </span><span class="nv">v</span> <span class="p">[</span><span class="mi">3</span> <span class="mi">1</span> <span class="mi">2</span><span class="p">])</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nb">filter </span><span class="nv">odd?</span> <span class="nv">v</span><span class="p">)</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">;(3 1)</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nb">filter </span><span class="o">#</span><span class="p">(</span><span class="nb">&lt; </span><span class="nv">%</span> <span class="mi">3</span><span class="p">)</span> <span class="nv">v</span><span class="p">)</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">;(1 2)</span></div></div></pre></div></figure>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>At the end of the chapter is an interview with Rich Hickey, Creator of Clojure. What comes across is how he designed Clojure with a particular purpose in mind having identified a gap in the market for a predominantly functional,extensible, dynamic language, with solid concurrency features for the JVM and CLR. Unlike previous Lisp dialects Clojure is aimed  as a general purpose production programming and unlike previous dialects is written with an understanding that most development is done in teams.(Other dialects aim to enpower the individual but encourage code which doesn’t work well in a team environment)</p>
+
+<h3 id="find">Find:</h3>
+
+<p><strong>Examples using Clojure sequences</strong></p>
+
+<p>http://clojure.org/sequences</p>
+
+<p>http://www.gettingclojure.com/cookbook:sequences</p>
+
+<p>blip.tv/clojure/clojure-sequences-740581</p>
+
+<p><strong>The formal definition of a Clojure function</strong></p>
+
+<p>http://clojure.org/functional_programming</p>
+
+<p><strong>A script for quickly invoking the repl (clojure console) in your environment</strong></p>
+
+<p>http://en.wikibooks.org/wiki/Learning_Clojure/Installation#Windows_Configuration</p>
+
+<h3 id="do">Do:</h3>
+
+<p><strong>Implement a function called (big st n) that returns true if a string st is longer than n characters.</strong></p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">bigstn.clj</span><a class="code-highlight-caption-link" href="https://gist.github.com/8164020">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kd">defn </span><span class="nv">bigstn</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="s">&quot;Returns true if string is longer than n chars&quot;</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">[</span><span class="nv">string</span> <span class="nv">n</span><span class="p">]</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span> <span class="nb">&gt; </span><span class="p">(</span><span class="nb">count </span><span class="nv">string</span><span class="p">)</span> <span class="nv">n</span><span class="p">))</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nb">println </span><span class="s">&quot;expect true: &quot;</span> <span class="p">(</span><span class="nf">bigstn</span> <span class="s">&quot;heather&quot;</span> <span class="mi">3</span><span class="p">))</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nb">println </span><span class="s">&quot;expect false: &quot;</span> <span class="p">(</span><span class="nf">bigstn</span> <span class="s">&quot;dog&quot;</span> <span class="mi">4</span><span class="p">))</span></div></div></pre></div></figure>
+
+<p><strong>Write a function called (collection-type col)</strong></p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">collection-type.clj</span><a class="code-highlight-caption-link" href="https://gist.github.com/8164020">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">;http://faustus.webatu.com/clj-quick-ref.html</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; found a list of type tests</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; cond is like a switch statement </span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="c1">; and allows you to check multiple conditions</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nf">defn</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">     <span class="nv">collection-type</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">[</span><span class="nv">col</span><span class="p">]</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nf">cond</span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line">     <span class="p">(</span><span class="nf">list?</span> <span class="nv">col</span><span class="p">)</span> <span class="ss">:list</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line">     <span class="p">(</span><span class="nb">map? </span><span class="nv">col</span><span class="p">)</span> <span class="ss">:map</span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line">     <span class="p">(</span><span class="nb">vector? </span><span class="nv">col</span><span class="p">)</span> <span class="ss">:vector</span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">))</span>
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="k">def </span><span class="nv">AVector</span> <span class="p">[</span><span class="ss">:luke</span> <span class="ss">:lucy</span> <span class="ss">:lynne</span><span class="p">])</span>
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="k">def </span><span class="nv">AList</span> <span class="o">&#39;</span><span class="p">(</span><span class="ss">:luke</span> <span class="ss">:lucy</span> <span class="ss">:lynne</span><span class="p">))</span>
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="k">def </span><span class="nv">AMap</span> <span class="p">&#x7b;</span><span class="ss">:chewie</span> <span class="ss">:wookie</span>, <span class="ss">:lea</span> <span class="ss">:human</span><span class="p">&#x7d;)</span>
+</div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nb">println </span><span class="s">&quot;expect vector:&quot;</span> <span class="p">(</span><span class="nf">collection-type</span> <span class="nv">AVector</span><span class="p">))</span>
+</div></div><div data-line="19" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nb">println </span><span class="s">&quot;expect list:&quot;</span> <span class="p">(</span><span class="nf">collection-type</span> <span class="nv">AList</span><span class="p">))</span>
+</div></div><div data-line="20" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">(</span><span class="nb">println </span><span class="s">&quot;expect map:&quot;</span> <span class="p">(</span><span class="nf">collection-type</span> <span class="nv">AMap</span><span class="p">))</span></div></div></pre></div></figure>
+
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://heatherjcampbell.com/agile/agile-weekly-prescriptive-coaching/" class="btn" title="Agile Weekly: Prescriptive Coaching?">Previous article</a>
+      
+      
+        <a href="http://heatherjcampbell.com/development/clojure-day-2/" class="btn" title="Clojure Day 2">Next article</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span>&copy; 2016 Heather Campbell. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/so-simple/">So Simple Theme</a>.</span>
+<div class="social-icons">
+	<a href="http://twitter.com/hcampbell07" title="Heather Campbell on Twitter" target="_blank"><i class="icon-twitter icon-2x"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="http://github.com/heatherjc07" title="Heather Campbell on Github" target="_blank"><i class="icon-github icon-2x"></i></a>
+	
+</div><!-- /.social-icons -->
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://heatherjcampbell.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://heatherjcampbell.com/assets/js/scripts.min.js"></script>
+
+<!-- Jekyll Simple Search option -->
+<script>
+  $(document).ready(function() {
+      $('.search-field').simpleJekyllSearch({
+          jsonFile : 'http://heatherjcampbell.com/search.json',
+          searchResults : '.search-results',
+          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          noResults: '<p>Nothing found.</p>'
+        });
+  });
+
+  (function( $, window, undefined ) {
+    
+     var bs = {
+          close: $(".icon-remove-sign"),
+          searchform: $(".search-form"),
+          canvas: $("body"),
+          dothis: $('.dosearch')
+      };
+    
+    bs.dothis.on('click', function() {
+      $('.search-wrapper').css({ display: "block" });
+      bs.searchform.toggleClass('active');
+      bs.searchform.find('input').focus();
+      bs.canvas.toggleClass('search-overlay');
+    });
+    
+      bs.close.on('click', function() {
+        $('.search-wrapper').removeAttr( 'style' );
+        bs.searchform.toggleClass('active');
+        bs.canvas.removeClass('search-overlay');
+    });
+  })( jQuery, window );
+</script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-69172837-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>	        
+
+</body>
+</html>

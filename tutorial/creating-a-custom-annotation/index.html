@@ -1,0 +1,383 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Creating a Custom Annotation &#8211; Technical Musing of a Mummy</title>
+<meta name="description" content="Creating a customer annotation in Java">
+<meta name="keywords" content="JSR303, java, validation">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://heatherjcampbell.com/images/">
+<meta name="twitter:title" content="Creating a Custom Annotation">
+<meta name="twitter:description" content="Creating a customer annotation in Java">
+<meta name="twitter:creator" content="@hcampbell07">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Creating a Custom Annotation">
+<meta property="og:description" content="Creating a customer annotation in Java">
+<meta property="og:url" content="http://heatherjcampbell.com/tutorial/creating-a-custom-annotation/">
+<meta property="og:site_name" content="Technical Musing of a Mummy">
+
+
+
+
+
+<link rel="canonical" href="http://heatherjcampbell.com/tutorial/creating-a-custom-annotation/">
+<link href="http://heatherjcampbell.com/feed.xml" type="application/atom+xml" rel="alternate" title="Technical Musing of a Mummy Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://heatherjcampbell.com/assets/css/main.min.css">
+<link rel="stylesheet" href="http://heatherjcampbell.com/assets/css/code.css">
+<!-- Webfonts -->
+<script src="//use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="http://heatherjcampbell.com/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://heatherjcampbell.com/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://heatherjcampbell.com/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://heatherjcampbell.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://heatherjcampbell.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://heatherjcampbell.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://heatherjcampbell.com/images/apple-touch-icon-144x144-precomposed.png">
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav">
+	    <ul>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/about/">About</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/articles/">Posts</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/tags/">Tags</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="https://twitter.com/HCampbell07/">Tweets</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/presentations/">Presentations</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/reading/">Reading List</a>
+				 
+			</li>
+	        
+	        <li><a href="http://heatherjcampbell.com/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+	        <li class="dosearch"><i class="icon-search"></i> Search</li>
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+<div class="search-wrapper">
+	<div class="search-form">
+		<input type="text" class="search-field" placeholder="Search...">
+		<i class="icon-remove-sign icon-2x"></i>
+		<ul class="search-results post-list"></ul><!-- /.search-results -->
+	</div><!-- /.search-form -->
+</div><!-- ./search-wrapper -->
+
+<header class="masthead">
+	<div class="wrap">
+        <h1 class="site-title"><a href="http://heatherjcampbell.com">Technical Musing of a Mummy</a></h1>
+		<h2 class="site-description" itemprop="description">A Blog About All Things IT Related</h2>
+	</div>
+</header><!-- /.masthead -->
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <span class="entry-tags"><a href="http://heatherjcampbell.com/tags/#JSR303" title="Pages tagged JSR303">JSR303</a>&nbsp;&bull;&nbsp;<a href="http://heatherjcampbell.com/tags/#java" title="Pages tagged java">java</a>&nbsp;&bull;&nbsp;<a href="http://heatherjcampbell.com/tags/#validation" title="Pages tagged validation">validation</a></span>
+        
+          <h1 class="entry-title">Creating a Custom Annotation</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        <img src="http://heatherjcampbell.com/images/bio-photo.JPG" alt="Heather Campbell photo" class="author-photo">
+        <span class="author vcard">By <span class="fn"><a href="http://heatherjcampbell.com/about/" title="About Heather Campbell">Heather Campbell</a></span></span>
+        <span class="entry-date date published"><time datetime="2012-06-14T00:00:00+01:00"><i class="icon-calendar-empty"></i> June 14, 2012</time></span>
+        
+        
+        <span><a href="http://heatherjcampbell.com/tutorial/creating-a-custom-annotation/" rel="bookmark" title="Creating a Custom Annotation"><i class="icon-link"></i> Permalink</a></span>
+        
+        <span class="social-share-facebook">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://heatherjcampbell.com/tutorial/creating-a-custom-annotation/" title="Share on Facebook" itemprop="Facebook"><i class="icon-facebook-sign"></i> Like</a></span>
+        <span class="social-share-twitter">
+            <a href="https://twitter.com/intent/tweet?hashtags=tutorial&text=Creating a Custom Annotation&url=http://heatherjcampbell.com/tutorial/creating-a-custom-annotation/&via=hcampbell07" title="Share on Twitter" itemprop="Twitter"><i class="icon-twitter-sign"></i> Tweet</a></span>
+        <span class="social-share-googleplus">
+            <a href="https://plus.google.com/share?url=http://heatherjcampbell.com/tutorial/creating-a-custom-annotation/" title="Share on Google Plus" itemprop="GooglePlus"><i class="icon-google-plus-sign"></i> +1</a></span>
+            <!-- /.social-share -->
+      </footer>
+      <div class="entry-content">
+        <p>JSR 303 provides a set of built-in validations but there will be times when you need to create your own validation annotation. Thankfully the specification was written with that in mind and it is relatively simple to write a custom validation annotation.</p>
+
+<p>A typical scenario could be that we want to validate that two passwords entered by the user match.</p>
+
+<h2 id="defining-the-annotation">Defining the Annotation</h2>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">Matches.java</span><a class="code-highlight-caption-link" href="https://gist.github.com/5224957">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kn">import</span> <span class="nn">static</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">annotation</span><span class="o">.</span><span class="na">ElementType</span><span class="o">.*;</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kn">import</span> <span class="nn">static</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">annotation</span><span class="o">.</span><span class="na">RetentionPolicy</span><span class="o">.*;</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kn">import</span> <span class="nn">java.lang.annotation.Documented</span><span class="o">;</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kn">import</span> <span class="nn">java.lang.annotation.Retention</span><span class="o">;</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kn">import</span> <span class="nn">java.lang.annotation.Target</span><span class="o">;</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kn">import</span> <span class="nn">javax.validation.Constraint</span><span class="o">;</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kn">import</span> <span class="nn">javax.validation.Payload</span><span class="o">;</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nd">@Target</span><span class="o">(&#x7b;</span><span class="n">TYPE</span><span class="o">,</span> <span class="n">ANNOTATION_TYPE</span><span class="o">&#x7d;)</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nd">@Retention</span><span class="o">(</span><span class="n">RUNTIME</span><span class="o">)</span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nd">@Constraint</span><span class="o">(</span><span class="n">validatedBy</span> <span class="o">=</span> <span class="n">MatchesValidator</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nd">@Documented</span>
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kd">public</span> <span class="nd">@interface</span> <span class="n">Matches</span> <span class="o">&#x7b;</span>
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">String</span> <span class="nf">message</span><span class="o">()</span> <span class="k">default</span> <span class="s">&quot;&#x7b;constraints.matches&#x7d;&quot;</span><span class="o">;</span> 
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">Class</span><span class="o">[]</span> <span class="nf">groups</span><span class="o">()</span> <span class="k">default</span> <span class="o">&#x7b;&#x7d;;</span> 
+</div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">Class</span><span class="o">[]</span> <span class="nf">payload</span><span class="o">()</span> <span class="k">default</span> <span class="o">&#x7b;&#x7d;;</span> 
+</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">String</span> <span class="nf">field</span><span class="o">();</span> 
+</div></div><div data-line="19" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">String</span> <span class="nf">verifyField</span><span class="o">();</span>
+</div></div><div data-line="20" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="21" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">&#x7d;</span></div></div></pre></div></figure>
+
+<p>We use the @interface keyword to define an annotation.</p>
+
+<p>There are certain attributes and annotations we must define in order to satisfy the specification.
+ + an attribute “message” that returns the default key for creating error messages in case the constraint is violated
+ + an attribute “groups” that allows the specification of validation groups, to which this constraint belongs This must default to an empty array.
+ + <code>@Target({ METHOD, FIELD, ANNOTATION_TYPE })</code>: Says, that type declarations and annotation declarations may be annotated with @Matches (but not method or field declarations e.g.)
+ + <code>@Retention(RUNTIME)</code>: Specifies, that annotations of this type will be available at runtime by the means of reflection
+ + <code>@Constraint(validatedBy = MatchesValidator.class)</code>: Specifies the validator to be used to validate elements annotated with @Matches
+ + Documented: Says, that the use of @Matches will be contained in the JavaDoc of elements annotated with it</p>
+
+<h2 id="implementing-the-constrainvalidator">Implementing the ConstrainValidator</h2>
+
+<p>The next step is to implement the ConstraintValidator that will validate classes with the <code>@Matches</code> annotation</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">MatchesValidator.java</span><a class="code-highlight-caption-link" href="https://gist.github.com/5224957">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kn">import</span> <span class="nn">org.mvel2.MVEL</span><span class="o">;</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kn">import</span> <span class="nn">javax.validation.ConstraintValidator</span><span class="o">;</span> 
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kn">import</span> <span class="nn">javax.validation.ConstraintValidatorContext</span><span class="o">;</span> 
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MatchesValidator</span> <span class="kd">implements</span> <span class="n">ConstraintValidator</span><span class="o">&#x7b;</span> 
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="kd">private</span> <span class="n">String</span> <span class="n">field</span><span class="o">;</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="kd">private</span> <span class="n">String</span> <span class="n">verifyField</span><span class="o">;</span> 
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">initialize</span><span class="o">(</span><span class="n">Matches</span> <span class="n">constraintAnnotation</span><span class="o">)&#x7b;</span> 
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="k">this</span><span class="o">.</span><span class="na">field</span> <span class="o">=</span> <span class="n">constraintAnnotation</span><span class="o">.</span><span class="na">field</span><span class="o">();</span> 
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="k">this</span><span class="o">.</span><span class="na">verifyField</span> <span class="o">=</span> <span class="n">constraintAnnotation</span><span class="o">.</span><span class="na">verifyField</span><span class="o">();</span> 
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="o">&#x7d;</span> 
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isValid</span><span class="o">(</span><span class="n">Object</span> <span class="n">value</span><span class="o">,</span> <span class="n">ConstraintValidatorContext</span> <span class="n">context</span><span class="o">)&#x7b;</span> 
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">Object</span> <span class="n">fieldObj</span> <span class="o">=</span> <span class="n">MVEL</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="n">field</span><span class="o">,</span> <span class="n">value</span><span class="o">);</span> 
+</div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">Object</span> <span class="n">verifyFieldObj</span> <span class="o">=</span> <span class="n">MVEL</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="n">verifyField</span><span class="o">,</span> <span class="n">value</span><span class="o">);</span> 
+</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="kt">boolean</span> <span class="n">neitherSet</span> <span class="o">=</span> <span class="o">(</span><span class="n">fieldObj</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">verifyFieldObj</span> <span class="o">==</span> <span class="kc">null</span><span class="o">);</span> 
+</div></div><div data-line="19" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="20" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="k">if</span> <span class="o">(</span><span class="n">neitherSet</span><span class="o">)</span> <span class="o">&#x7b;</span> 
+</div></div><div data-line="21" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="k">return</span> <span class="kc">true</span><span class="o">;</span> 
+</div></div><div data-line="22" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="o">&#x7d;</span> 
+</div></div><div data-line="23" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="24" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="kt">boolean</span> <span class="n">matches</span> <span class="o">=</span> <span class="o">(</span><span class="n">fieldObj</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> 
+</div></div><div data-line="25" class="code-highlight-row numbered"><div class="code-highlight-line">                        <span class="o">&amp;&amp;</span> <span class="n">fieldObj</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">verifyFieldObj</span><span class="o">);</span> 
+</div></div><div data-line="26" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="27" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="k">if</span> <span class="o">(!</span><span class="n">matches</span><span class="o">)</span> <span class="o">&#x7b;</span> 
+</div></div><div data-line="28" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="n">context</span><span class="o">.</span><span class="na">disableDefaultConstraintViolation</span><span class="o">();</span> 
+</div></div><div data-line="29" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="n">context</span><span class="o">.</span><span class="na">buildConstraintViolationWithTemplate</span><span class="o">(</span><span class="s">&quot;message&quot;</span><span class="o">)</span>
+</div></div><div data-line="30" class="code-highlight-row numbered"><div class="code-highlight-line">        <span class="o">.</span><span class="na">addNode</span><span class="o">(</span><span class="n">verifyField</span><span class="o">)</span> 
+</div></div><div data-line="31" class="code-highlight-row numbered"><div class="code-highlight-line">        <span class="o">.</span><span class="na">addConstraintViolation</span><span class="o">();</span> 
+</div></div><div data-line="32" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="o">&#x7d;</span> 
+</div></div><div data-line="33" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="34" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="k">return</span> <span class="n">matches</span><span class="o">;</span> 
+</div></div><div data-line="35" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="o">&#x7d;</span> 
+</div></div><div data-line="36" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">&#x7d;</span></div></div></pre></div></figure>
+
+<p>The ConstraintValidator interface specifies two type parameters, which we set in our implementation. The first specifies the annotation type to be validated by a ConstraintValidator (in our example Matches), the second the type of elements, which the validator can handle (we’re expecting an object). Specifying object means we don’t limit the validation annotation to a particular type. MVEL is used to inspect the properties of the object being validated. If we specified a particular type we could use the fields accessor methods.
+The implementation of the validator is straightforward. The initialize() method gives us access to any attributes of the annotation. In this case we’re expecting the name of the password field (field) and the match password field. (verifyfield)</p>
+
+<p>The isValid() method determines whether the two fields match. If they do the @Matches annotation is satisfied. If they are not an exception is raised using the default message.</p>
+
+<p>Note, that the specification recommends, that null values should be declared to be valid. If null is not a valid value for an element, it should be annotated with @NotNull explicitly.</p>
+
+<h2 id="specifying-the-error-message">Specifying the Error Message</h2>
+
+<p>Next we need to specify the error message. To do so, we create a file named ValidationMessages.properties under src/main/resources with the following content:</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">ValidationMessages.properties</span><a class="code-highlight-caption-link" href="https://gist.github.com/5224957">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="err">constraints.matches</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">   <span class="o">=</span><span class="s">Your confirmation password does not match the password you entered. </span></div></div></pre></div></figure>
+
+<h2 id="using-our-new-annotation">Using Our New Annotation</h2>
+
+<p>We can now use the @Matches annotation on our CreateUserAccountForm class to verify the password and passwordRepeat fields match.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">CreateUserAccountForm.java</span><a class="code-highlight-caption-link" href="https://gist.github.com/5224957">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nd">@Matches</span><span class="o">(</span><span class="n">field</span><span class="o">=</span><span class="s">&quot;password&quot;</span><span class="o">,</span> <span class="n">verifyField</span><span class="o">=</span><span class="s">&quot;passwordRepeat&quot;</span><span class="o">)</span> 
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CreateUserAccountForm</span> <span class="o">&#x7b;</span> 
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="nd">@Size</span><span class="o">(</span><span class="n">min</span><span class="o">=</span><span class="mi">6</span><span class="o">,</span> <span class="n">max</span><span class="o">=</span><span class="mi">20</span><span class="o">)</span> 
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="kd">private</span> <span class="n">String</span> <span class="n">password</span><span class="o">;</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="nd">@Size</span><span class="o">(</span><span class="n">min</span><span class="o">=</span><span class="mi">6</span><span class="o">,</span> <span class="n">max</span><span class="o">=</span><span class="mi">20</span><span class="o">)</span> 
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="kd">private</span> <span class="n">String</span> <span class="n">passwordRepeat</span><span class="o">;</span> 
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="o">...</span> 
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">&#x7d;</span></div></div></pre></div></figure>
+
+<h2 id="testing-the-new-constraint">Testing the New Constraint</h2>
+
+<p>We can then write a simple junit test to check our new constraint</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">MatchesTest.java</span><a class="code-highlight-caption-link" href="https://gist.github.com/5224957">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">Assert</span><span class="o">.*;</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kn">import</span> <span class="nn">java.util.Set</span><span class="o">;</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kn">import</span> <span class="nn">javax.validation.ConstraintViolation</span><span class="o">;</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kn">import</span> <span class="nn">javax.validation.Validation</span><span class="o">;</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kn">import</span> <span class="nn">javax.validation.Validator</span><span class="o">;</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kn">import</span> <span class="nn">javax.validation.ValidatorFactory</span><span class="o">;</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kn">import</span> <span class="nn">org.junit.BeforeClass</span><span class="o">;</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kn">import</span> <span class="nn">org.junit.Test</span><span class="o">;</span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MatchesTest</span> <span class="o">&#x7b;</span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="kd">private</span> <span class="kd">static</span> <span class="n">Validator</span> <span class="n">validator</span><span class="o">;</span>  
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="nd">@BeforeClass</span>
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">setUp</span><span class="o">()</span> <span class="o">&#x7b;</span>
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">ValidatorFactory</span> <span class="n">factory</span> 
+</div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="o">=</span> <span class="n">Validation</span><span class="o">.</span><span class="na">buildDefaultValidatorFactory</span><span class="o">();</span>
+</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">validator</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="na">getValidator</span><span class="o">();</span>
+</div></div><div data-line="19" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="o">&#x7d;</span>
+</div></div><div data-line="20" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="21" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="nd">@Test</span>
+</div></div><div data-line="22" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testPasswordsNotMatching</span> <span class="o">()</span> <span class="o">&#x7b;</span>
+</div></div><div data-line="23" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">CreateUserAccountForm</span> <span class="n">form</span> 
+</div></div><div data-line="24" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="o">=</span> <span class="k">new</span> <span class="nf">CreateUserAccountForm</span> <span class="o">(</span><span class="s">&quot;Password1&quot;</span><span class="o">,</span> <span class="s">&quot;PasswordBlah&quot;</span><span class="o">);</span>
+</div></div><div data-line="25" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="26" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">Set</span><span class="o">&gt;</span> <span class="n">constraintViolations</span> <span class="o">=</span>
+</div></div><div data-line="27" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="28" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">validator</span><span class="o">.</span><span class="na">validate</span><span class="o">(</span><span class="n">form</span><span class="o">);</span>
+</div></div><div data-line="29" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="30" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">assertEquals</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">constraintViolations</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>
+</div></div><div data-line="31" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">assertEquals</span><span class="o">(</span>
+</div></div><div data-line="32" class="code-highlight-row numbered"><div class="code-highlight-line">     <span class="s">&quot;Your confirmation password does not match the password you entered.&quot;</span><span class="o">,</span> 
+</div></div><div data-line="33" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="n">constraintViolations</span><span class="o">.</span><span class="na">iterator</span><span class="o">().</span><span class="na">next</span><span class="o">()</span>
+</div></div><div data-line="34" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="o">.</span><span class="na">getInterpolatedMessage</span><span class="o">());</span>
+</div></div><div data-line="35" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="o">&#x7d;</span>
+</div></div><div data-line="36" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="37" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="nd">@Test</span>
+</div></div><div data-line="38" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testPasswordsValid</span><span class="o">()</span> <span class="o">&#x7b;</span>
+</div></div><div data-line="39" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">CreateUserAccountForm</span> <span class="n">form</span> 
+</div></div><div data-line="40" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="o">=</span> <span class="k">new</span> <span class="nf">CreateUserAccountForm</span><span class="o">(</span><span class="s">&quot;Password1&quot;</span><span class="o">,</span> <span class="s">&quot;Password1&quot;</span><span class="o">);</span>
+</div></div><div data-line="41" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="42" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">Set</span><span class="o">&gt;</span> <span class="n">constraintViolations</span> <span class="o">=</span> 
+</div></div><div data-line="43" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="n">validator</span><span class="o">.</span><span class="na">validate</span><span class="o">(</span><span class="n">form</span><span class="o">);</span>
+</div></div><div data-line="44" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">assertEquals</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">constraintViolations</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>
+</div></div><div data-line="45" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="o">&#x7d;</span>
+</div></div><div data-line="46" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">&#x7d;</span></div></div></pre></div></figure>
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://heatherjcampbell.com/books/passionate-programmer/" class="btn" title="Passionate Programmer">Previous article</a>
+      
+      
+        <a href="http://heatherjcampbell.com/skills/the-process-of-selecting-a-product/" class="btn" title="The Process of Selecting a Product">Next article</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span>&copy; 2016 Heather Campbell. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/so-simple/">So Simple Theme</a>.</span>
+<div class="social-icons">
+	<a href="http://twitter.com/hcampbell07" title="Heather Campbell on Twitter" target="_blank"><i class="icon-twitter icon-2x"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="http://github.com/heatherjc07" title="Heather Campbell on Github" target="_blank"><i class="icon-github icon-2x"></i></a>
+	
+</div><!-- /.social-icons -->
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://heatherjcampbell.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://heatherjcampbell.com/assets/js/scripts.min.js"></script>
+
+<!-- Jekyll Simple Search option -->
+<script>
+  $(document).ready(function() {
+      $('.search-field').simpleJekyllSearch({
+          jsonFile : 'http://heatherjcampbell.com/search.json',
+          searchResults : '.search-results',
+          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          noResults: '<p>Nothing found.</p>'
+        });
+  });
+
+  (function( $, window, undefined ) {
+    
+     var bs = {
+          close: $(".icon-remove-sign"),
+          searchform: $(".search-form"),
+          canvas: $("body"),
+          dothis: $('.dosearch')
+      };
+    
+    bs.dothis.on('click', function() {
+      $('.search-wrapper').css({ display: "block" });
+      bs.searchform.toggleClass('active');
+      bs.searchform.find('input').focus();
+      bs.canvas.toggleClass('search-overlay');
+    });
+    
+      bs.close.on('click', function() {
+        $('.search-wrapper').removeAttr( 'style' );
+        bs.searchform.toggleClass('active');
+        bs.canvas.removeClass('search-overlay');
+    });
+  })( jQuery, window );
+</script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-69172837-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>	        
+
+</body>
+</html>

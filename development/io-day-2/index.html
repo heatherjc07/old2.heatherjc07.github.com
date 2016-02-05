@@ -1,0 +1,464 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Io Day 2 &#8211; Technical Musing of a Mummy</title>
+<meta name="description" content="Io Day 2: Seven Languages in Seven Weeks">
+<meta name="keywords" content="seven languages in seven weeks, io, languages">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://heatherjcampbell.com/images/">
+<meta name="twitter:title" content="Io Day 2">
+<meta name="twitter:description" content="Io Day 2: Seven Languages in Seven Weeks">
+<meta name="twitter:creator" content="@hcampbell07">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Io Day 2">
+<meta property="og:description" content="Io Day 2: Seven Languages in Seven Weeks">
+<meta property="og:url" content="http://heatherjcampbell.com/development/io-day-2/">
+<meta property="og:site_name" content="Technical Musing of a Mummy">
+
+
+
+
+
+<link rel="canonical" href="http://heatherjcampbell.com/development/io-day-2/">
+<link href="http://heatherjcampbell.com/feed.xml" type="application/atom+xml" rel="alternate" title="Technical Musing of a Mummy Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://heatherjcampbell.com/assets/css/main.min.css">
+<link rel="stylesheet" href="http://heatherjcampbell.com/assets/css/code.css">
+<!-- Webfonts -->
+<script src="//use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="http://heatherjcampbell.com/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://heatherjcampbell.com/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://heatherjcampbell.com/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://heatherjcampbell.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://heatherjcampbell.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://heatherjcampbell.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://heatherjcampbell.com/images/apple-touch-icon-144x144-precomposed.png">
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav">
+	    <ul>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/about/">About</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/articles/">Posts</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/tags/">Tags</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="https://twitter.com/HCampbell07/">Tweets</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/presentations/">Presentations</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/reading/">Reading List</a>
+				 
+			</li>
+	        
+	        <li><a href="http://heatherjcampbell.com/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+	        <li class="dosearch"><i class="icon-search"></i> Search</li>
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+<div class="search-wrapper">
+	<div class="search-form">
+		<input type="text" class="search-field" placeholder="Search...">
+		<i class="icon-remove-sign icon-2x"></i>
+		<ul class="search-results post-list"></ul><!-- /.search-results -->
+	</div><!-- /.search-form -->
+</div><!-- ./search-wrapper -->
+
+<header class="masthead">
+	<div class="wrap">
+        <h1 class="site-title"><a href="http://heatherjcampbell.com">Technical Musing of a Mummy</a></h1>
+		<h2 class="site-description" itemprop="description">A Blog About All Things IT Related</h2>
+	</div>
+</header><!-- /.masthead -->
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <span class="entry-tags"><a href="http://heatherjcampbell.com/tags/#seven languages in seven weeks" title="Pages tagged seven languages in seven weeks">seven languages in seven weeks</a>&nbsp;&bull;&nbsp;<a href="http://heatherjcampbell.com/tags/#io" title="Pages tagged io">io</a>&nbsp;&bull;&nbsp;<a href="http://heatherjcampbell.com/tags/#languages" title="Pages tagged languages">languages</a></span>
+        
+          <h1 class="entry-title">Io Day 2</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        <img src="http://heatherjcampbell.com/images/bio-photo.JPG" alt="Heather Campbell photo" class="author-photo">
+        <span class="author vcard">By <span class="fn"><a href="http://heatherjcampbell.com/about/" title="About Heather Campbell">Heather Campbell</a></span></span>
+        <span class="entry-date date published"><time datetime="2012-09-10T00:00:00+01:00"><i class="icon-calendar-empty"></i> September 10, 2012</time></span>
+        
+        
+        <span><a href="http://heatherjcampbell.com/development/io-day-2/" rel="bookmark" title="Io Day 2"><i class="icon-link"></i> Permalink</a></span>
+        
+        <span class="social-share-facebook">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://heatherjcampbell.com/development/io-day-2/" title="Share on Facebook" itemprop="Facebook"><i class="icon-facebook-sign"></i> Like</a></span>
+        <span class="social-share-twitter">
+            <a href="https://twitter.com/intent/tweet?hashtags=development&text=Io Day 2&url=http://heatherjcampbell.com/development/io-day-2/&via=hcampbell07" title="Share on Twitter" itemprop="Twitter"><i class="icon-twitter-sign"></i> Tweet</a></span>
+        <span class="social-share-googleplus">
+            <a href="https://plus.google.com/share?url=http://heatherjcampbell.com/development/io-day-2/" title="Share on Google Plus" itemprop="GooglePlus"><i class="icon-google-plus-sign"></i> +1</a></span>
+            <!-- /.social-share -->
+      </footer>
+      <div class="entry-content">
+        <p><em>My experience with day two of exploring Io through <a href="http://pragprog.com/book/btlang/seven-languages-in-seven-weeks" target="_blank">Seven Languages in Seven Weeks.</a></em></p>
+
+<p>Day 2 of Io follows a pretty similar format to Ruby day 2 looking at conditional loops, operators and reflection.</p>
+
+<h2 id="conditional-loops">Conditional Loops</h2>
+
+<p>Conditional Loops in Io are not pretty to read. It’s basic syntax means it is easy to remember how to write conditional loops but it takes a bit of concentration to read the code and get what it is doing. I miss a bit of Ruby’s syntactic sugar!</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">conditional1.io</span><a class="code-highlight-caption-link" href="https://gist.github.com/5267761">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">while</span><span class="o">(</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="mf">11</span><span class="o">,</span> <span class="n">i</span> <span class="n">println</span><span class="o">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mf">1</span><span class="o">);</span> 
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="s">&quot;This one goes up to 11&quot;</span> <span class="n">println</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">for</span><span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="mf">1</span><span class="o">,</span> <span class="mf">11</span><span class="o">,</span> <span class="n">i</span> <span class="n">println</span><span class="o">);</span> 
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="s">&quot;This one goes up to 11&quot;</span> <span class="n">println</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">if</span><span class="o">(</span><span class="no">false</span><span class="o">)</span> <span class="k">then</span><span class="o">(</span><span class="s">&quot;It is true.&quot;</span> <span class="n">println</span><span class="o">)</span> 
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">else</span><span class="o">(</span><span class="s">&quot;It is false.&quot;</span> <span class="n">println</span><span class="o">)</span></div></div></pre></div></figure>
+
+<p>Io allows you to attach additional parameters but it is up to you to make sure your arguments match correctly. If you miss a parameter your arguments end up in the wrong place, there is no compiler to babysit you. The example below shows the optional increment parameter and prints only odd numbers.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">conditional2.io</span><a class="code-highlight-caption-link" href="https://gist.github.com/5267761">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">for</span><span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="mf">1</span><span class="o">,</span> <span class="mf">11</span><span class="o">,</span> <span class="mf">2</span><span class="o">,</span> <span class="n">i</span> <span class="n">println</span><span class="o">);</span> <span class="s">&quot;This one goes up to 11&quot;</span> <span class="n">println</span></div></div></pre></div></figure>
+
+<h2 id="operators">Operators</h2>
+
+<p>One thing I really like about Io is the ability to create your own operators which allows you to build some very succinct and powerful syntax. The following command displays the operators and their precedence.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">operator1.io</span><a class="code-highlight-caption-link" href="https://gist.github.com/5267761">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">OperatorTable</span></div></div></pre></div></figure>
+
+<p>You can add your own operators and specify their precedence.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">operator2.io</span><a class="code-highlight-caption-link" href="https://gist.github.com/5267761">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">OperatorTable</span> <span class="n">addOperator</span><span class="o">(</span><span class="s">&quot;xor&quot;</span><span class="o">,</span> <span class="mf">11</span><span class="o">)</span></div></div></pre></div></figure>
+
+<p>If you want to see a full example of this take a look at my day 3 post</p>
+
+<h2 id="messages">Messages</h2>
+
+<p>Almost everything in Io is a message. You can query any characteristic of a message and act on it appropriately. The key components are the sender who sends the message, the target who received and executes the message and the message arguments.</p>
+
+<h2 id="reflection">Reflection</h2>
+
+<p>Here is a simple example of object reflection printing out the ancestors of an object and their slots.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">reflection.io</span><a class="code-highlight-caption-link" href="https://gist.github.com/5267761">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">Object</span> <span class="n">ancestors</span> <span class="o">:=</span> <span class="k">method</span><span class="o">(</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">prototype</span> <span class="o">:=</span> <span class="n">self</span> <span class="n">proto</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">if</span><span class="o">(</span><span class="n">prototype</span> <span class="o">!=</span> <span class="nb">Object</span><span class="o">,</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">writeln</span><span class="o">(</span><span class="s">&quot;Slots of &quot;</span><span class="o">,</span> <span class="n">prototype</span> <span class="n">type</span><span class="o">,</span> <span class="s">&quot;\n---------------&quot;</span><span class="o">)</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">prototype</span> <span class="n">slotNames</span> <span class="n">foreach</span><span class="o">(</span><span class="n">slotName</span><span class="o">,</span> <span class="n">writeln</span><span class="o">(</span><span class="n">slotName</span><span class="o">))</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">writeln</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">prototype</span> <span class="n">ancestors</span><span class="o">))</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">Animal</span> <span class="o">:=</span> <span class="nb">Object</span> <span class="k">clone</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">Animal</span> <span class="n">speak</span> <span class="o">:=</span> <span class="k">method</span><span class="o">(</span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="s">&quot;ambiguous animal noise&quot;</span> <span class="n">println</span><span class="o">)</span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">Duck</span> <span class="o">:=</span> <span class="n">Animal</span> <span class="k">clone</span>
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">Duck</span> <span class="n">speak</span> <span class="o">:=</span> <span class="k">method</span><span class="o">(</span>
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="s">&quot;quack&quot;</span> <span class="n">println</span><span class="o">)</span>
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">Duck</span> <span class="n">walk</span> <span class="o">:=</span> <span class="k">method</span><span class="o">(</span>
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="s">&quot;waddle&quot;</span> <span class="n">println</span><span class="o">)</span>
+</div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">disco</span> <span class="o">:=</span> <span class="n">Duck</span> <span class="k">clone</span>
+</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">disco</span> <span class="n">ancestors</span>
+</div></div><div data-line="19" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="20" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="21" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">//Returns </span>
+</div></div><div data-line="22" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">//</span>
+</div></div><div data-line="23" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">//Slots of Duck</span>
+</div></div><div data-line="24" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">//---------------</span>
+</div></div><div data-line="25" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">//speak</span>
+</div></div><div data-line="26" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">//walk</span>
+</div></div><div data-line="27" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">//type</span>
+</div></div><div data-line="28" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">//Slots of Animal</span>
+</div></div><div data-line="29" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">//---------------</span>
+</div></div><div data-line="30" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">//speak</span>
+</div></div><div data-line="31" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">//type</span></div></div></pre></div></figure>
+
+<h2 id="do">Do</h2>
+
+<p><em>A Fibonacci sequence starts with two 1s. Each subsequent number is the sum of the two numbers that came before: 1, 1, 2, 3, 5, 8, 13, 21, and so on. Write a program to find the nth Fibonacci number. fib(1) is 1, and fib(4) is 3. As a bonus, solve the problem with recursion and with loops.</em></p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">fibonacci.io</span><a class="code-highlight-caption-link" href="https://gist.github.com/5267761">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">fibonacci</span> <span class="o">:=</span> <span class="k">method</span><span class="o">(</span><span class="n">n</span><span class="o">,</span>  <span class="k">if</span><span class="o">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="mf">3</span><span class="o">,</span> <span class="mf">1</span><span class="o">,</span> <span class="n">fibonacci</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="mf">1</span><span class="o">)</span> 
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="o">+</span> <span class="n">fibonacci</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="mf">2</span><span class="o">)))</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">writeln</span> <span class="o">(</span><span class="s">&quot;Recursive Solution&quot;</span><span class="o">)</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">println</span> <span class="k">for</span><span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="mf">1</span><span class="o">,</span> <span class="mf">20</span><span class="o">,</span> <span class="n">fibonacci</span><span class="o">(</span><span class="n">i</span><span class="o">)</span> <span class="n">println</span><span class="o">)</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">fibonacci2</span> <span class="o">:=</span> <span class="k">method</span><span class="o">(</span><span class="n">n</span><span class="o">,</span>  
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">val_before_last</span> <span class="o">:=</span> <span class="mf">0</span>  
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">last_val</span> <span class="o">:=</span> <span class="mf">0</span>  
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">total</span> <span class="o">:=</span> <span class="mf">1</span>  
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">for</span><span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="mf">2</span><span class="o">,</span> <span class="n">n</span><span class="o">,</span>     
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">val_before_last</span> <span class="o">=</span> <span class="n">last_val</span>    
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">last_val</span> <span class="o">=</span> <span class="n">total</span>    
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">total</span> <span class="o">=</span> <span class="n">last_val</span> <span class="o">+</span> <span class="n">val_before_last</span>  <span class="o">)</span>  
+</div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">total</span><span class="o">)</span>
+</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="19" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">writeln</span> <span class="o">(</span><span class="s">&quot;Iterative  Solution&quot;</span><span class="o">)</span>
+</div></div><div data-line="20" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">println</span> <span class="k">for</span><span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="mf">1</span><span class="o">,</span> <span class="mf">20</span><span class="o">,</span> <span class="n">fibonacci2</span><span class="o">(</span><span class="n">i</span><span class="o">)</span> <span class="n">println</span><span class="o">)</span></div></div></pre></div></figure>
+
+<p><em>How would you change / to return 0 if the denominator is zero?</em></p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">divide.io</span><a class="code-highlight-caption-link" href="https://gist.github.com/5267761">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">(</span><span class="mf">6</span> <span class="o">/</span> <span class="mf">0</span><span class="o">)</span> <span class="n">println</span> <span class="c1">// inf</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">(</span><span class="mf">2</span> <span class="o">/</span> <span class="mf">4</span><span class="o">)</span> <span class="n">println</span> <span class="c1">// 0.5</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">Number</span> <span class="n">origDivision</span> <span class="o">:=</span> <span class="n">Number</span> <span class="n">getSlot</span><span class="o">(</span><span class="s">&quot;/&quot;</span><span class="o">)</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">Number</span> <span class="o">/</span> <span class="o">:=</span> <span class="k">method</span><span class="o">(</span><span class="n">other</span><span class="o">,</span>   
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">             <span class="k">if</span> <span class="o">(</span><span class="n">other</span> <span class="o">==</span> <span class="mf">0</span><span class="o">,</span> <span class="mf">0</span><span class="o">,</span> <span class="n">self</span> <span class="n">origDivision</span><span class="o">(</span><span class="n">other</span><span class="o">)))</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">(</span><span class="mf">6</span> <span class="o">/</span> <span class="mf">0</span><span class="o">)</span> <span class="n">println</span> <span class="c1">// 0</span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">(</span><span class="mf">2</span> <span class="o">/</span> <span class="mf">4</span><span class="o">)</span> <span class="n">println</span> <span class="c1">// 0.5</span></div></div></pre></div></figure>
+
+<p><em>Write a program to add up all of the numbers in a two-dimensional array.</em></p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">sumarray.io</span><a class="code-highlight-caption-link" href="https://gist.github.com/5267761">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">array</span> <span class="o">:=</span> <span class="nb">list</span><span class="o">(</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">list</span><span class="o">(</span> <span class="mf">1</span><span class="o">,</span> <span class="mf">3</span><span class="o">,</span> <span class="mf">5</span> <span class="o">),</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">list</span><span class="o">(</span> <span class="mf">10</span><span class="o">,</span> <span class="mf">20</span> <span class="o">),</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">list</span><span class="o">(</span> <span class="mf">100</span><span class="o">,</span> <span class="mf">200</span><span class="o">,</span> <span class="mf">300</span><span class="o">,</span> <span class="mf">500</span> <span class="o">)</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">);</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">sumArray</span> <span class="o">:=</span> <span class="k">method</span><span class="o">(</span><span class="n">array</span><span class="o">,</span>  <span class="n">array</span> <span class="n">flatten</span> <span class="n">sum</span>  <span class="o">)</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">sumArray</span><span class="o">(</span><span class="n">array</span><span class="o">)</span> <span class="n">println</span></div></div></pre></div></figure>
+
+<p><em>Add a slot called myAverage to a list that computes the average of all the numbers in a list. What happens if there are no numbers in a list? (Bonus: Raise an Io exception if any item in the list is not a number.)</em></p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">myAverage.io</span><a class="code-highlight-caption-link" href="https://gist.github.com/5267761">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">List</span> <span class="n">myAverage</span> <span class="o">:=</span> <span class="k">method</span> <span class="o">(</span> <span class="n">total</span> <span class="o">:=</span> <span class="mf">0</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="n">self</span> <span class="n">foreach</span><span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="n">item</span><span class="o">,</span> 
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">   <span class="k">if</span><span class="o">(</span><span class="n">item</span> <span class="n">type</span> <span class="o">==</span> <span class="s">&quot;Number&quot;</span><span class="o">,</span> <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="n">item</span><span class="o">,</span> 
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">   <span class="n">Exception</span> <span class="n">raise</span><span class="o">(</span><span class="s">&quot;#&#x7b;item&#x7d; is not a Number&quot;</span> <span class="n">interpolate</span><span class="o">)))</span>  
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="n">total</span> <span class="o">/</span> <span class="o">(</span><span class="n">self</span> <span class="n">size</span><span class="o">)</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="o">)</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="nb">list</span><span class="o">(</span><span class="mf">5</span><span class="o">,</span><span class="mf">2</span><span class="o">,</span><span class="mf">3</span><span class="o">,</span><span class="mf">1</span><span class="o">)</span> <span class="n">myAverage</span> <span class="n">println</span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="nb">list</span><span class="o">()</span> <span class="n">myAverage</span> <span class="n">println</span> 
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="nb">list</span><span class="o">(</span><span class="mf">5</span><span class="o">,</span><span class="s">&quot;t&quot;</span><span class="o">,</span><span class="mf">6</span><span class="o">,</span><span class="mf">7</span><span class="o">)</span> <span class="n">myAverage</span> <span class="n">println</span></div></div></pre></div></figure>
+
+<p><em>Write a prototype for a two-dimensional list. The dim(x, y) method should allocate a list of y lists that are x elements long. set(x, y, value) should set a value, and get(x, y) should return that value.</em></p>
+
+<p><em>Bonus: Write a transpose method so that (new_matrix get(y, x)) == matrix get(x,y) on the original list.</em></p>
+
+<p><em>Write the matrix to a file, and read a matrix from a file.</em></p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">matrix.io</span><a class="code-highlight-caption-link" href="https://gist.github.com/5267761">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">TwoDList</span> <span class="o">:=</span> <span class="nb">Object</span> <span class="k">clone</span> <span class="k">do</span> <span class="o">(</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">init</span> <span class="o">:=</span> <span class="k">method</span><span class="o">(</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">self</span> <span class="n">lists</span> <span class="o">:=</span> <span class="nb">list</span><span class="o">()</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="o">)</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">dim</span> <span class="o">:=</span> <span class="k">method</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">,</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">self</span> <span class="n">lists</span> <span class="n">preallocateToSize</span><span class="o">(</span><span class="n">y</span><span class="o">)</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="k">for</span><span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="mf">0</span><span class="o">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mf">1</span><span class="o">,</span> 
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="n">self</span> <span class="n">lists</span> <span class="n">append</span><span class="o">(</span><span class="nb">list</span><span class="o">()</span> <span class="n">preallocateToSize</span><span class="o">(</span><span class="n">x</span><span class="o">)))</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">self</span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="o">)</span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">set</span> <span class="o">:=</span> <span class="k">method</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">,</span> <span class="n">value</span><span class="o">,</span>
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">self</span> <span class="n">lists</span> <span class="n">at</span><span class="o">(</span><span class="n">y</span><span class="o">)</span> <span class="n">atInsert</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">value</span><span class="o">)</span>
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="o">)</span>
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">get</span> <span class="o">:=</span> <span class="k">method</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">,</span>
+</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">self</span> <span class="n">lists</span> <span class="n">at</span><span class="o">(</span><span class="n">y</span><span class="o">)</span> <span class="n">at</span><span class="o">(</span><span class="n">x</span><span class="o">)</span>
+</div></div><div data-line="19" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="o">)</span>
+</div></div><div data-line="20" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="21" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">transpose</span> <span class="o">:=</span> <span class="k">method</span><span class="o">(</span>
+</div></div><div data-line="22" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">transposedList</span> 
+</div></div><div data-line="23" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="o">:=</span> <span class="n">TwoDList</span> <span class="k">clone</span> <span class="n">dim</span><span class="o">(</span><span class="n">self</span> <span class="n">lists</span> <span class="n">size</span><span class="o">,</span> 
+</div></div><div data-line="24" class="code-highlight-row numbered"><div class="code-highlight-line">       <span class="n">self</span> <span class="n">lists</span> <span class="n">at</span><span class="o">(</span><span class="mf">0</span><span class="o">)</span> <span class="n">size</span><span class="o">)</span>
+</div></div><div data-line="25" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">self</span> <span class="n">lists</span> <span class="n">foreach</span><span class="o">(</span><span class="n">y</span><span class="o">,</span> <span class="n">subList</span><span class="o">,</span> 
+</div></div><div data-line="26" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="n">subList</span> <span class="n">foreach</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">value</span><span class="o">,</span>
+</div></div><div data-line="27" class="code-highlight-row numbered"><div class="code-highlight-line">        <span class="n">transposedList</span> <span class="n">set</span><span class="o">(</span><span class="n">y</span><span class="o">,</span> <span class="n">x</span><span class="o">,</span> <span class="n">value</span><span class="o">)</span>
+</div></div><div data-line="28" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="o">)</span>
+</div></div><div data-line="29" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="o">)</span>
+</div></div><div data-line="30" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">transposedList</span>
+</div></div><div data-line="31" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="o">)</span> 
+</div></div><div data-line="32" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="33" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">println</span> <span class="o">:=</span> <span class="k">method</span><span class="o">(</span>
+</div></div><div data-line="34" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">self</span> <span class="n">lists</span> <span class="n">foreach</span><span class="o">(</span><span class="n">y</span><span class="o">,</span> <span class="n">subList</span><span class="o">,</span> 
+</div></div><div data-line="35" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="n">subList</span> <span class="n">foreach</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">value</span><span class="o">,</span> 
+</div></div><div data-line="36" class="code-highlight-row numbered"><div class="code-highlight-line">        <span class="k">if</span><span class="o">(</span><span class="n">x</span> <span class="o">==</span> <span class="mf">0</span> <span class="n">or</span> <span class="n">x</span> <span class="o">==</span> <span class="n">subList</span> <span class="n">size</span><span class="o">,</span> <span class="s">&quot;|&quot;</span> <span class="n">print</span><span class="o">)</span>
+</div></div><div data-line="37" class="code-highlight-row numbered"><div class="code-highlight-line">        <span class="s">&quot; #&#x7b;get(x, y)&#x7d; |&quot;</span> <span class="n">interpolate</span> <span class="n">print</span>        
+</div></div><div data-line="38" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="o">)</span>
+</div></div><div data-line="39" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="s">&quot;&quot;</span> <span class="n">println</span>      
+</div></div><div data-line="40" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="o">)</span>
+</div></div><div data-line="41" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="o">)</span>
+</div></div><div data-line="42" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="43" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">toFile</span> <span class="o">:=</span> <span class="k">method</span><span class="o">(</span><span class="n">name</span><span class="o">,</span>
+</div></div><div data-line="44" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="nb">File</span> <span class="n">with</span><span class="o">(</span><span class="n">name</span><span class="o">)</span> <span class="n">open</span> <span class="n">write</span><span class="o">(</span><span class="n">self</span> <span class="n">serialized</span><span class="o">)</span> <span class="n">close</span>
+</div></div><div data-line="45" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="o">)</span>
+</div></div><div data-line="46" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="47" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">fromFile</span> <span class="o">:=</span> <span class="k">method</span><span class="o">(</span><span class="n">name</span><span class="o">,</span>
+</div></div><div data-line="48" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">doRelativeFile</span><span class="o">(</span><span class="n">name</span><span class="o">)</span>
+</div></div><div data-line="49" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="o">)</span> 
+</div></div><div data-line="50" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">)</span>
+</div></div><div data-line="51" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="52" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">list</span> <span class="o">=</span> <span class="n">TwoDList</span> <span class="k">clone</span> <span class="n">dim</span><span class="o">(</span><span class="mf">2</span><span class="o">,</span> <span class="mf">3</span><span class="o">)</span>
+</div></div><div data-line="53" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">list</span> <span class="n">set</span><span class="o">(</span><span class="mf">0</span><span class="o">,</span> <span class="mf">0</span><span class="o">,</span> <span class="s">&quot;Apple&quot;</span><span class="o">)</span>
+</div></div><div data-line="54" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">list</span> <span class="n">set</span><span class="o">(</span><span class="mf">1</span><span class="o">,</span> <span class="mf">0</span><span class="o">,</span> <span class="s">&quot;Banana&quot;</span><span class="o">)</span>
+</div></div><div data-line="55" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">list</span> <span class="n">set</span><span class="o">(</span><span class="mf">0</span><span class="o">,</span> <span class="mf">1</span><span class="o">,</span> <span class="s">&quot;Damson&quot;</span><span class="o">)</span>
+</div></div><div data-line="56" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">list</span> <span class="n">set</span><span class="o">(</span><span class="mf">1</span><span class="o">,</span> <span class="mf">1</span><span class="o">,</span> <span class="s">&quot;Elderflower&quot;</span><span class="o">)</span>
+</div></div><div data-line="57" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">list</span> <span class="n">set</span><span class="o">(</span><span class="mf">0</span><span class="o">,</span> <span class="mf">2</span><span class="o">,</span> <span class="s">&quot;Grapefruit&quot;</span><span class="o">)</span>
+</div></div><div data-line="58" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">list</span> <span class="n">set</span><span class="o">(</span><span class="mf">1</span><span class="o">,</span> <span class="mf">2</span><span class="o">,</span> <span class="s">&quot;Kiwi&quot;</span><span class="o">)</span>
+</div></div><div data-line="59" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="60" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">list</span> <span class="n">get</span><span class="o">(</span><span class="mf">0</span><span class="o">,</span> <span class="mf">0</span><span class="o">)</span> <span class="n">println</span>
+</div></div><div data-line="61" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">list</span> <span class="n">get</span><span class="o">(</span><span class="mf">1</span><span class="o">,</span> <span class="mf">0</span><span class="o">)</span> <span class="n">println</span>
+</div></div><div data-line="62" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">list</span> <span class="n">get</span><span class="o">(</span><span class="mf">0</span><span class="o">,</span> <span class="mf">1</span><span class="o">)</span> <span class="n">println</span>
+</div></div><div data-line="63" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">list</span> <span class="n">get</span><span class="o">(</span><span class="mf">1</span><span class="o">,</span> <span class="mf">1</span><span class="o">)</span> <span class="n">println</span>
+</div></div><div data-line="64" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">list</span> <span class="n">get</span><span class="o">(</span><span class="mf">0</span><span class="o">,</span> <span class="mf">2</span><span class="o">)</span> <span class="n">println</span>
+</div></div><div data-line="65" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">list</span> <span class="n">get</span><span class="o">(</span><span class="mf">1</span><span class="o">,</span> <span class="mf">2</span><span class="o">)</span> <span class="n">println</span>
+</div></div><div data-line="66" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="67" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">transposedList</span> <span class="o">:=</span> <span class="nb">list</span> <span class="n">transpose</span>
+</div></div><div data-line="68" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="69" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">transposedList</span> <span class="n">toFile</span><span class="o">(</span><span class="s">&quot;transposed.txt&quot;</span><span class="o">)</span>
+</div></div><div data-line="70" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="71" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">transposedListFromFile</span> 
+</div></div><div data-line="72" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="o">:=</span> <span class="n">TwoDList</span> <span class="n">fromFile</span><span class="o">(</span><span class="s">&quot;transposed.txt&quot;</span><span class="o">)</span>
+</div></div><div data-line="73" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="74" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="s">&quot;2x3 list:&quot;</span> <span class="n">println</span>
+</div></div><div data-line="75" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">list</span> <span class="n">println</span>
+</div></div><div data-line="76" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="77" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="s">&quot;Transposed 3x2 list:&quot;</span> <span class="n">println</span>
+</div></div><div data-line="78" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">transposedList</span> <span class="n">println</span>
+</div></div><div data-line="79" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="80" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="s">&quot;Transposed 3x2 list from file:&quot;</span> <span class="n">println</span>
+</div></div><div data-line="81" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">transposedListFromFile</span> <span class="n">println</span></div></div></pre></div></figure>
+
+<p><em>Write a program that gives you ten tries to guess a random number from 1 to 100.</em></p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">guess.io</span><a class="code-highlight-caption-link" href="https://gist.github.com/5267761">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">toGuess</span> <span class="o">:=</span> <span class="mf">4</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">guessCount</span> <span class="o">:=</span> <span class="mf">0</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">prevDiff</span> <span class="o">:=</span> <span class="no">nil</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">currDiff</span> <span class="o">:=</span> <span class="no">nil</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">while</span><span class="o">(</span><span class="n">guessCount</span> <span class="o">&lt;</span> <span class="mf">10</span><span class="o">,</span> 
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">guessCount</span> <span class="o">=</span> <span class="n">guessCount</span> <span class="o">+</span> <span class="mf">1</span>  
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">currGuess</span> 
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="o">:=</span> <span class="nb">File</span> <span class="n">standardInput</span> <span class="n">readLine</span><span class="o">(</span><span class="s">&quot;Enter your guess: &quot;</span><span class="o">)</span> <span class="n">asNumber</span><span class="o">()</span> 
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">currDiff</span> <span class="o">:=</span> <span class="o">(</span><span class="n">toGuess</span> <span class="o">-</span> <span class="n">currGuess</span><span class="o">)</span> <span class="n">abs</span>  
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">if</span><span class="o">(</span><span class="n">currDiff</span> <span class="o">==</span> <span class="mf">0</span><span class="o">)</span> <span class="k">then</span> <span class="o">(</span>
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">guessCount</span> <span class="o">=</span> <span class="mf">10</span>
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="o">)</span> <span class="k">else</span> <span class="o">(</span>
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="k">if</span> <span class="o">(</span><span class="n">prevDiff</span> <span class="o">==</span> <span class="no">nil</span><span class="o">)</span> <span class="k">then</span><span class="o">(</span><span class="s">&quot;Try again&quot;</span> <span class="n">println</span><span class="o">)</span> 
+</div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="k">elseif</span><span class="o">(</span><span class="n">currDiff</span> <span class="o">==</span> <span class="n">prevDiff</span><span class="o">)</span> <span class="k">then</span> <span class="o">(</span><span class="s">&quot;Same&quot;</span> <span class="n">println</span><span class="o">)</span>
+</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="k">elseif</span><span class="o">(</span><span class="n">currDiff</span> <span class="o">&amp;</span><span class="n">lt</span><span class="o">;</span> <span class="n">prevDiff</span><span class="o">)</span> <span class="k">then</span> <span class="o">(</span><span class="s">&quot;Hotter&quot;</span> <span class="n">println</span><span class="o">)</span> 
+</div></div><div data-line="19" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="k">else</span><span class="o">(</span><span class="s">&quot;Colder&quot;</span> <span class="n">println</span><span class="o">)</span>
+</div></div><div data-line="20" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">prevDiff</span> <span class="o">=</span> <span class="n">currDiff</span>
+</div></div><div data-line="21" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="o">)</span>
+</div></div><div data-line="22" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">)</span>
+</div></div><div data-line="23" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="24" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">if</span><span class="o">(</span><span class="n">currDiff</span> <span class="o">==</span> <span class="mf">0</span><span class="o">,</span> <span class="s">&quot;Correct!&quot;</span><span class="o">,</span> <span class="s">&quot;Sorry, you ran out of guesses.&quot;</span><span class="o">)</span> <span class="n">println</span></div></div></pre></div></figure>
+
+<p>Check out my code at <a href="https://github.com/heatherjc07/seven_languages_in_seven_days/tree/master/Io/Day2" target="_blank">github</a></p>
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://heatherjcampbell.com/development/io-day-3/" class="btn" title="Io Day 3">Previous article</a>
+      
+      
+        <a href="http://heatherjcampbell.com/development/prolog-day-1/" class="btn" title="Prolog Day 1">Next article</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span>&copy; 2016 Heather Campbell. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/so-simple/">So Simple Theme</a>.</span>
+<div class="social-icons">
+	<a href="http://twitter.com/hcampbell07" title="Heather Campbell on Twitter" target="_blank"><i class="icon-twitter icon-2x"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="http://github.com/heatherjc07" title="Heather Campbell on Github" target="_blank"><i class="icon-github icon-2x"></i></a>
+	
+</div><!-- /.social-icons -->
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://heatherjcampbell.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://heatherjcampbell.com/assets/js/scripts.min.js"></script>
+
+<!-- Jekyll Simple Search option -->
+<script>
+  $(document).ready(function() {
+      $('.search-field').simpleJekyllSearch({
+          jsonFile : 'http://heatherjcampbell.com/search.json',
+          searchResults : '.search-results',
+          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          noResults: '<p>Nothing found.</p>'
+        });
+  });
+
+  (function( $, window, undefined ) {
+    
+     var bs = {
+          close: $(".icon-remove-sign"),
+          searchform: $(".search-form"),
+          canvas: $("body"),
+          dothis: $('.dosearch')
+      };
+    
+    bs.dothis.on('click', function() {
+      $('.search-wrapper').css({ display: "block" });
+      bs.searchform.toggleClass('active');
+      bs.searchform.find('input').focus();
+      bs.canvas.toggleClass('search-overlay');
+    });
+    
+      bs.close.on('click', function() {
+        $('.search-wrapper').removeAttr( 'style' );
+        bs.searchform.toggleClass('active');
+        bs.canvas.removeClass('search-overlay');
+    });
+  })( jQuery, window );
+</script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-69172837-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>	        
+
+</body>
+</html>

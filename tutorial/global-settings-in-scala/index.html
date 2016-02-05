@@ -1,0 +1,288 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Global Settings in Scala &#8211; Technical Musing of a Mummy</title>
+<meta name="description" content="Defining behaviour at a global level in Play">
+<meta name="keywords" content="scala, play, development">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://heatherjcampbell.com/images/">
+<meta name="twitter:title" content="Global Settings in Scala">
+<meta name="twitter:description" content="Defining behaviour at a global level in Play">
+<meta name="twitter:creator" content="@hcampbell07">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Global Settings in Scala">
+<meta property="og:description" content="Defining behaviour at a global level in Play">
+<meta property="og:url" content="http://heatherjcampbell.com/tutorial/global-settings-in-scala/">
+<meta property="og:site_name" content="Technical Musing of a Mummy">
+
+
+
+
+
+<link rel="canonical" href="http://heatherjcampbell.com/tutorial/global-settings-in-scala/">
+<link href="http://heatherjcampbell.com/feed.xml" type="application/atom+xml" rel="alternate" title="Technical Musing of a Mummy Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://heatherjcampbell.com/assets/css/main.min.css">
+<link rel="stylesheet" href="http://heatherjcampbell.com/assets/css/code.css">
+<!-- Webfonts -->
+<script src="//use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="http://heatherjcampbell.com/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://heatherjcampbell.com/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://heatherjcampbell.com/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://heatherjcampbell.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://heatherjcampbell.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://heatherjcampbell.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://heatherjcampbell.com/images/apple-touch-icon-144x144-precomposed.png">
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav">
+	    <ul>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/about/">About</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/articles/">Posts</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/tags/">Tags</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="https://twitter.com/HCampbell07/">Tweets</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/presentations/">Presentations</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="http://heatherjcampbell.com/reading/">Reading List</a>
+				 
+			</li>
+	        
+	        <li><a href="http://heatherjcampbell.com/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+	        <li class="dosearch"><i class="icon-search"></i> Search</li>
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+<div class="search-wrapper">
+	<div class="search-form">
+		<input type="text" class="search-field" placeholder="Search...">
+		<i class="icon-remove-sign icon-2x"></i>
+		<ul class="search-results post-list"></ul><!-- /.search-results -->
+	</div><!-- /.search-form -->
+</div><!-- ./search-wrapper -->
+
+<header class="masthead">
+	<div class="wrap">
+        <h1 class="site-title"><a href="http://heatherjcampbell.com">Technical Musing of a Mummy</a></h1>
+		<h2 class="site-description" itemprop="description">A Blog About All Things IT Related</h2>
+	</div>
+</header><!-- /.masthead -->
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <span class="entry-tags"><a href="http://heatherjcampbell.com/tags/#scala" title="Pages tagged scala">scala</a>&nbsp;&bull;&nbsp;<a href="http://heatherjcampbell.com/tags/#play" title="Pages tagged play">play</a>&nbsp;&bull;&nbsp;<a href="http://heatherjcampbell.com/tags/#development" title="Pages tagged development">development</a></span>
+        
+          <h1 class="entry-title">Global Settings in Scala</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        <img src="http://heatherjcampbell.com/images/bio-photo.JPG" alt="Heather Campbell photo" class="author-photo">
+        <span class="author vcard">By <span class="fn"><a href="http://heatherjcampbell.com/about/" title="About Heather Campbell">Heather Campbell</a></span></span>
+        <span class="entry-date date published"><time datetime="2013-06-24T00:00:00+01:00"><i class="icon-calendar-empty"></i> June 24, 2013</time></span>
+        
+        
+        <span><a href="http://heatherjcampbell.com/tutorial/global-settings-in-scala/" rel="bookmark" title="Global Settings in Scala"><i class="icon-link"></i> Permalink</a></span>
+        
+        <span class="social-share-facebook">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://heatherjcampbell.com/tutorial/global-settings-in-scala/" title="Share on Facebook" itemprop="Facebook"><i class="icon-facebook-sign"></i> Like</a></span>
+        <span class="social-share-twitter">
+            <a href="https://twitter.com/intent/tweet?hashtags=tutorial&text=Global Settings in Scala&url=http://heatherjcampbell.com/tutorial/global-settings-in-scala/&via=hcampbell07" title="Share on Twitter" itemprop="Twitter"><i class="icon-twitter-sign"></i> Tweet</a></span>
+        <span class="social-share-googleplus">
+            <a href="https://plus.google.com/share?url=http://heatherjcampbell.com/tutorial/global-settings-in-scala/" title="Share on Google Plus" itemprop="GooglePlus"><i class="icon-google-plus-sign"></i> +1</a></span>
+            <!-- /.social-share -->
+      </footer>
+      <div class="entry-content">
+        <p>In a recent Scala Play! project I wanted to carry out certain things on starting up and shutting down my application. Typical things like starting up and cleaning up resources. This is how I came across the Global Object. This gives you a hook into certain events like starting and stopping, when the user requests an action which doesn’t exist and allows you to define code which is run when they occur.</p>
+
+<p>You create the Global object in the default (empty) package.</p>
+
+<pre><code>import play.api._
+
+object Global extends GlobalSettings {
+ //override methods and provide your logic
+}
+</code></pre>
+
+<p>In this example I’m starting and stopping a test email service on starting and stopping my application and I’m defining pages to be displayed when an error or missing handler exception occurs.</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">Global.scala</span><a class="code-highlight-caption-link" href="https://gist.github.com/5853431">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">object</span> <span class="nc">Global</span> <span class="k">extends</span> <span class="nc">GlobalSettings</span><span class="o">&#x7b;</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="k">override</span> <span class="k">def</span> <span class="n">onStart</span><span class="o">(</span><span class="n">app</span><span class="k">:</span> <span class="kt">Application</span><span class="o">)</span> <span class="o">&#x7b;</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="nc">Logger</span><span class="o">.</span><span class="n">info</span><span class="o">(</span><span class="s">&quot;Application starting up...&quot;</span><span class="o">)</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">startTestEmailServer</span><span class="o">(</span><span class="mi">2526</span><span class="o">)</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">if</span> <span class="o">(</span><span class="nc">Controls</span><span class="o">.</span><span class="n">count</span><span class="o">()</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">&#x7b;</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">seedMongoDB</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="nc">Logger</span><span class="o">.</span><span class="n">info</span><span class="o">(</span><span class="s">&quot;Detected empty database...seeding data&quot;</span><span class="o">)</span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="o">&#x7d;</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="o">&#x7d;</span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="k">override</span> <span class="k">def</span> <span class="n">onStop</span><span class="o">(</span><span class="n">app</span><span class="k">:</span> <span class="kt">Application</span><span class="o">)</span> <span class="o">&#x7b;</span>
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line">   <span class="n">stopTestEmailServer</span>
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line">   <span class="nc">Logger</span><span class="o">.</span><span class="n">info</span><span class="o">(</span><span class="s">&quot;Application shutdown...&quot;</span><span class="o">)</span>
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line"> <span class="o">&#x7d;</span>
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">override</span> <span class="k">def</span> <span class="n">onHandlerNotFound</span><span class="o">(</span><span class="n">request</span><span class="k">:</span> <span class="kt">RequestHeader</span><span class="o">)</span> <span class="k">=</span> <span class="o">&#x7b;</span>
+</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="nc">NotFound</span><span class="o">(</span>
+</div></div><div data-line="19" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="n">views</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">error</span><span class="o">(</span><span class="nc">Messages</span><span class="o">(</span><span class="s">&quot;application.title&quot;</span><span class="o">),</span> 
+</div></div><div data-line="20" class="code-highlight-row numbered"><div class="code-highlight-line">                         <span class="nc">Messages</span><span class="o">(</span><span class="s">&quot;error.notFound&quot;</span><span class="o">))</span>
+</div></div><div data-line="21" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="o">)</span>
+</div></div><div data-line="22" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="o">&#x7d;</span>
+</div></div><div data-line="23" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="24" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">override</span> <span class="k">def</span> <span class="n">onError</span><span class="o">(</span><span class="n">request</span><span class="k">:</span> <span class="kt">RequestHeader</span><span class="o">,</span> <span class="n">ex</span><span class="k">:</span> <span class="kt">Throwable</span><span class="o">)</span> <span class="k">=</span> <span class="o">&#x7b;</span>
+</div></div><div data-line="25" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="nc">InternalServerError</span><span class="o">(</span>
+</div></div><div data-line="26" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="n">views</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">error</span><span class="o">(</span><span class="nc">Messages</span><span class="o">(</span><span class="s">&quot;application.title&quot;</span><span class="o">),</span> 
+</div></div><div data-line="27" class="code-highlight-row numbered"><div class="code-highlight-line">                          <span class="nc">Messages</span><span class="o">(</span><span class="s">&quot;error.problem&quot;</span><span class="o">))</span>
+</div></div><div data-line="28" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="o">)</span>
+</div></div><div data-line="29" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="o">&#x7d;</span>
+</div></div><div data-line="30" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="o">&#x7d;</span></div></div></pre></div></figure>
+
+<p>For more info see <a href="http://www.playframework.com/documentation/2.0/ScalaGlobal">Play!’s page on it</a></p>
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://heatherjcampbell.com/presentations/mongodb-and-aws/" class="btn" title="MongoDB and AWS">Previous article</a>
+      
+      
+        <a href="http://heatherjcampbell.com/skills/explaining-languages-through-storytelling/" class="btn" title="Explaining Languages through Storytelling">Next article</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span>&copy; 2016 Heather Campbell. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/so-simple/">So Simple Theme</a>.</span>
+<div class="social-icons">
+	<a href="http://twitter.com/hcampbell07" title="Heather Campbell on Twitter" target="_blank"><i class="icon-twitter icon-2x"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="http://github.com/heatherjc07" title="Heather Campbell on Github" target="_blank"><i class="icon-github icon-2x"></i></a>
+	
+</div><!-- /.social-icons -->
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://heatherjcampbell.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://heatherjcampbell.com/assets/js/scripts.min.js"></script>
+
+<!-- Jekyll Simple Search option -->
+<script>
+  $(document).ready(function() {
+      $('.search-field').simpleJekyllSearch({
+          jsonFile : 'http://heatherjcampbell.com/search.json',
+          searchResults : '.search-results',
+          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          noResults: '<p>Nothing found.</p>'
+        });
+  });
+
+  (function( $, window, undefined ) {
+    
+     var bs = {
+          close: $(".icon-remove-sign"),
+          searchform: $(".search-form"),
+          canvas: $("body"),
+          dothis: $('.dosearch')
+      };
+    
+    bs.dothis.on('click', function() {
+      $('.search-wrapper').css({ display: "block" });
+      bs.searchform.toggleClass('active');
+      bs.searchform.find('input').focus();
+      bs.canvas.toggleClass('search-overlay');
+    });
+    
+      bs.close.on('click', function() {
+        $('.search-wrapper').removeAttr( 'style' );
+        bs.searchform.toggleClass('active');
+        bs.canvas.removeClass('search-overlay');
+    });
+  })( jQuery, window );
+</script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-69172837-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>	        
+
+</body>
+</html>
